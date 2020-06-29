@@ -23,8 +23,12 @@ kramdown:
 plugins:
   - jekyll-feed
 
+source: .
+destination: ./_site
+layouts_dir: _layouts
+includes_dir: _includes
 sass:
-  sass_dir: css
+  sass_dir: _sass
   style: compressed
 
 plugins:
