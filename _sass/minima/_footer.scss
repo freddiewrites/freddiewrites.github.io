@@ -1,0 +1,44 @@
+.site-footer {
+  padding: 40px 0 38px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid fade-out(#281C28, .9);
+  @include media('>=tablet') {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    text-align: left;
+  }
+  &__copyright {
+    @include media('>=tablet') {
+      margin-right: 2rem;
+    }
+  }
+  &__credit {
+    flex-grow: 1;
+    opacity: .5;
+    a {
+      color: inherit;
+    }
+  }
+  &__social {
+    opacity: .5;
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.social-media-list {
+  margin: 1rem auto 0;
+  text-align: center;
+  @include media('>=tablet') {
+    margin: 0;
+    text-align: initial;
+  }
+  li {
+    @include media('>=tablet') {
+      margin-left: 2rem;
+    }
+  }
+}

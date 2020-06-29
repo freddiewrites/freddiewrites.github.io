@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Helping Sketch find their voice"
+date:   2017-06-20 12:00:00 -0500
+categories: [UX, writing]
+hero-image: 'https://i0.wp.com/freddiewrit.es/wp-content/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg?w=2000&ssl=1'
+---
+I got to commission some super cool people to write guest columns for us when I worked for [iCreate Magazine](http://www.futureplc.com/technology/). One of those people was Christopher Downer (who wrote about designing an ace app called Clear back in the day). Early in 2017, that came full circle when Chris got in touch to ask if I’d help Bohemian Coding (the ace folk who make [Sketch](https://www.sketch.com/)) with their copy.
+
+---------------
+
+### What was the brief?
+
+Sketch is well known and loved among the design community, but its developers — Bohemian Coding — felt there was room for improvement in the way they communicated the app’s rapid development.
+
+They asked me to help them overhaul their blog posts (which mark every major new release of the app) to highlight key new features and communicate vital changes that could impact on users’ workflows.
+
+Following that, I worked on their in-app prompts, subscriptions flows and the homepage copy for their website.
+
+---------------
+
+### What did I do?
+
+Before I got stuck in writing fresh posts, I took the opportunity to review what the team has previously published. I also looked at competitor communications, reaction from users and made a note of the kind of questions being asked after every update. With that in mind, I went about creating a consistent structure and voice that could be applied to every update post.
+
+The new structure would give users some handy familiarity and allow them to easily navigate each post to find the information they needed. A short summary at the very top of each post rounded up the biggest changes for users who were short on time.
+
+> **“We move fast, and so does our excellent developer community. That’s awesome, but it means a lot of manual plugin updates. On some occasions, an older plugin might not be compatible with a new version of Sketch, which causes even more issues. With Sketch 45, we’ve taken some steps to fix this.”**
+
+![Original photo by Alejandro Escamilla on Unsplash](https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/Sketch-Blog-Photo-by-Alejandro-Escamilla-on-Unsplash.jpg?w=556&h=364&ssl=1 'Original photo by Alejandro Escamilla on Unsplash')
+
+---------------
+
+You can view three update posts I wrote (for [Sketch 43](https://blog.sketchapp.com/improved-shape-editing-and-more-in-sketch-43-b8f1ed22adbe), [Sketch 44](https://blog.sketchapp.com/a-new-artboard-picker-better-vectors-and-more-in-sketch-44-71a442dbec04) and [Sketch 45](https://blog.sketchapp.com/a-redesigned-color-popover-better-plugin-management-and-more-in-sketch-45-8de62b3d9abe)) on the Sketch Blog. You can also see some of the copy I wrote on the [homepage of their website](https://www.sketch.com/).

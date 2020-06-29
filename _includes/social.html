@@ -1,0 +1,15 @@
+<ul class="social-media-list">
+  {%- if site.email -%}<li><a class="no-hover" href="mailto:{{ site.email }}">Email</a></li>{%- endif -%}
+  {%- if site.dribbble_username -%}<li><a class="no-hover" href="https://dribbble.com/{{ site.dribbble_username| cgi_escape | escape }}">Dribbble</a></li>{%- endif -%}
+  {%- if site.facebook_username -%}<li><a class="no-hover" href="https://www.facebook.com/{{ site.facebook_username| cgi_escape | escape }}">Facebook</a></li>{%- endif -%}
+  {%- if site.flickr_username -%}<li><a class="no-hover" href="https://www.flickr.com/photos/{{ site.flickr_username| cgi_escape | escape }}">Flickr</a></li>{%- endif -%}
+  {%- if site.github_username -%}<li><a class="no-hover" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">Github</a></li>{%- endif -%}
+  {%- if site.instagram_username -%}<li><a class="no-hover" href="https://instagram.com/{{ site.instagram_username| cgi_escape | escape }}">Instagram</a></li>{%- endif -%}
+  {%- if site.linkedin_username -%}<li><a class="no-hover" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">Linkedin</a></li>{%- endif -%}
+  {%- if site.pinterest_username -%}<li><a class="no-hover" href="https://www.pinterest.com/{{ site.pinterest_username| cgi_escape | escape }}">Pinterest</a></li>{%- endif -%}
+  {%- for mst in site.mastodon -%}{%- if mst.username and mst.instance -%}<li><a class="no-hover" href="https://{{ mst.instance| cgi_escape | escape}}/@{{mst.username}}">Mastodon</a></li>{%- endif -%}{%- endfor -%}
+  {%- if site.twitter_username -%}<li><a class="no-hover" href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}">Twitter</a></li>{%- endif -%}
+  {%- if site.youtube_username -%}<li><a class="no-hover" href="https://youtube.com/{{ site.youtube_username| cgi_escape | escape }}">Youtube</a></li>{%- endif -%}
+  {%- if site.googleplus_username -%}<li><a class="no-hover" href="https://plus.google.com/{{ site.googleplus_username| escape }}">Google+</a></li>{%- endif -%}
+  {%- if site.rss -%}<li><a class="no-hover" href="{{ 'feed.xml' | relative_url }}">RSS</a></li>{%- endif -%}
+</ul>

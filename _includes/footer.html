@@ -1,0 +1,119 @@
+<div class="wrapper">
+  <section class="signup">
+    <div class="signup__text--mobile">
+      I send out an occasional newsletter with stuff I’ve been seeing, doing and thinking.
+    </div>
+    <div class="signup__form">
+      <form action="#!" method="post" name="" target="_blank" novalidate="" class="form">
+              <input type="email" value="" name="EMAIL" placeholder="Email" class="form__input">
+              <input type="submit" value="Subscribe" name="subscribe" class="form__submit">
+          </form>
+    </div>
+    <div class="signup__text">
+      I send out an occasional newsletter with stuff I’ve been seeing, doing and thinking.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h3>Latest</h3>
+    </div>
+    <div class="recent-posts">
+      {% for post in site.posts %}
+        {% if forloop.index <= 3 %}
+          <div class="post-preview">
+            <a class="post-preview__button no-hover" href="{{ post.url }}">
+              <div class="post-preview__content">
+                <h3 class="post-preview__title">
+                  {{ post.title }} <span>• {{ post.date | date: "%-d %b, %Y" }}</span>
+                </h3>
+                <p class="post-preview__excerpt">
+                  {{ post.excerpt | strip_html }}
+                </p>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<footer>
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <div class="wrapper">
+    <div class="site-footer">
+      <div class="site-footer__copyright">
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}
+      </div>
+
+      <div class="site-footer__credit">
+        Site by <a href="https://squatch.in/" class="no-hover" target="_blank">Squatch.in</a>
+      </div>
+
+      <div class="site-footer__social">
+        {%- include social.html -%}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+      var follower, init, mouseX, mouseY, positionElement, printout, timer;
+
+      follower = document.getElementById('follower');
+
+      printout = document.getElementById('printout');
+
+      mouseX = event => {
+        return event.clientX;
+      };
+
+      mouseY = event => {
+        return event.clientY;
+      };
+
+      positionElement = event => {
+        var mouse;
+        mouse = {
+          x: mouseX(event),
+          y: mouseY(event) };
+
+        follower.style.top = mouse.y + 'px';
+        return follower.style.left = mouse.x + 'px';
+      };
+
+      timer = false;
+
+      window.onmousemove = init = event => {
+        var _event;
+        _event = event;
+        return timer = setTimeout(() => {
+          return positionElement(_event);
+        }, 1);
+      };
+
+      $('.nav-trigger').on('click', function() {
+        $('body').toggleClass('nav-is-open');
+      });
+
+    });
+
+    $(".page-link").mouseover(function() {
+      var color = $(this).data("color");
+      $("body").css("background-color", color);
+      $("body").css("color", "#FFF");
+      $("body").addClass("cursor-alt");
+    });
+
+    $(".site-header").mouseleave(function() {
+      $("body").css("background-color", "white");
+      $("body").css("color", "#281C28");
+      $("body").removeClass("cursor-alt");
+    });
+
+  </script>
+
+</footer>

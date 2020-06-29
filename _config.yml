@@ -1,0 +1,31 @@
+port: 5000
+title: Freddie Writes
+email: freddie@sketch.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Hello 👋 I'm Freddie Harrison. I’m a writer who cares about making things simple, accessible and a little more human.
+url: 'https://freddiewrit.es'
+show_excerpts: true
+instagram_username: freddiewrites
+twitter_username: freddiewrites
+rss: https://github.com/jekyll/jekyll-feed
+
+# Build settings
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    fenced_code_blocks: true
+    default_lang: javascript
+    span:
+      disable: true
+    block:
+      line_numbers: true
+
+plugins:
+  - jekyll-feed
+
+sass:
+  sass_dir: css
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag

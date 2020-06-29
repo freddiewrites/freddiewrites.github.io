@@ -1,0 +1,240 @@
+.site-header {
+  &__logo {
+    width: 44px;
+    height: 44px;
+    @include media('>=tablet') {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    padding: 18px 0;
+    text-align: center;
+    @include media('>=tablet') {
+      padding: 37px 0;
+    }
+    @include media('>=desktop') {
+      padding: 74px 0;
+      text-align: left;
+    }
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #281C28;
+      opacity: .1;
+      content: "";
+    }
+  }
+}
+
+.logo {
+  fill: #000;
+  transition: .35s;
+  .cursor-alt & {
+    fill: #FFF;
+    transition: .35s;
+  }
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
+}
+
+.site-nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: none;
+  padding: 2rem 0;
+  transform: translateY(-50%);
+
+  @include media('>=desktop') {
+    display: block;
+    padding: 0;
+  }
+
+  .nav-is-open & {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    transform: translate(0);
+  }
+
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 1rem 0;
+    font-size: 18px;
+    color: inherit;
+    line-height: $base-line-height;
+    @include media('>=desktop') {
+      display: inline-block;
+      padding: 0;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:not(:last-child) {
+      @include media('>=desktop') {
+        margin-right: 42px;
+      }
+    }
+    &:nth-child(2) {
+      @include media('>=desktop') {
+        padding-left: 16px;
+      }
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: -1rem;
+        font-size: 18px;
+        line-height: 22px;
+        color: #D4A4D3;
+        transform: translateY(-50%);
+        content: "•";
+        @include media('>=desktop') {
+          left: 0rem;
+        }
+      }
+    }
+  }
+}
+
+.nav-trigger {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 20px;
+  transform: translateY(-50%);
+  transition: .1s;
+  content: "";
+  opacity: 1;
+  &:hover {
+    height: 24px;
+    cursor: pointer;
+  }
+  @include media('>=desktop') {
+    display: none;
+    opacity: 0;
+  }
+  span {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $text-color;
+    border-radius: 4px;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+  .nav-is-open & {
+    transform: translateY(-50%) rotate(45deg);
+    span {
+      &:nth-child(1),
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+  }
+}
+
+/**
+ * CURSOR
+ */
+
+html {
+  @include media('>=tablet') {
+    cursor: none;
+  }
+  input:hover,
+  a:hover {
+    @include media('>=tablet') {
+      cursor: none;
+    }
+  }
+}
+
+body {
+  transition: background-color .35s, color .35s;
+}
+
+.follower-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#follower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  #circle1 {
+    position: absolute;
+    display: none;
+    height: 44px;
+    width: 44px;
+    margin-top: 0em;
+    margin-left: 0em;
+    background: #66BCEC;
+    background: linear-gradient(225deg, #66BCEC 0%, #D4A4D3 48.96%, #E6AC0D 100%);
+    background-size: 200% 200%;
+    border-radius: 50%;
+    animation: gradient 3s ease infinite;
+    transform: translate(-50%, -50%);
+    @include media('>=tablet') {
+      display: block;
+    }
+    .cursor-alt & {
+      background: transparent;
+      border: 2px solid #FFF;
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,0 +1,48 @@
+<head>
+  {%- feed_meta -%}
+  
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{ page.title | escape }}</title>
+  <meta property="og:title" content="{{ page.title | strip_html }}" />
+  <meta name="twitter:title" content="{{ page.title | strip_html }}" />
+
+  <!-- Description -->
+  {% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt | strip_html }}" />
+  <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
+  <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
+  {% else %}
+  <meta name="description" content="{{ site.description }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta name="twitter:description" content="{{ site.description }}" />
+  {% endif %}
+
+  <meta property="og:type" content="article" />
+
+  <!-- Images -->
+  {% if page.hero-image %}
+  <meta property="og:image" content="{{ page.hero-image }}" />
+  <meta name="twitter:image" content="{{ page.hero-image }}" />
+  {% else %}
+  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=18msEodUx0T5Gsjpk-X45TbHYpKyQCSCu" />
+  <meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=18msEodUx0T5Gsjpk-X45TbHYpKyQCSCu" />
+  {% endif %}
+
+  <!-- Non-Dynamic Metadata -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Freddie Writes" />
+  <meta name="twitter:site" content="@freddiewrites" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+</head>
+
+<div class="follower-wrapper">
+  <div id="follower">
+    <div id="circle1"></div>
+    <div id="circle2"></div>
+  </div>
+</div>

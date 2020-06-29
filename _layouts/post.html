@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+    <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+            <div class="post-header__title">
+                <h1 class="post-title p-name" itemprop="name headline">
+                    {{ page.title | escape }}
+                </h1>
+            </div>
+            <div class="post-header__meta">
+                {%- assign total_words = content | number_of_words -%}
+                {%- assign reading_time = total_words | divided_by: 225 -%}
+                {% if reading_time > 1 %}
+                    <h5>
+                        {{ reading_time }} minutes
+                    </h5>
+                {% else %}
+                    <h5>
+                        1 minute
+                    </h5>
+                {% endif %}
+
+                <h5>
+                    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {%- assign date_format = site.minima.date_format | default: "%-d %b, %Y" -%}
+                        {{ page.date | date: date_format }}
+                    </time>
+                </h5>
+            </div>
+        </header>
+
+        {% if page.hero-image %}
+            <div class="post-hero" style="background-image: url({{ page.hero-image }});"></div>
+        {% endif %}
+
+        <div class="post-content e-content" itemprop="articleBody">
+            {{ content }}
+        </div>
+
+        <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+    </article>
+</div>
