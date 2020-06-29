@@ -34,10 +34,6 @@
 .logo {
   fill: #000;
   transition: .35s;
-  .cursor-alt & {
-    fill: #FFF;
-    transition: .35s;
-  }
 }
 
 .site-title {
@@ -222,7 +218,8 @@ body {
     }
     .cursor-alt & {
       background: transparent;
-      border: 2px solid #FFF;
+      border: 2px solid #000;
+      opacity: .25;
     }
   }
 }

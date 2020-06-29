@@ -2,8 +2,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 550px;
   padding: 5.625rem 0;
+  margin: 0 auto;
   align-items: center;
+  @include media('>=tablet') {
+    max-width: 100%;
+  }
   &__form {
     width: 100%;
     @include media('>=tablet') {
