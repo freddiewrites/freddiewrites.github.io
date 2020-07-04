@@ -8,6 +8,7 @@
     flex-direction: row;
     font-size: 18px;
     text-align: left;
+    align-items: center;
   }
   &__copyright {
     @include media('>=tablet') {
@@ -16,7 +17,10 @@
   }
   &__credit {
     flex-grow: 1;
-    opacity: .5;
+    margin-top: 1rem;
+    @include media('>=tablet') {
+      margin-top: 0;
+    }
     a {
       color: inherit;
     }

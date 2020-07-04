@@ -2,7 +2,7 @@
 layout: post
 title:  "30"
 date:   2020-01-25 12:00:00 -0500
-categories: personal reading
+categories: [personal, reading]
 excerpt: 
 ---
 I turned 30 this month — hooray! 🎉 In the lead up to my birthday, lots of people asked me how I felt about this milestone. Was I worried? Was I anxious? Honestly, I’ve felt none of these things. Here’s where I did land with it…

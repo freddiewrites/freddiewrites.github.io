@@ -30,7 +30,8 @@ h2 {
 }
 
 h3 {
-	font-size: 1.5rem;
+	padding-top: .625rem;
+	font-size: 1.32rem;
 	font-weight: normal;
 	line-height: 2rem;
 	@include media('>=tablet') {
@@ -60,11 +61,11 @@ h5 {
 }
 
 p {
-	margin-bottom: 3rem;
-	font-size: 1.125rem;
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
 	font-weight: normal;
-	line-height: 1.5rem;
-	@include media('>=tablet') {
+	line-height: 1.85rem;
+	@include media('>=desktop') {
 		font-size: 1.5rem;
 		line-height: 2.25rem;
 	}
@@ -153,5 +154,20 @@ blockquote {
 	}
 	strong {
 		font-weight: normal;
+	}
+}
+
+table {
+	color: $text-color;
+	th {
+	    background-color: fade-out($text-color, .9);
+	    border: 1px solid fade-out($text-color, .9);
+	    border-bottom-color: fade-out($text-color, .9);
+	}
+	td {
+		border: 1px solid fade-out($text-color, .9);
+	}
+	tr:nth-child(even) {
+	    background-color: fade-out($text-color, .9);
 	}
 }

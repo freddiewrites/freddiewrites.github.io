@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating a new magazine from scratch"
 date:   2016-11-12 12:00:00 -0500
-categories: editorial publishing strategy
+categories: [editorial, publishing, strategy]
 hero-image: 'https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/OPOA_2.jpg?w=1500&ssl=1'
 ---
 As a writer and former features editor with a background in ‘big publishing’, it probably comes as no surprise that I’m a huge fan of magazines. When my former employers, [Arts University Bournemouth (AUB)](https://aub.ac.uk/), asked me to produce their new alumni magazine it was a bit of a dream come true.

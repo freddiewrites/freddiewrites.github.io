@@ -2,11 +2,12 @@
 layout: post
 title:  "The everything machine"
 date:   2019-01-04 12:00:00 -0500
-categories: personal tech thoughts
+categories: [personal, tech, thoughts]
+vimeoId: 107569286
 ---
 The act of [converging technologies](https://en.wikipedia.org/wiki/Technological_convergence) is one of the great feats of the 21st Century. It’s evidenced by the meme that tends to show up in the slide decks of semi-knowledgable speakers at conferences. You know the one. There’s a desk full of objects. A calculators, a stack of books, a notepad, an alarm clock, a typewriter. In the next image, it’s a single Macintosh computer.
 
-https://vimeo.com/107569286
+{% include vimeoPlayer.html id=page.vimeoId %}
 
 Having two separate devices for different jobs that share similar silicon has always been an inconvenience. And one that engineers have endeavoured to fix. Remember those combined TVs and VCRs? I had one in my bedroom when I was a kid. Go a little further back and there are those combined alarm clocks and tea-makers. Whenever a new thing combined two previously separate things, we were living in the future.
 

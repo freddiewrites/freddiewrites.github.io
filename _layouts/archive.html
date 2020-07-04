@@ -10,10 +10,31 @@ layout: default
         </h1>
     </header>
 
+    {%- assign categories = "" | split: ',' %}
+    {%- for post in site.posts -%}
+    	{%- for category in post.categories -%}
+    		{% assign categories = categories | push: category %}
+    	{%- endfor -%}
+    {%- endfor -%}
+
+    {%- assign categories = categories | uniq  %}
+
+    <div class="select-bar">
+    	<div class="select">
+    		<select name="category" class="post-control" data-filter-group="category">
+    			<option value="*">All Categories</option>
+    			{%- for category in categories -%}
+      				<option value=".{{ category }}">{{ category | capitalize }}</option>
+      			{%- endfor -%}
+    		</select>
+    	</div>
+    </div>
+
     {%- if site.posts.size > 0 -%}
 	<ul class="post-list">
 	    {%- for post in site.posts -%}
-	    <li class="post-list__item post-item">
+
+	    <li class="post-list__item post-item {%- for category in post.categories -%} {{ category | prepend: ' ' }} {%- endfor -%}">
 	        <div class="post-item__meta">
 	            {%- assign date_format = site.minima.date_format | default: "%-d %b, %Y" -%}
 	            <h5 class="post-item__date">
