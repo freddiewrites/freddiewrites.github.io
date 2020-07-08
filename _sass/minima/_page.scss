@@ -22,3 +22,28 @@
 		width: 100%;
 	}
 }
+
+.freddie-bust {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	margin: 0 0 3rem;
+	@include media('>=tablet') {
+		height: 0;
+		transform: translate(450px, -210px);
+	}
+	@include media('>=desktop') {
+		width: 250px;
+		margin: 3rem 0 0 0;
+		transform: translateX(calc(700px + 4rem));
+	}
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 8px;
+		border: 1px solid fade-out($text-color, .9);
+	}
+	&__caption {
+		font-size: 10px;
+	}
+}
