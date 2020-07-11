@@ -4,25 +4,40 @@ title: About
 permalink: /about/
 ---
 
-**I’m a writer living by the sea. Making stuff easier for people to understand gets me out of bed in the morning.**
+**I'm a writer who cares about making things simple, accessible and human. Making stuff easier for people to understand gets me out of bed in the morning.**
 
-I lead on copywriting and content strategy for [Sketch](https://www.sketch.com/). When I’m not at work, I co-host [Episode Party](https://www.episode.party/) – a podcast where two hosts and one guest chat about three of our favourite podcasts.
+Right now I lead on copy and content strategy for [Sketch](https://www.sketch.com), where we're helping people to design better products.
 
-Previously, I was a senior writer at [Sideshow](https://www.sideshowagency.com/), a freelance copywriter, and a web editor for [Arts University Bournemouth](https://aub.ac.uk/). In that time, I re-launched the university’s website, worked on the app won the Chair’s Grand Prix at the CIM Marketing Excellence Awards, and wrote for two of the UK’s top ten most valuable brands.
+When I'm not working, I'm reading, walking, running, at the gym, or figuring out how to keep my sourdough starter alive.
 
-I cut my teeth in publishing, starting out as Staff Writer and quickly rising to Features Editor at iCreate Magazine. While I was there, I co-authored the iTunes bestseller [iCloud for Beginners](https://books.apple.com/us/book/icloud-for-beginners/id497723676).
+---
 
-My work has won awards from Computer Arts, the Chartered Institute of Marketing and HEIST, among others. But more importantly, it’s left a little less jargon in the world.
+Great writing starts from a place of empathy, so my work often begins with getting to know the people who will read it.
+
+I'm happy to go and do my own research, but equally able to work with in-house researchers and stakeholders to figure out what matters.
+
+By taking what I've learnt and backing it with a sound strategy, I'm able to write in a way that gets to the heart of what readers and businesses want (even if they're not always aligned).
+
+Some people call what I do content design, UX writing, or copywriting. I call it all writing because that's the one distant family members understand the best.
+
+---
+
+Previously, I was a senior writer at [Sideshow](https://www.sideshowagency.com/), a freelance copywriter, and a web editor for [Arts University Bournemouth](https://aub.ac.uk/).
+
+I cut my teeth in publishing, starting out as a Staff Writer and leaving as Features Editor for iCreate Magazine and co-author of the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11).
+
+I've spent countless (enjoyable) hours making websites easier to read and navigate, led on an award-winning app launch, and wrote for two of the UK’s top ten most valuable brands.
+
+My work has won awards from Computer Arts, the Chartered Institute of Marketing and HEIST, among others.
 
 ---------------
 
-### 💼 Clients (past and present)
-
+### Selected clients
 Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct Line, EE, Experian, Future Publishing, Harper Adams University, HSBC, Investec Asset Management, Sketch, Kingston University, Visa.
 
 ---------------
 
-### 🏆 Awards
+### Awards
 
 I’ve been fortunate enough to get involved in a few award-winning projects over the years. Here are a few of the big wins:
 
