@@ -39,8 +39,6 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 
 ### Awards
 
-I’ve been fortunate enough to get involved in a few award-winning projects over the years. Here are a few of the big wins:
-
 {:.cv-list}
 * {:.cv-item} *2017* HEIST Awards — Best Use of Innovation
 * {:.cv-item} *2016* Brand Impact Awards — Education

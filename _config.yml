@@ -7,7 +7,7 @@ url: 'https://freddiewrit.es'
 show_excerpts: true
 instagram_username: freddiewrites
 twitter_username: freddiewrites
-rss: https://github.com/jekyll/jekyll-feed
+rss: /feed.xml
 
 # Build settings
 kramdown:
