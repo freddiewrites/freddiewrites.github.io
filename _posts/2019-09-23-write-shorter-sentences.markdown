@@ -2,7 +2,7 @@
 layout: post
 title:  "Write shorter sentences"
 date:   2019-09-23 12:00:00 -0500
-categories: [thoughts, writing]
+categories: thoughts
 ---
 When I’m editing a piece of writing — my own, or someone else’s — I always ask the same three questions:
 

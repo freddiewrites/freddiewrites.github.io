@@ -2,7 +2,7 @@
 layout: post
 title:  "The everything machine"
 date:   2019-01-04 12:00:00 -0500
-categories: [personal, tech, thoughts]
+categories: [personal, thoughts]
 vimeoId: 107569286
 ---
 The act of [converging technologies](https://en.wikipedia.org/wiki/Technological_convergence) is one of the great feats of the 21st Century. It’s evidenced by the meme that tends to show up in the slide decks of semi-knowledgable speakers at conferences. You know the one. There’s a desk full of objects. A calculators, a stack of books, a notepad, an alarm clock, a typewriter. In the next image, it’s a single Macintosh computer.
