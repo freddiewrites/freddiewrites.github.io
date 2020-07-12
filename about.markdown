@@ -8,23 +8,23 @@ permalink: /about/
 
 Right now I lead on copy and content strategy for [Sketch](https://www.sketch.com), where we're helping people to design better products.
 
-When I'm not working, I'm reading, walking, running, at the gym, or figuring out how to keep my sourdough starter alive.
+When I'm not working, I'm reading, walking, running, at the gym, or figuring out why I keep killing my sourdough starter.
 
----
+---------------
 
 Great writing starts from a place of empathy, so my work often begins with getting to know the people who will read it.
 
 I'm happy to go and do my own research, but equally able to work with in-house researchers and stakeholders to figure out what matters.
 
-By taking what I've learnt and backing it with a sound strategy, I'm able to write in a way that gets to the heart of what readers and businesses want (even if they're not always aligned).
+By taking what I've learnt and backing it with a sound strategy, I can write in a way that gets to the heart of what readers and businesses want (even if they're not always aligned).
 
-Some people call what I do content design, UX writing, or copywriting. I call it all writing because that's the one distant family members understand the best.
+Some people call what I do content design, UX writing, or copywriting. I call it all writing because that's what distant family members seem to resonate with.
 
----
+---------------
 
 Previously, I was a senior writer at [Sideshow](https://www.sideshowagency.com/), a freelance copywriter, and a web editor for [Arts University Bournemouth](https://aub.ac.uk/).
 
-I cut my teeth in publishing, starting out as a Staff Writer and leaving as Features Editor for iCreate Magazine and co-author of the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11).
+As a journalism graduate from [Bournemouth University](https://www.bournemouth.ac.uk/), I got my start as a Staff Writer for iCreate Magazine where I co-authored the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11). I left iCreate as Features Editor.
 
 I've spent countless (enjoyable) hours making websites easier to read and navigate, led on an award-winning app launch, and wrote for two of the UK’s top ten most valuable brands.
 
@@ -48,3 +48,9 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 * {:.cv-item} *2014* Brand Impact Awards — Best Education Campaign
 * {:.cv-item} *2014* Heist Awards — Creativity and Innovation
 * {:.cv-item} *2014* Heist Awards — Best Website
+
+---------------
+
+### Colophon
+
+This website runs on [Jekyll](https://www.jekyllrb.com) and is hosted on [GitHub Pages](https://pages.github.com). It was designed and developed by fine folk at [Squatchin](https://www.squatch.in). It’s set in [Untitled Sans](https://klim.co.nz/retail-fonts/untitled-sans/) by Klim Type Foundry. The wonderful [Emmeline Pidgen](http://emmelineillustration.com/) illustrated my headshot that you see on this very page.
