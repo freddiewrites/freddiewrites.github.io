@@ -3,6 +3,7 @@ layout: post
 title:  "Apps that make my Mac better"
 date:   2018-09-22 12:00:00 -0500
 categories: thoughts
+excerpt: A round up of the apps that I rely on to make my Mac more useful.
 ---
 I’m unashamed an Apple nerd. I bought my first MacBook from a guy on eBay in 2007 and haven’t looked back. My first job out of university was writing for a magazine that covered Apple. And I’ve tinkered away on macOS and iOS ever since.
 

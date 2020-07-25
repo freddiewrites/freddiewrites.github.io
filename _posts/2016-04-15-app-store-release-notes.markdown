@@ -3,6 +3,7 @@ layout: post
 title:  "Writing great app store release notes"
 date:   2016-04-15 12:00:00 -0500
 categories: thoughts
+excerpt: If you’re an indie developer trying to make yoiur mark on the App Store, don’t ignore your release notes.
 ---
 ### Learning from the good, the average and the ugly
 I’ve written before about how [great copy should live everywhere](https://freddiewrit.es/about-app-copy/). If you’re an indie developer trying to make your mark on the App Store, ensuring that the copy inside and around your app is written to win over users can only be a good thing. Not convinced? Here are a few reasons why:
