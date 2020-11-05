@@ -85,9 +85,8 @@ a:not(.no-hover) {
 	position: relative;
 	z-index: 1;
 	color: inherit;
-	transition: .35s;
 	&:hover {
-		color: #FFF;
+		color: $light;
 		text-decoration: none;
 		transition: .35s;
 		&::after {
@@ -170,4 +169,14 @@ table {
 	tr:nth-child(even) {
 	    background-color: fade-out($text-color, .9);
 	}
+}
+
+
+::selection {
+	color: $light;
+  	background: #D4A4D3;
+}
+::-moz-selection {
+	color: $light;
+  	background: #D4A4D3;
 }

@@ -136,17 +136,13 @@
         $(".page-link").hover(function() {
             var color = $(this).data("color");
             $("body").css("background-color", color);
-            $("body").css("color", "#FFF");
-            $(".logo").css("fill", "#FFF");
-            $("body").addClass("cursor-alt");
+            $("body").addClass("cursor-alt page-alt");
         }, function() {
             $("body").css("background-color", "white");
-            $("body").css("color", "#281C28");
-            $(".logo").css("fill", "#000");
-            $("body").removeClass("cursor-alt");
+            $("body").removeClass("cursor-alt page-alt");
         });
 
-        $(".signup__form, .post-preview, .site-footer__credit a, .social-media-list a, .post-link, .page-content-alt a, .post-content a, .site-header__logo").hover(function(){
+        $(".signup__form, .post-preview, .site-footer__credit a, .social-media-list a, .post-link, .page-content-alt a, .post-content a, .site-header__logo, select").hover(function(){
             $("body").addClass("cursor-alt");
         }, function(){
             $("body").removeClass("cursor-alt");

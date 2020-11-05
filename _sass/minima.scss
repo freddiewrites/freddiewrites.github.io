@@ -13,6 +13,7 @@ $spacing-unit:     30px !default;
 $text-color:       #281C28 !default;
 $background-color: #fdfdfd !default;
 $brand-color:      #FF206E !default;
+$light:            #FFF !default;
 
 $grey-color:       #2d3741 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -53,6 +54,5 @@ $on-laptop:        1000px !default;
   "minima/footer",
   "minima/home",
   "minima/post",
-  "minima/page",
-  "minima/syntax-highlighting"
+  "minima/page"
 ;

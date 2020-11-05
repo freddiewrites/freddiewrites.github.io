@@ -3,12 +3,24 @@ header {
 }
 
 .site-header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background: #FFF;
+  @include media('>=tablet') {
+    position: relative;
+    background: transparent;
+  }
+
   &__logo {
     width: 44px;
     height: 44px;
     @include media('>=tablet') {
       width: 60px;
       height: 60px;
+    }
+    path {
+      transition: .35s;
     }
   }
   &__wrapper {
@@ -63,14 +75,16 @@ header {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: $light;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
   opacity: 0;
   .nav-is-open & {
     z-index: 20;
+    pointer-events: auto;
     opacity: 1;
-    @include media('>=desktop') {
+    @include media('>=tablet') {
       z-index: -1;
       opacity: 0;
     }
@@ -78,6 +92,12 @@ header {
   &__link {
     display: block;
     margin: 1rem 0;
+    &:hover {
+      color: inherit !important;
+      @include media('>=tablet') {
+        color: $light;
+      }
+    }
     &::after {
       opacity: 0;
     }
@@ -92,7 +112,7 @@ header {
   padding: 0;
   transform: translateY(-50%);
 
-  @include media('>=desktop') {
+  @include media('>=tablet') {
     display: block;
   }
 
@@ -128,20 +148,19 @@ header {
 .nav-trigger {
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 0;
   z-index: 999;
   display: block;
-  width: 32px;
+  width: 28px;
   height: 20px;
   transform: translateY(-50%);
   transition: .1s;
   content: "";
   opacity: 1;
   &:hover {
-    height: 24px;
     cursor: pointer;
   }
-  @include media('>=desktop') {
+  @include media('>=tablet') {
     display: none;
     opacity: 0;
   }
@@ -150,14 +169,13 @@ header {
     left: 0;
     display: block;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: $text-color;
     &:nth-child(1) {
       top: 0;
     }
     &:nth-child(2) {
-      top: 50%;
-      transform: translateY(-50%);
+      top: 9px;
     }
     &:nth-child(3) {
       bottom: 0;
@@ -193,6 +211,9 @@ html {
 
 body {
   transition: background-color .35s, color .35s;
+  &.nav-is-open {
+    overflow: hidden;
+  }
 }
 
 .follower-wrapper {
@@ -203,6 +224,21 @@ body {
   height: 100vh;
   z-index: 9999;
   pointer-events: none;
+}
+
+.page-alt {
+  @include media('>=tablet') {
+    color: $light;
+  }
+  a {
+    transition: 0s;
+  }
+  .site-header__logo path {
+    @include media('>=tablet') {
+      fill: $light;
+      transition: .35s;
+    }
+  }
 }
 
 #follower {
@@ -226,9 +262,11 @@ body {
       display: block;
     }
     .cursor-alt & {
-      background: transparent;
-      border: 2px solid #000;
-      opacity: .25;
+      @include media('>=tablet') {
+        background: transparent;
+        border: 2px solid #000;
+        opacity: .25;
+      }
     }
   }
 }

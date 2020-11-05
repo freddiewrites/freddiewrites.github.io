@@ -115,6 +115,7 @@ ul li, ol li {
 a {
   color: $brand-color;
   text-decoration: none;
+  transition: 0s;
 
   &:visited {
     color: darken($brand-color, 15%);
