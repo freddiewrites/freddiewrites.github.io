@@ -2,7 +2,8 @@
 layout: post
 title:  "How to spot the passive voice"
 date:   2018-09-16 12:00:00 -0500
-categories: [thoughts, writing]
+categories: thoughts
+excerpt: No, you don’t sound any less serious or professional if you write using the active voice. Trust me.
 ---
 The passive voice — or passive sentences — are subject to almost universal scorn and banished in just about every brand’s Tone of Voice guidelines. I know I’ve banished them when writing up Tone of Voice guidelines for clients. But I’ll also happily admit it took me a long time to know exactly what passive voice was and how to spot it from a mile off.
 

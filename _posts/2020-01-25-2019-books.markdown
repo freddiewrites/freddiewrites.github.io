@@ -2,7 +2,8 @@
 layout: post
 title:  "Books I read in 2019"
 date:   2020-01-25 12:00:00 -0500
-categories: [personal, reading]
+categories: personal
+excerpt: Somehow I managed to read 17 books in 2019, here’s what I thought of all of them.
 ---
 Through a combination of sheer determination and something akin to a miracle, I read 17 books in 2019. My goal was to read 12, so shooting past that feels like an achievement.
 

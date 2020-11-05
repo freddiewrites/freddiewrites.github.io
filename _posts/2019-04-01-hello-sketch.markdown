@@ -2,7 +2,8 @@
 layout: post
 title:  "Hello Sketch"
 date:   2019-04-01 12:00:00 -0500
-categories: personal
+categories: [personal, work]
+excerpt: I’m going in-house and joining the team at Sketch after two fantastic years of agency life at Sideshow.
 ---
 After almost two fantastic years working for [Sideshow](https://www.sideshowagency.com/), I’m incredibly excited to be joining the team at [Sketch](https://www.sketch.com/).
 

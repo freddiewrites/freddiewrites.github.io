@@ -2,7 +2,8 @@
 layout: post
 title:  "Hello Sideshow"
 date:   2017-07-10 12:00:00 -0500
-categories: personal
+categories: [personal, work]
+excerpt: After a few years of freelancing, I’m going full-time for one of my clients and joining Sideshow.
 ---
 **TL;DR I’m out of the freelance game and working for an awesome agency**
 

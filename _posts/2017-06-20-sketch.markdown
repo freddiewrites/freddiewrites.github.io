@@ -2,8 +2,9 @@
 layout: post
 title:  "Helping Sketch find their voice"
 date:   2017-06-20 12:00:00 -0500
-categories: [UX, writing]
+categories: work
 hero-image: 'https://i0.wp.com/freddiewrit.es/wp-content/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg?w=2000&ssl=1'
+excerpt: Before I joined Sketch as a full-time employee, they asked me to help shape their voice.
 ---
 I got to commission some super cool people to write guest columns for us when I worked for [iCreate Magazine](http://www.futureplc.com/technology/). One of those people was Christopher Downer (who wrote about designing an ace app called Clear back in the day). Early in 2017, that came full circle when Chris got in touch to ask if I’d help Bohemian Coding (the ace folk who make [Sketch](https://www.sketch.com/)) with their copy.
 

@@ -1,7 +1,7 @@
 <div class="wrapper">
     <section class="signup">
         <div class="signup__text--mobile">
-            I send out an occasional newsletter with stuff I’ve been seeing, doing and thinking.
+            Get an occasional newsletter full of things I’ve been seeing, doing and thinking.
         </div>
         <div class="signup__form">
             <form action="https://freddiewrit.us14.list-manage.com/subscribe/post?u=ff3fd96684f2831c13c034c72&amp;id=cd8421d354" method="post" name="" target="_blank" novalidate="" class="form">
@@ -13,13 +13,13 @@
             </form>
         </div>
         <div class="signup__text">
-            I send out an occasional newsletter with stuff I’ve been seeing, doing and thinking.
+            Get an occasional newsletter full of things I’ve been seeing, doing and thinking.
         </div>
     </section>
 
     <section>
         <div class="section-header">
-            <h3>Latest</h3>
+            <h3>Latest Posts</h3>
         </div>
         <div class="recent-posts">
             {% for post in site.posts %}
@@ -28,7 +28,7 @@
                         <a class="post-preview__button no-hover" href="{{ post.url }}">
                             <div class="post-preview__content">
                                 <h3 class="post-preview__title">
-                                    {{ post.title }} <span>• {{ post.date | date: "%-d %b, %Y" }}</span>
+                                    {{ post.title }} <span>• {{ post.date | date: "%-d %b %Y" }}</span>
                                 </h3>
                                 <p class="post-preview__excerpt">
                                     {{ post.excerpt | strip_html }}
@@ -102,7 +102,7 @@
                 };
 
                 follower.style.top = mouse.y + 'px';
-                
+
                 return follower.style.left = mouse.x + 'px';
             };
 
