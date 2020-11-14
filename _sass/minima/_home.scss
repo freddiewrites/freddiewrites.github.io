@@ -84,6 +84,12 @@
   }
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 
 .recent-posts {
   display: flex;
