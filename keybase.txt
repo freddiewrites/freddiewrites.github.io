@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/freddiewrites
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://freddiewrit.es
+  * I am freddiewrites (https://keybase.io/freddiewrites) on keybase.
+  * I have a public key with fingerprint 3DB4 9353 B5B9 C5F3 14DE  B4B0 D147 7536 6D82 0FF7
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200af28e9243ea89bd409c0b873030079da5da18e211028dd9dbaac7ba13260ccb0a",
+      "fingerprint": "3db49353b5b9c5f314deb4b0d14775366d820ff7",
+      "host": "keybase.io",
+      "key_id": "d14775366d820ff7",
+      "kid": "010124b2f02bceb8758b7883220f1c6a0fd10b5324f8e2a77abce8c738e0833799db0a",
+      "uid": "6e4e68f455821dc6a825b3312e512e19",
+      "username": "freddiewrites"
+    },
+    "merkle_root": {
+      "ctime": 1518882307,
+      "hash_meta": "edb92800f88eaccf75904af6d5e0b38a32e68d23068e107566227fd0fcace669",
+      "seqno": 2115739
+    },
+    "revoke": {
+      "sig_ids": [
+        "5625a8669e532e76468507ee8cc2f1bf0c9319f8834c50cdb91dfea145d804800f"
+      ]
+    },
+    "service": {
+      "hostname": "freddiewrit.es",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1518882307,
+  "expire_in": 157680000,
+  "prev": "07efb3a08ff7153a2e3586ad402f3ba9a04bd5670d07485f5c9c351ab13c5131",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMP9AnicbZN9bBRFGMavtIVQg5QAQaBqXIum5CyzOzu7s2cpaKhwiPYIIgJtj9md
+2d7R9vbYu2vLR8UWtUCFBASUgpggEoWSKJS2EaQcSg2CEWJiCzRo+UhrIvQINkW+
+6mwj8Q/5Y7PZ2ed539888873I5JdaUnnZsaUspqR/UmnT1TFXIvWvp68UtAtulzw
+rBRK2OCLlVIWifpLglTwCECUACCmhJkmyZARrOlUBpoBdKxCAAFQNUoQJSJmkigC
+CVOqUZ0QQ9WJCCUFGIYOiOAWzGComNlhOxiK8rKQ6rIGEdSRrhnIhKJMmS7rgIqy
+qiKoKBRLwDRVbgxYEcfB4XQSYdlBi6/xD/8g3iP0D7k5uaxLJpB0g3FYhHUVYyhx
+mWgoBJhUBDqCkmxycqKqhMuwoULMAIZQ1fguBrljg+UUJjMFmzJCWBIp92MJ6RCK
+EkP8ETVHGGF2iJQxrjZtRmmQVdjBKIsIVW6hjNklpcxvW1bUSdiIBh2diESMsQSB
+yndJIgF/GYsSbmdU1yQMgIkxI4ZhqkgDMjEVihjQISZQ4iyU+xTMRKAiRZEk1aTA
+NIjBFMWBibBlIUvw8CNBKtQ4gc3KrRLmNI8Ei3l2EcGzWECKhAjmDsaDYKoiKxgB
+lfEcDMkUdRMYGhQ1jgFlAwGDY4nUZESUEcVAdgiFwiqnmV0eNAaLO4f1/xCyeQpu
+IWxbUcuwSvm/QDQajnicZKLLw464gun+f8v49WCI8mHhjnJmR4JWiCfFlY8IjVWG
+gzbzBx0FUhUOBIDTh5U7E6AyU4cEYD4WIoJEYhBhhfDplUyoE40AWadIUQEFqoyR
+iQzNgEgkuggNJELxvxRFmXOSYl6TZxci0ZjNhKoT8YIUV1Kaa2jqEOcWudKGpz+8
+W1lX0l0tc0LFXSnbClpvLTyY5Un/sv5CZmR+ZWr8cDx5wleNP2W0PnUh2nu3/Rbx
+ft6/01ujLd3XM2n7qbL9DRf66mpar45+7NTe40hsulHeTHMTyZvH/WF+d0XKK315
+4KOBRGLXLquj8533k25rm8ZMz/o03N6Xi1d3x+6ndSd82P1k5jHfGGvvg7bub0du
+ynspM3x81aVA85SGtoVz1npnXp48JC1jXkNLvFr2tQ8x7p0p6tvSm5Hf2JwnF95J
+bIkZOev6f7x7YPbXRc0dKy7tWLIvO2NWxvCstzp7zmbOnXGUNu3Y3TV7f2H12Ddm
+oYacga4DWkX70NJXBi5/1llTf3/8Exta6tbt8t6c9my+e9r6L6qzxuZ2sNU5r2VX
+F215Dtdcq/MFVpxfcHsquJ47av/5q7vH97sb3fWB/J2H5+dMvn46H4x2LdiYsnVY
+StvEfa09R3V20bW1t3LqsFOuk6M//MtAc9EH7zY1v/ne+qLVRxMnu73fJBo9v8eO
+bQ+vXTS5c5S55tVDtX/uufHJmZ/rutQZf8tTpqeenzpp4q87Tzx/9uMpoGhRPL9y
+VMqI2rhd+XTq1UPbFvj27PXV1x9pOXe5dNzBB5HA24d3zOv1rlyyIfnatgKf2FMY
+l49cWdpUkP7Li3e8tXkXcwo25j9ztmNdhe/x3yZsf7Cm7YX2wOZr7uUVN+sXWvdq
+ly5bvOqHvsbQvX8ALrwF3Q==
+=Da2b
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/freddiewrites
+
+==================================================================
