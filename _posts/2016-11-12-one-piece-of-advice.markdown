@@ -3,7 +3,7 @@ layout: post
 title:  "Creating a new magazine from scratch"
 date:   2016-11-12 12:00:00 -0500
 categories: work
-hero-image: 'https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/OPOA_2.jpg?w=1500&ssl=1'
+hero-image: '/uploads/2018/02/OPOA_2.jpg'
 excerpt: I worked with Arts University Bournemouth to bring their alumni programme to life in print .
 ---
 As a writer and former features editor with a background in ‘big publishing’, it probably comes as no surprise that I’m a huge fan of magazines. When my former employers, [Arts University Bournemouth (AUB)](https://aub.ac.uk/), asked me to produce their new alumni magazine it was a bit of a dream come true.
@@ -16,7 +16,7 @@ The brief from AUB was fairly open:
 
 I’d be working with their partner agency, [Bond & Coyne](https://bondandcoyne.co.uk/), on the magazine’s design, which would be loosely based on their ‘One Piece of Advice’ alumni initiative. The editorial direction and just about everything else was up to me.
 
-![Creating a new magazine 1](https://i0.wp.com/freddiewrit.es/wp-content/uploads/2016/04/OPOA_4.jpg?w=1120&ssl=1 'Creating a new magazine')
+![Creating a new magazine 1](/uploads/2016/04/OPOA_4.jpg)
 
 ---------------
 
@@ -32,7 +32,7 @@ I was also incredibly fortunate to contribute one of the magazine’s larger fea
 
 The whole project, from concept to completion, took around three months.
 
-![Creating a new magazine 2](https://i0.wp.com/freddiewrit.es/wp-content/uploads/2016/04/OPOA_3.jpg?w=1120&ssl=1 'Creating a new magazine')
+![Creating a new magazine 2](/uploads/2016/04/OPOA_3.jpg)
 
 ---------------
 

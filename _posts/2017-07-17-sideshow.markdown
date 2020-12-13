@@ -7,7 +7,7 @@ excerpt: After a few years of freelancing, I’m going full-time for one of my c
 ---
 **TL;DR I’m out of the freelance game and working for an awesome agency**
 
-![Sideshow Ice Cream](https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/sideshpw-ice-cream.jpg?w=556&h=556&crop=1&ssl=1 'Sideshow Ice Cream')
+![Sideshow Ice Cream](/uploads/2018/02/sideshpw-ice-cream.jpg)
 
 A hand holding up a traditional ice cream with chocolate flake
 After almost two years of working for myself, I’m super happy to be heading back into an office every day. I’m joining the wonderful folks at [Sideshow](https://www.sideshowagency.com/) and I couldn’t be more excited.

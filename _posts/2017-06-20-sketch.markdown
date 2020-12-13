@@ -3,7 +3,7 @@ layout: post
 title:  "Helping Sketch find their voice"
 date:   2017-06-20 12:00:00 -0500
 categories: work
-hero-image: 'https://i0.wp.com/freddiewrit.es/wp-content/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg?w=2000&ssl=1'
+hero-image: '/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg'
 excerpt: Before I joined Sketch as a full-time employee, they asked me to help shape their voice.
 ---
 I got to commission some super cool people to write guest columns for us when I worked for [iCreate Magazine](http://www.futureplc.com/technology/). One of those people was Christopher Downer (who wrote about designing an ace app called Clear back in the day). Early in 2017, that came full circle when Chris got in touch to ask if I’d help Bohemian Coding (the ace folk who make [Sketch](https://www.sketch.com/)) with their copy.
@@ -28,7 +28,7 @@ The new structure would give users some handy familiarity and allow them to easi
 
 > **“We move fast, and so does our excellent developer community. That’s awesome, but it means a lot of manual plugin updates. On some occasions, an older plugin might not be compatible with a new version of Sketch, which causes even more issues. With Sketch 45, we’ve taken some steps to fix this.”**
 
-![Original photo by Alejandro Escamilla on Unsplash](https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/Sketch-Blog-Photo-by-Alejandro-Escamilla-on-Unsplash.jpg?w=556&h=364&ssl=1 'Original photo by Alejandro Escamilla on Unsplash')
+![Original photo by Alejandro Escamilla on Unsplash](/uploads/2018/02/Sketch-Blog-Photo-by-Alejandro-Escamilla-on-Unsplash.jpg)
 
 ---------------
 

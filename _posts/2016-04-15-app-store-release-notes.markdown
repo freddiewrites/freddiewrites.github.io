@@ -20,7 +20,7 @@ Are you convinced yet? Good. Now, let’s get down to the business of writing gr
 
 ---------------
 
-![Three iPhones showing various app store screenshots](https://i2.wp.com/freddiewrit.es/wp-content/uploads/2018/02/good-app-release-notes.jpeg?ssl=1 'Three iPhones showing various app store screenshots')
+![Three iPhones showing various app store screenshots](/uploads/2018/02/good-app-release-notes.jpeg)
 
 ### The Good
 Above are some of the best release notes I’ve noticed recently. Before you say it, I know these are all from relatively big developers (Swarm being the biggest, here), but as we’ll see later on, release notes from big developers are a real mixed bag. And they’re where you, you brilliant indie dev, can differenciate yourself.
@@ -35,7 +35,7 @@ What makes these so great? A few things:
 
 ---------------
 
-![Three iPhones showing various app store screenshots](https://i1.wp.com/freddiewrit.es/wp-content/uploads/2018/02/bad-app-release-notes.jpeg?ssl=1 'Three iPhones showing various app store screenshots')
+![Three iPhones showing various app store screenshots](/uploads/2018/02/bad-app-release-notes.jpeg)
 
 ### The Average
 
@@ -49,7 +49,7 @@ These are all pretty average examples of release notes — in every sense. T
 
 ---------------
 
-![Three iPhones showing various app store screenshots](https://i2.wp.com/freddiewrit.es/wp-content/uploads/2018/02/ugly-app-release-notes.jpeg?ssl=1 'Three iPhones showing various app store screenshots')
+![Three iPhones showing various app store screenshots](/uploads/2018/02/ugly-app-release-notes.jpeg)
 
 ### The Ugly
 

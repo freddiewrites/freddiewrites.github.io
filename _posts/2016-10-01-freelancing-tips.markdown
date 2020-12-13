@@ -3,7 +3,7 @@ layout: post
 title:  "Seven freelancing tips that worked for me"
 date:   2016-10-01 12:00:00 -0500
 categories: thoughts
-hero-image: 'https://i0.wp.com/freddiewrit.es/wp-content/uploads/2016/10/freddie-old-desk.jpg?w=2992&ssl=1'
+hero-image: '/uploads/2016/10/freddie-old-desk.jpg'
 excerpt: To mark a year of freelancing, I thought I’d share some advice I’ve followed that’s helped me along the way.
 ---
 A year ago, I quit my day job as a web editor for a university to be a freelance copywriter. Since then, it’s been the rollercoaster that every freelancer talks about. I’ve edited magazines, picked up awards and moved to a new city. I’ve also freaked out about who’ll pay my rent next month or if I’m even any good at what I’m doing at all, but that’s another story.
@@ -22,7 +22,7 @@ Again, I stole this entirely from the aforementioned Jessica Hische post. Maybe 
 
 ### Hire an expert or two
 
-Hiring my [accountant](https://www.phm-accountants.co.uk/) and paying a [designer](https://www.danielduke.me/) to sort my branding and business cards for me were two of the best decisions I’ve made as a freelancer. It might feel like an unnecessary expense, but it took me two whole days of pure stress to sort my tax return out last year. That’s two whole days I wasn’t working or earning money. Effectively, the two ‘extra’ days I’ll work this year will pay for my accountant. Hiring people who have the skills you don’t feels great.
+Hiring my accountant and paying a [designer](https://www.danielduke.me/) to sort my branding and business cards for me were two of the best decisions I’ve made as a freelancer. It might feel like an unnecessary expense, but it took me two whole days of pure stress to sort my tax return out last year. That’s two whole days I wasn’t working or earning money. Effectively, the two ‘extra’ days I’ll work this year will pay for my accountant. Hiring people who have the skills you don’t feels great.
 
 ### Don’t undersell yourself
 
