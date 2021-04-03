@@ -36,9 +36,8 @@ layout: default
 
 	    <li class="post-list__item post-item {%- for category in post.categories -%} {{ category | prepend: ' ' }} {%- endfor -%}">
 	        <div class="post-item__meta">
-	            {%- assign date_format = site.minima.date_format | default: "%-d %b %Y" -%}
 	            <h5 class="post-item__date">
-	                {{ post.date | date: date_format }}
+	                {{ post.date | date_to_string }}
 	            </h5>
 	            {%- assign total_words = post.content | number_of_words -%}
 	            {%- assign reading_time = total_words | divided_by: 225 -%}

@@ -5,6 +5,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hello 👋 I'm Freddie Harrison. I’m a writer who cares about making things simple, accessible and a little more human.
 url: 'https://freddiewrit.es'
 show_excerpts: true
+timezone: Europe/London
+permalink: /journal/:year/:month/:slug/
 instagram_username:
 twitter_username: freddiewrites
 rss: /feed.xml
@@ -22,6 +24,7 @@ kramdown:
 
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 source: .
 destination: ./_site
@@ -30,6 +33,3 @@ includes_dir: _includes
 sass:
   sass_dir: _sass
   style: compressed
-
-plugins:
-  - jekyll-seo-tag
