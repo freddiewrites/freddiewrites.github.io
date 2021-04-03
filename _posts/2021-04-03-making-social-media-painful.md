@@ -17,7 +17,7 @@ But there is one “hack” that’s helped me to get my social habit down to so
 
 Why make something deliberately worse? Well, like I said at the beginning, I still get value from these platforms. I love using Instagram to see what my friends are up to in their lives. And Twitter is great for discovering new stuff. But their apps are brilliant, and that’s the problem. They’re too convenient and too enjoyable and that’s how “just 15 minutes” on social media unconsciously turns into an hour. 
 
-This whole approach embodies the ideas about habit forming and braking that James Clear sets out in his excellent book, [Atomic Habits](https://uk.bookshop.org/books/atomic-habits-the-life-changing-million-copy-1-bestseller/9781847941831). He says that you can form habits by making them obvious, attractive, easy and satisfying. The opposite holds true for breaking habits; make them invisible, unattractive, difficult unsatisfying. And that’s exactly what I’m doing here.
+This approach is based on James Clear’s habit forming and braking ideas from his excellent book, [Atomic Habits](https://uk.bookshop.org/books/atomic-habits-the-life-changing-million-copy-1-bestseller/9781847941831). He says that you can form habits by making them obvious, attractive, easy and satisfying. The opposite is true for breaking habits; make them invisible, unattractive, difficult unsatisfying. And that’s exactly what I’m doing here.
 
 If you’re the kind of person who compares social media platforms to the tobacco industry, I guess you could consider this the equivalent of forcing all cigarette brands to use plain packaging with huge health warnings on the front. Making something less appealing makes it much less likely to take over your life.
 
