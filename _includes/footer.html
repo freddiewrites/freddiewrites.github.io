@@ -17,29 +17,31 @@
         </div>
     </section>
 
-    <section>
-        <div class="section-header">
-            <h3>Latest Posts</h3>
-        </div>
-        <div class="recent-posts">
-            {% for post in site.posts %}
-                {% if forloop.index <= 3 %}
-                    <div class="post-preview">
-                        <a class="post-preview__button no-hover" href="{{ post.url }}">
-                            <div class="post-preview__content">
-                                <h3 class="post-preview__title">
-                                    {{ post.title }} <span>• {{ post.date | date_to_string }}</span>
-                                </h3>
-                                <p class="post-preview__excerpt">
-                                    {{ post.excerpt | strip_html }}
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </section>
+    {% unless page.id %}
+      <section>
+          <div class="section-header">
+              <h3>Latest Posts</h3>
+          </div>
+          <div class="recent-posts">
+              {% for post in site.posts %}
+                  {% if forloop.index <= 3 %}
+                      <div class="post-preview">
+                          <a class="post-preview__button no-hover" href="{{ post.url }}">
+                              <div class="post-preview__content">
+                                  <h3 class="post-preview__title">
+                                      {{ post.title }} <span>• {{ post.date | date_to_string }}</span>
+                                  </h3>
+                                  <p class="post-preview__excerpt">
+                                      {{ post.excerpt | strip_html }}
+                                  </p>
+                              </div>
+                          </a>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          </div>
+      </section>
+    {% endunless %}
 </div>
 
 <footer>
