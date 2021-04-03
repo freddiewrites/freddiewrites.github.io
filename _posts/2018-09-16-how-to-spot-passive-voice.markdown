@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "How to spot the passive voice"
-date:   2018-09-16 12:00:00 -0500
 categories: thoughts
 excerpt: No, you don’t sound any less serious or professional if you write using the active voice. Trust me.
 ---

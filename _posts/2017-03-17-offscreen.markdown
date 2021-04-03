@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Writing for one of the web’s most respected publications"
-date:   2017-03-17 12:00:00 -0500
 categories: work
 hero-image: '/uploads/2018/02/Offscreen_2.jpg'
 excerpt: A personal highlight of my freelancing career, writing for Kai Brach’s Offscreen Magazine.

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Write shorter sentences"
-date:   2019-09-23 12:00:00 -0500
 categories: thoughts
 excerpt: There’s a pretty simple way to make your writing better. Write shorter sentences.
 ---

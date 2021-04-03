@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Seven freelancing tips that worked for me"
-date:   2016-10-01 12:00:00 -0500
 categories: thoughts
 hero-image: '/uploads/2016/10/freddie-old-desk.jpg'
 excerpt: To mark a year of freelancing, I thought I’d share some advice I’ve followed that’s helped me along the way.

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Writing great app store release notes"
-date:   2016-04-15 12:00:00 -0500
 categories: thoughts
 excerpt: If you’re an indie developer trying to make yoiur mark on the App Store, don’t ignore your release notes.
 ---

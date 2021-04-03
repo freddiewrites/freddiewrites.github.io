@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "App is performing a database migration, please be patient"
-date:   2015-10-24 12:00:00 -0500
 categories: thoughts
 hero-image: '/uploads/2015/10/app-database-migration.jpeg'
 excerpt: Why great copy at every level of your product — and how bad copy can ruin an experience.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "30"
-date:   2020-01-25 12:00:00 -0500
+title: "30"
+date: 2020-01-05
 categories: personal
 excerpt: A few thoughts on how it felt to turn 30 and what the first three decades of life are all about.
 ---

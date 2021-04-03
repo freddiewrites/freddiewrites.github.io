@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Creating a new magazine from scratch"
-date:   2016-11-12 12:00:00 -0500
 categories: work
 hero-image: '/uploads/2018/02/OPOA_2.jpg'
 excerpt: I worked with Arts University Bournemouth to bring their alumni programme to life in print .

@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "The everything machine"
-date:   2019-01-04 12:00:00 -0500
 categories: [personal, thoughts]
 vimeoId: 107569286
 excerpt: How one of the great technology feats of the 21st Century became a bit too much for me.

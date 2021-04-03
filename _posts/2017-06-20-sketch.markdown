@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Helping Sketch find their voice"
-date:   2017-06-20 12:00:00 -0500
 categories: work
 hero-image: '/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg'
 excerpt: Before I joined Sketch as a full-time employee, they asked me to help shape their voice.

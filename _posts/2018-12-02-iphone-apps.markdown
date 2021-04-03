@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Apps that make my iPhone better"
-date:   2018-12-02 12:00:00 -0500
 categories: thoughts
 excerpt: A round up of the apps that I rely on to make my iPhone more useful.
 ---

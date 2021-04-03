@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "The big green button"
-date:   2018-09-25 12:00:00 -0500
 categories: thoughts
 excerpt: Why writers can spot the obvious improvements and your product people can’t. 
 ---
