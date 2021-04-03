@@ -9,7 +9,7 @@ Over the past few years, I’ve been trying lots of different things to kick my 
 
 I started by using Apple’s [Screen Time](https://support.apple.com/en-us/HT208982) limits to place a 15 minute per day restriction on Twitter, Instagram and LinkedIn. But it’s easy enough to override that and give myself an extra 15 minutes or longer. That override process almost becomes unconscious, like riding a bike or driving my car. It’s only partially useful as a solution.
 
-But there is one “hack” that’s helped me to get my social habit down to something that’s both manageable and acceptable. And that’s to introduce as much friction as possible by **using the mobile web browser versions of each platform**. It works for a few reasons:
+But there is one “hack” that’s helped me to get my social habit down to something that’s both manageable and acceptable. And that’s to introduce as much friction as possible by using the mobile web browser versions of each platform. It works for a few reasons:
 
 1. Forcing myself to open Safari, type in an address, then log in (I always make sure to sign out every time I’m done) adds enough friction to stop me in my tracks and make sure this is something I want to be doing right now.
 2. You can’t get push notifications for social networking sites you visit in your browser and then log out of, so you can’t get drawn back in except for on my own terms. Some sites may offer to send notifications, but I’d always ignore/deny them.
