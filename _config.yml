@@ -6,7 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 url: 'https://freddiewrit.es'
 show_excerpts: true
 timezone: Europe/London
-permalink: /journal/:year/:month/:slug/
+permalink: /journal/:year/:slug/
 instagram_username:
 twitter_username: freddiewrites
 rss: /feed.xml
