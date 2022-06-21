@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-**I'm a writer turnd full-stack marketer who cares about making things simple, accessible and human.**
+**I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
 
 Right now I lead on product marketing for [Sketch](https://www.sketch.com), where we're helping people to design better products.
 
