@@ -4,21 +4,23 @@ title: About
 permalink: /about/
 ---
 
-**I'm a writer who cares about making things simple, accessible and human. Making stuff easier for people to understand gets me out of bed in the morning.**
+**I'm a writer turnd full-stack marketer who cares about making things simple, accessible and human.**
 
-Right now I lead on copy and content strategy for [Sketch](https://www.sketch.com), where we're helping people to design better products.
+Right now I lead on product marketing for [Sketch](https://www.sketch.com), where we're helping people to design better products.
 
-When I'm not working, I'm reading, walking, running, at the gym, or figuring out why I keep killing my sourdough starter.
+I work remotely but live in London with my lovely wife. When I'm not working, I'm reading, walking, running, or fussing over my morning coffee.
 
 ---------------
 
-Great writing starts from a place of empathy, so my work often begins with getting to know the people who will read it.
+I call myself a full-stack marketer because I can do a bit of everything — from writing copy to building out multi-channel marketing campaigns.
 
-I'm happy to go and do my own research, but equally able to work with in-house researchers and stakeholders to figure out what matters.
+Of all the skills I’ve been lucky enough to practice over the last decade, writing is what I love to do the most — whether that’s internal comms, a clear marketing plan, a blog post, a video treatment or an email.
 
-By taking what I've learnt and backing it with a sound strategy, I can write in a way that gets to the heart of what readers and businesses want (even if they're not always aligned).
+I believe that putting your audience — or your customer — at the heart of what you do matters more than anything else. That means talking about what they care about. If you’re doing things right, you’ll be talking about you care about at the same time.
 
-Some people call what I do content design, UX writing, or copywriting. I call it all writing because that's what distant family members seem to resonate with.
+I love working as part of a team, drawing on everyone’s unique experiences and skills to create something great. I’m definitely a practical, hands-on type, though. You won’t find me standing in the sidelines, hoping for the best. I prefer to get stuck in and make things every project as good as it can be.
+
+Learning about how something works and teaching it to others gives me a lot of satisfaction. I’m always up for sharing what I’ve learnt, be it with customers or colleagues.
 
 ---------------
 
