@@ -8,7 +8,7 @@ permalink: /about/
 
 Right now I lead on product marketing for [Sketch](https://www.sketch.com), where we're helping people to design better products.
 
-I work remotely but live in London with my lovely wife. When I'm not working, I'm reading, walking, running, or fussing over my morning coffee.
+I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. When I'm not working, I'm reading, walking, lifting weights, or fussing over my morning coffee.
 
 ---------------
 
