@@ -1,56 +1,7 @@
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64579474-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-64579474-2');
-  </script>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>{{ page.title | escape }}</title>
-  <meta property="og:title" content="{{ page.title | strip_html }}" />
-  <meta name="twitter:title" content="{{ page.title | strip_html }}" />
-
-  <!-- Description -->
-  {% if page.excerpt %}
-  <meta name="description" content="{{ page.excerpt | strip_html }}" />
-  <meta property="og:description" content="{{ page.excerpt | strip_html }}" />
-  <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
-  {% else %}
-  <meta name="description" content="{{ site.description }}" />
-  <meta property="og:description" content="{{ site.description }}" />
-  <meta name="twitter:description" content="{{ site.description }}" />
-  {% endif %}
-
-  <meta property="og:type" content="article" />
-
-  <!-- Images -->
-  {% if page.hero-image %}
-  <meta property="og:image" content="{{ page.hero-image }}" />
-  <meta name="twitter:image" content="{{ page.hero-image }}" />
-  {% else %}
-  <meta property="og:image" content="{{ "/assets/images/freddie.jpg" | absolute_url }}" />
-  <meta name="twitter:image" content="{{ "/assets/images/freddie.jpg" | absolute_url }}" />
-  {% endif %}
-
-  <!-- Non-Dynamic Metadata -->
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="Freddie Writes" />
-  <meta name="twitter:site" content="@freddiewrites" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ "/feed.json" | relative_url }}">
 </head>
-
-<div class="follower-wrapper">
-  <div id="follower">
-    <div id="circle1"></div>
-    <div id="circle2"></div>
-  </div>
-</div>

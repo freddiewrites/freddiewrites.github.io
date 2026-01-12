@@ -1,0 +1,6 @@
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 225 %}
+{% if minutes == 0 %}
+  {% assign minutes = 1 %}
+{% endif %}
+{{ minutes }} min read
