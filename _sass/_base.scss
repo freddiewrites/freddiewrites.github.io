@@ -91,15 +91,25 @@ hr {
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--link-color);
-  color: var(--bg-color);
-  padding: var(--space-xs) var(--space-sm);
-  text-decoration: none;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
   z-index: 100;
 
   &:focus {
-    top: 0;
+    position: fixed;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    width: auto;
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--link-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
   }
 }
