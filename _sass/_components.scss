@@ -13,12 +13,14 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-md);
+  font-family: var(--font-ui);
 }
 
 .site-title {
   font-size: 1.2em;
   font-weight: 700;
   color: var(--text-color);
+  transition: color var(--transition-fast);
 
   &:hover {
     color: var(--link-color);
@@ -32,6 +34,7 @@
   a {
     color: var(--text-color);
     font-size: 1em;
+    transition: color var(--transition-fast);
 
     &:hover {
       color: var(--link-color);
@@ -44,6 +47,7 @@
   padding: var(--space-xl) 0;
   margin-top: var(--space-3xl);
   text-align: center;
+  font-family: var(--font-ui);
 }
 
 .footer-links {
@@ -54,6 +58,7 @@
 
   a {
     color: var(--text-muted);
+    transition: color var(--transition-fast);
 
     &:hover {
       color: var(--link-color);
@@ -72,20 +77,30 @@
   align-items: baseline;
   gap: var(--space-md);
   margin-bottom: var(--space-xs);
+  transition: transform var(--transition-fast);
+
+  &:hover {
+    transform: translateX(2px);
+  }
 
   time {
     font-size: 1em;
     color: var(--text-muted);
     flex-shrink: 0;
     min-width: 2em;
+    font-family: var(--font-ui);
+    font-variant-numeric: tabular-nums;
   }
 
   .post-title {
     margin: 0;
     font-size: 1em;
+    font-family: var(--font-body);
+    font-weight: 400;
 
     a {
       color: var(--text-color);
+      transition: color var(--transition-fast);
 
       &:hover {
         color: var(--link-color);
@@ -100,6 +115,7 @@
   font-weight: 600;
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-xs);
+  color: var(--text-muted);
 
   &:first-of-type {
     margin-top: var(--space-md);
@@ -114,11 +130,12 @@
 }
 
 .tag {
-  background-color: var(--text-muted);
-  color: var(--bg-color);
+  background-color: var(--border-color);
+  color: var(--text-muted);
   padding: 2px var(--space-xs);
   border-radius: 3px;
   font-size: 0.85em;
+  font-family: var(--font-ui);
   display: inline-block;
 }
 
@@ -129,6 +146,13 @@
   h1 {
     margin-bottom: var(--space-sm);
   }
+}
+
+/* Post meta */
+.post-meta {
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.95em;
 }
 
 /* Responsive navigation */
@@ -145,5 +169,20 @@
   .footer-links {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+
+  .post-card:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .post-card {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
