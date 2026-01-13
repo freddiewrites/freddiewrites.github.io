@@ -77,11 +77,6 @@
   align-items: baseline;
   gap: var(--space-md);
   margin-bottom: var(--space-xs);
-  transition: transform var(--transition-fast);
-
-  &:hover {
-    transform: translateX(2px);
-  }
 
   time {
     font-size: 1em;
@@ -169,20 +164,5 @@
   .footer-links {
     flex-direction: column;
     gap: var(--space-sm);
-  }
-
-  .post-card:hover {
-    transform: none;
-  }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .post-card {
-    transition: none;
-
-    &:hover {
-      transform: none;
-    }
   }
 }
