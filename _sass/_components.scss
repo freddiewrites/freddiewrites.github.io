@@ -70,18 +70,20 @@
 
 /* Post cards (for lists) */
 .post-card {
-  margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--text-muted);
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
 
-  &:last-child {
-    border-bottom: none;
+  time {
+    font-size: 1em;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    min-width: 2em;
   }
 
   .post-title {
-    margin-top: 0;
-    margin-bottom: var(--space-sm);
-    font-size: 1.5em;
+    margin: 0;
+    font-size: 1em;
 
     a {
       color: var(--text-color);
@@ -91,25 +93,17 @@
       }
     }
   }
-
-  .post-excerpt {
-    color: var(--text-muted);
-    margin-bottom: 0;
-  }
 }
 
-/* Post metadata */
-.post-meta {
-  color: var(--text-muted);
-  font-size: 0.9em;
-  margin-bottom: var(--space-lg);
+/* Year headers in posts section */
+.posts h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
 
-  time {
-    color: var(--text-muted);
-  }
-
-  span {
-    margin: 0 var(--space-xs);
+  &:first-of-type {
+    margin-top: var(--space-md);
   }
 }
 
