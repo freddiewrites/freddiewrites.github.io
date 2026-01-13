@@ -10,25 +10,22 @@ layout: default
 
   <section class="posts">
     <h2>Recent Writing</h2>
-    {% assign current_year = "now" | date: "%Y" | plus: 0 %}
     {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% assign post_count = 0 %}
+    {% assign post_limit = 15 %}
 
     {% for year_group in posts_by_year %}
-      {% assign year = year_group.name | plus: 0 %}
-      {% if year == current_year %}
-        {% assign posts_by_month = year_group.items | group_by_exp: "post", "post.date | date: '%B %Y'" %}
-        {% for month_group in posts_by_month %}
-          <h2>{{ month_group.name }}</h2>
-          {% for post in month_group.items %}
-            {% include post-card.html %}
-          {% endfor %}
-        {% endfor %}
-      {% else %}
+      {% if post_count < post_limit %}
         <h2>{{ year_group.name }}</h2>
         {% for post in year_group.items %}
-          {% include post-card.html %}
+          {% if post_count < post_limit %}
+            {% include post-card.html %}
+            {% assign post_count = post_count | plus: 1 %}
+          {% endif %}
         {% endfor %}
       {% endif %}
     {% endfor %}
+
+    <a href="/posts/" class="all-posts-link">All Posts &rarr;</a>
   </section>
 </div>
