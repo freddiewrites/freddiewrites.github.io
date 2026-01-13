@@ -274,6 +274,62 @@ kbd {
   box-shadow: 0 1px 0 var(--border-color);
 }
 
+/* Footnotes */
+.footnotes {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9em;
+
+  &::before {
+    content: "Footnotes";
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  ol {
+    padding-left: var(--space-md);
+  }
+
+  li {
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+
+    p {
+      margin-bottom: var(--space-xs);
+    }
+  }
+}
+
+/* Footnote reference link in text */
+a.footnote {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  padding: 0 0.2em;
+
+  &::before {
+    content: "[";
+  }
+
+  &::after {
+    content: "]";
+  }
+}
+
+/* Back to text link */
+a.reversefootnote {
+  font-size: 0.8em;
+  margin-left: 0.3em;
+  text-decoration: none;
+}
+
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;

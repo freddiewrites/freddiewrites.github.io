@@ -39,7 +39,7 @@ For technical writing, use `inline code` to reference variable names, file paths
 
 Abbreviations like <abbr title="Hypertext Markup Language">HTML</abbr> show a dotted underline and reveal their meaning on hover.
 
-You can also use <small>small text</small> for less prominent information, or superscripts for footnotes<sup>1</sup> and subscripts for chemical formulas like H<sub>2</sub>O.
+You can also use <small>small text</small> for less prominent information, and subscripts for chemical formulas like H<sub>2</sub>O. Footnotes[^1] are also supported and appear at the end of the post.
 
 ## Lists
 
@@ -152,6 +152,14 @@ Definition lists work well for glossaries or term explanations:
   <dd>The vertical space between lines of text, measured from baseline to baseline.</dd>
 </dl>
 
+## Footnotes
+
+Footnotes are useful for citations, asides, or supplementary information that would interrupt the flow of the main text. They use Kramdown's footnote syntax[^2].
+
+To create a footnote, add `[^identifier]` where you want the reference to appear, then define the footnote content elsewhere in the document with `[^identifier]: Your footnote text here`.
+
+Footnotes can contain multiple paragraphs[^3] and are automatically numbered and collected at the end of the post.
+
 ## Combining Elements
 
 Elements work together naturally. For example, a blockquote might contain a list:
@@ -172,3 +180,11 @@ Or a list might contain code:
 ---
 
 This style guide covers the core elements you'll use most often. The styling is designed to be readable, consistent, and visually cohesive across all content types.
+
+[^1]: This is a simple footnote demonstrating the basic syntax.
+
+[^2]: Kramdown is the default Markdown processor used by Jekyll. It extends standard Markdown with additional features like footnotes, tables, and definition lists.
+
+[^3]: Footnotes can span multiple paragraphs by indenting subsequent paragraphs with four spaces.
+
+    Like this second paragraph, which is still part of footnote 3. This is useful for longer explanatory notes or citations that require more context.
