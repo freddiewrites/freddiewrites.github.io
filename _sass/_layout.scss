@@ -26,11 +26,6 @@ main {
   }
 }
 
-.post-content, .page {
-  p, ul, ol, blockquote {
-    max-width: 65ch; /* Optimal reading line length */
-  }
-}
 
 /* Home page layout */
 .home {
