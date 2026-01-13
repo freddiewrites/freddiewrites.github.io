@@ -8,8 +8,25 @@ layout: default
 
   <section class="posts">
     <h2>Recent Writing</h2>
-    {% for post in site.posts %}
-      {% include post-card.html %}
+    {% assign current_year = "now" | date: "%Y" | plus: 0 %}
+    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+    {% for year_group in posts_by_year %}
+      {% assign year = year_group.name | plus: 0 %}
+      {% if year == current_year %}
+        {% assign posts_by_month = year_group.items | group_by_exp: "post", "post.date | date: '%B %Y'" %}
+        {% for month_group in posts_by_month %}
+          <h2>{{ month_group.name }}</h2>
+          {% for post in month_group.items %}
+            {% include post-card.html %}
+          {% endfor %}
+        {% endfor %}
+      {% else %}
+        <h2>{{ year_group.name }}</h2>
+        {% for post in year_group.items %}
+          {% include post-card.html %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
   </section>
 </div>
