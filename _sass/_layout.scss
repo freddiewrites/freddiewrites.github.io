@@ -14,7 +14,7 @@
 main {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   min-height: calc(100vh - 200px); /* Reserve space for header/footer */
   animation: fadeIn var(--transition-medium) both;
 }
@@ -42,25 +42,14 @@ main {
   .home-divider {
     border: none;
     border-top: 1px solid var(--border-color);
-    margin: var(--space-xl) 0;
-  }
-
-  .posts {
-    h2 {
-      margin-top: var(--space-2xl);
-      margin-bottom: var(--space-xs);
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-    }
+    margin: var(--space-lg) 0;
   }
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   main {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-md) var(--space-sm);
   }
 
   h1 {
@@ -78,7 +67,7 @@ main {
 
 @media (max-width: 480px) {
   main {
-    padding: var(--space-md) var(--space-sm);
+    padding: var(--space-sm) var(--space-sm);
   }
 }
 

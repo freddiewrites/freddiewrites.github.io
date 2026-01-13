@@ -1,7 +1,6 @@
 /* Header and Navigation */
 .site-header {
   padding: var(--space-md) 0;
-  margin-bottom: var(--space-xl);
 }
 
 .site-nav {
@@ -44,8 +43,8 @@
 
 /* Footer */
 .site-footer {
-  padding: var(--space-xl) 0;
-  margin-top: var(--space-3xl);
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-xl);
   text-align: center;
   font-family: var(--font-ui);
 }
@@ -54,7 +53,7 @@
   display: flex;
   justify-content: center;
   gap: var(--space-lg);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 
   a {
     color: var(--text-muted);
@@ -108,12 +107,12 @@
 .posts h2 {
   font-size: 1.2em;
   font-weight: 600;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-xs);
   color: var(--text-muted);
 
   &:first-of-type {
-    margin-top: var(--space-md);
+    margin-top: 0;
   }
 }
 
