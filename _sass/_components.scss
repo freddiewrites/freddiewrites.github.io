@@ -71,8 +71,9 @@
 /* Post cards (for lists) */
 .post-card {
   display: flex;
+  align-items: baseline;
   gap: var(--space-md);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 
   time {
     font-size: 1em;
@@ -99,8 +100,8 @@
 .posts h2 {
   font-size: 1.2em;
   font-weight: 600;
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-md);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
 
   &:first-of-type {
     margin-top: var(--space-md);
