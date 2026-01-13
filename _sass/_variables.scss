@@ -6,6 +6,8 @@
   --link-color: #B5654A;          /* terracotta */
   --link-hover: #9A5540;          /* darker terracotta */
   --border-color: #E5E3E0;        /* warm light gray for borders */
+  --code-bg: #F3F2F0;             /* subtle warm gray for code */
+  --mark-bg: #FFF3CD;             /* warm yellow highlight */
 
   /* Spacing */
   --space-xs: 8px;
@@ -36,5 +38,7 @@
     --link-color: #C9826A;        /* lighter terracotta */
     --link-hover: #D99A85;        /* even lighter terracotta */
     --border-color: #3A3835;      /* warm dark gray for borders */
+    --code-bg: #2A2926;           /* dark warm gray for code */
+    --mark-bg: #5C4A1F;           /* muted yellow highlight */
   }
 }
