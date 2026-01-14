@@ -10,11 +10,12 @@ layout: default
       </time>
       <span>·</span>
       <span>{% include reading-time.html %}</span>
-      {% if page.categories %}
+      {% assign visible_categories = page.categories | where_exp: "cat", "cat != 'now'" %}
+      {% if visible_categories.size > 0 %}
         <span>·</span>
         <span class="tags">
-          {% for category in page.categories %}
-            <span class="tag">{{ category }}</span>
+          {% for category in visible_categories %}
+            <a href="/tags/{{ category }}/" class="tag">{{ category }}</a>
           {% endfor %}
         </span>
       {% endif %}

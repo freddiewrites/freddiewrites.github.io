@@ -139,6 +139,13 @@
   font-size: 0.85em;
   font-family: var(--font-ui);
   display: inline-block;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+  }
 }
 
 /* Awards list */
