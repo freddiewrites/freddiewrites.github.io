@@ -15,7 +15,10 @@ The brief from AUB was fairly open:
 
 I’d be working with their partner agency, [Bond & Coyne](https://bondandcoyne.co.uk/), on the magazine’s design, which would be loosely based on their ‘One Piece of Advice’ alumni initiative. The editorial direction and just about everything else was up to me.
 
-![Creating a new magazine 1](/uploads/2016/04/OPOA_4.jpg)
+<figure>
+  <img src="/uploads/2016/04/OPOA_4.jpg" alt="Close-up of the One Piece of Advice magazine cover and interior pages">
+  <figcaption>The first issue of One Piece of Advice. Photo: Bill Bradshaw</figcaption>
+</figure>
 
 ---------------
 
@@ -31,7 +34,10 @@ I was also incredibly fortunate to contribute one of the magazine’s larger fea
 
 The whole project, from concept to completion, took around three months.
 
-![Creating a new magazine 2](/uploads/2016/04/OPOA_3.jpg)
+<figure>
+  <img src="/uploads/2016/04/OPOA_3.jpg" alt="Stack of One Piece of Advice magazines showing the spine and cover">
+  <figcaption>100 pages of interviews, essays, and artwork. Photo: Bill Bradshaw</figcaption>
+</figure>
 
 ---------------
 

@@ -112,6 +112,11 @@ figure {
     font-size: 0.9em;
     color: var(--text-muted);
     font-family: var(--font-ui);
+    text-align: right;
+  }
+
+  &.portrait {
+    max-width: 280px;
   }
 }
 

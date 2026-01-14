@@ -4,6 +4,11 @@ title: About
 permalink: /about/
 ---
 
+<figure class="portrait">
+  <img src="/assets/images/freddie-portrait.jpg" alt="Freddie Harrison smiling outdoors">
+  <figcaption>Photo: <a href="https://www.naomijanephotography.com">Naomi Jane</a></figcaption>
+</figure>
+
 **I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
 
 Right now I lead on product marketing for [Sketch](https://www.sketch.com), where we're helping people to design better products.
@@ -41,15 +46,16 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 
 ### Awards
 
-{:.cv-list}
-* {:.cv-item} *2017* HEIST Awards — Best Use of Innovation
-* {:.cv-item} *2016* Brand Impact Awards — Education
-* {:.cv-item} *2016* HEIST Awards — Employer Marketing Initiative
-* {:.cv-item} *2015* CIM Excellence Awards — Chair's Grand Prix
-* {:.cv-item} *2015* CIM Excellence Awards — Innovation
-* {:.cv-item} *2014* Brand Impact Awards — Best Education Campaign
-* {:.cv-item} *2014* Heist Awards — Creativity and Innovation
-* {:.cv-item} *2014* Heist Awards — Best Website
+<ul class="awards-list">
+  <li class="award-item"><span class="award-year">2017</span> HEIST Awards — Best Use of Innovation</li>
+  <li class="award-item"><span class="award-year">2016</span> Brand Impact Awards — Education</li>
+  <li class="award-item"><span class="award-year">2016</span> HEIST Awards — Employer Marketing Initiative</li>
+  <li class="award-item"><span class="award-year">2015</span> CIM Excellence Awards — Chair's Grand Prix</li>
+  <li class="award-item"><span class="award-year">2015</span> CIM Excellence Awards — Innovation</li>
+  <li class="award-item"><span class="award-year">2014</span> Brand Impact Awards — Best Education Campaign</li>
+  <li class="award-item"><span class="award-year">2014</span> Heist Awards — Creativity and Innovation</li>
+  <li class="award-item"><span class="award-year">2014</span> Heist Awards — Best Website</li>
+</ul>
 
 ---------------
 

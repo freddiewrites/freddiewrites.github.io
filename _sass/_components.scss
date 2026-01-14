@@ -43,17 +43,18 @@
 
 /* Footer */
 .site-footer {
-  padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
-  text-align: center;
+  max-width: var(--content-width);
+  margin: var(--space-xl) auto 0;
+  padding: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--border-color);
   font-family: var(--font-ui);
 }
 
 .footer-links {
   display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-sm);
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
 
   a {
     color: var(--text-muted);
@@ -65,9 +66,8 @@
   }
 }
 
-.copyright {
+.footer-sep {
   color: var(--text-muted);
-  font-size: 0.9em;
 }
 
 /* Post cards (for lists) */
@@ -141,6 +141,28 @@
   display: inline-block;
 }
 
+/* Awards list */
+.awards-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.award-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.award-year {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 3em;
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+}
+
 /* Post header */
 .post-header {
   margin-bottom: var(--space-xl);
@@ -169,7 +191,6 @@
   }
 
   .footer-links {
-    flex-direction: column;
-    gap: var(--space-sm);
+    justify-content: center;
   }
 }
