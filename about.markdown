@@ -44,6 +44,48 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 
 ---------------
 
+### Experience
+
+<ul class="experience-list">
+  <li class="experience-item">
+    <span class="experience-years">2020–now</span>
+    <div class="experience-details">
+      <div class="experience-role">Marketing Lead, Sketch</div>
+      <div class="experience-summary">Leading product marketing for the design tool used by thousands of designers worldwide.</div>
+    </div>
+  </li>
+  <li class="experience-item">
+    <span class="experience-years">2017–2019</span>
+    <div class="experience-details">
+      <div class="experience-role">Senior Writer, Sideshow</div>
+      <div class="experience-summary">Writing for a creative agency's roster of clients across tech, finance, and education.</div>
+    </div>
+  </li>
+  <li class="experience-item">
+    <span class="experience-years">2015–2017</span>
+    <div class="experience-details">
+      <div class="experience-role">Freelance Copywriter</div>
+      <div class="experience-summary">Independent work for clients including two of the UK's top ten most valuable brands.</div>
+    </div>
+  </li>
+  <li class="experience-item">
+    <span class="experience-years">2013–2015</span>
+    <div class="experience-details">
+      <div class="experience-role">Web Editor, Arts University Bournemouth</div>
+      <div class="experience-summary">Led content strategy and copy for an award-winning website and app launch.</div>
+    </div>
+  </li>
+  <li class="experience-item">
+    <span class="experience-years">2011–2013</span>
+    <div class="experience-details">
+      <div class="experience-role">Staff Writer → Features Editor, iCreate Magazine</div>
+      <div class="experience-summary">Started as a staff writer, promoted to features editor. Co-authored the iTunes bestseller iCloud for Beginners.</div>
+    </div>
+  </li>
+</ul>
+
+---------------
+
 ### Awards
 
 <ul class="awards-list">

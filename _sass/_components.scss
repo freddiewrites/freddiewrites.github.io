@@ -163,6 +163,40 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Experience list */
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-item {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.experience-years {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 6.5em;
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-details {
+  .experience-role {
+    font-weight: 600;
+    font-family: var(--font-ui);
+  }
+
+  .experience-summary {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    margin-top: 2px;
+  }
+}
+
 /* Post header */
 .post-header {
   margin-bottom: var(--space-xl);
