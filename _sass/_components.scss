@@ -28,7 +28,7 @@
 
 .nav-links {
   display: flex;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 
   a {
     color: var(--text-color);
@@ -140,11 +140,16 @@
   font-family: var(--font-ui);
   display: inline-block;
   text-decoration: none;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  transition: background-color 200ms ease-out, color 200ms ease-out;
 
   &:hover {
     background-color: var(--link-color);
     color: var(--bg-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
   }
 }
 
