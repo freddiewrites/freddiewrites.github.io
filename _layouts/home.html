@@ -16,12 +16,23 @@ layout: default
 
     {% for year_group in posts_by_year %}
       {% if post_count < post_limit %}
-        <h2>{{ year_group.name }}</h2>
+        {% assign year_has_posts = false %}
         {% for post in year_group.items %}
-          {% if post_count < post_limit %}
-            {% include post-card.html %}
-            {% assign post_count = post_count | plus: 1 %}
-          {% endif %}
+          {% unless post.tags contains 'now' %}
+            {% assign year_has_posts = true %}
+            {% break %}
+          {% endunless %}
+        {% endfor %}
+        {% if year_has_posts %}
+          <h2>{{ year_group.name }}</h2>
+        {% endif %}
+        {% for post in year_group.items %}
+          {% unless post.tags contains 'now' %}
+            {% if post_count < post_limit %}
+              {% include post-card.html %}
+              {% assign post_count = post_count | plus: 1 %}
+            {% endif %}
+          {% endunless %}
         {% endfor %}
       {% endif %}
     {% endfor %}

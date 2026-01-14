@@ -8,9 +8,20 @@ permalink: /posts/
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 {% for year_group in posts_by_year %}
-  <h2>{{ year_group.name }}</h2>
+  {% assign year_has_posts = false %}
   {% for post in year_group.items %}
-    {% include post-card.html %}
+    {% unless post.tags contains 'now' %}
+      {% assign year_has_posts = true %}
+      {% break %}
+    {% endunless %}
   {% endfor %}
+  {% if year_has_posts %}
+    <h2>{{ year_group.name }}</h2>
+    {% for post in year_group.items %}
+      {% unless post.tags contains 'now' %}
+        {% include post-card.html %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
 {% endfor %}
 </section>

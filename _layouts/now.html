@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="page">
+  <h1>{{ page.title }}</h1>
+
+  {% assign latest_now = nil %}
+  {% for post in site.posts %}
+    {% if post.tags contains 'now' %}
+      {% assign latest_now = post %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if latest_now %}
+    <p class="post-meta">Last updated: {{ latest_now.date | date: "%-d %B %Y" }}</p>
+    {{ latest_now.content }}
+  {% else %}
+    {{ content }}
+  {% endif %}
+</article>
