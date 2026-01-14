@@ -27,7 +27,10 @@ The new structure would give users some handy familiarity and allow them to easi
 
 > **“We move fast, and so does our excellent developer community. That’s awesome, but it means a lot of manual plugin updates. On some occasions, an older plugin might not be compatible with a new version of Sketch, which causes even more issues. With Sketch 45, we’ve taken some steps to fix this.”**
 
-![Original photo by Alejandro Escamilla on Unsplash](/uploads/2018/02/Sketch-Blog-Photo-by-Alejandro-Escamilla-on-Unsplash.jpg)
+<figure>
+  <img src="/uploads/2018/02/Sketch-Blog-Photo-by-Alejandro-Escamilla-on-Unsplash.jpg" alt="Hands typing on a MacBook keyboard">
+  <figcaption>Photo: Alejandro Escamilla / Unsplash</figcaption>
+</figure>
 
 ---------------
 
