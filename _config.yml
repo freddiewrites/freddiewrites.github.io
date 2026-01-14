@@ -12,6 +12,14 @@ markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+  layout: tag
+  permalinks:
+    category: /tags/:name/
 
 sass:
   sass_dir: _sass
