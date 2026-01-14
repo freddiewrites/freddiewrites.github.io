@@ -20,6 +20,11 @@ layout: default
         </span>
       {% endif %}
     </div>
+    {% if page.image %}
+      <figure class="post-hero">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+      </figure>
+    {% endif %}
   </header>
   <div class="post-content" itemprop="articleBody">
     {{ content }}

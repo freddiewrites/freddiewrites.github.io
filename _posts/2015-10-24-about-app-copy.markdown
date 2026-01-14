@@ -2,7 +2,7 @@
 layout: post
 title:  "App is performing a database migration, please be patient"
 categories: thoughts
-hero-image: '/uploads/2015/10/app-database-migration.jpeg'
+image: '/uploads/2015/10/app-database-migration.jpeg'
 excerpt: Why great copy at every level of your product — and how bad copy can ruin an experience.
 ---
 I didn’t have a clue what that meant either.

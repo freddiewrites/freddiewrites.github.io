@@ -213,6 +213,15 @@
   }
 }
 
+/* Post hero image */
+.post-hero {
+  margin: var(--space-md) 0;
+
+  img {
+    margin: 0;
+  }
+}
+
 /* Post meta */
 .post-meta {
   color: var(--text-muted);

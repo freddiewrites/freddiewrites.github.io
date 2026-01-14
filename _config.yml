@@ -6,6 +6,17 @@ url: 'https://freddiewrit.es'
 timezone: Europe/London
 permalink: /journal/:year/:slug/
 
+# SEO & Social
+twitter:
+  username: freddiewrites
+author:
+  name: Freddie Harrison
+  twitter: freddiewrites
+social:
+  name: Freddie Harrison
+  links:
+    - https://twitter.com/freddiewrites
+
 # Build settings
 markdown: kramdown
 

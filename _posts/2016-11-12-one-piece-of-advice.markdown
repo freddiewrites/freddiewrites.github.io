@@ -2,7 +2,7 @@
 layout: post
 title:  "Creating a new magazine from scratch"
 categories: work
-hero-image: '/uploads/2018/02/OPOA_2.jpg'
+image: '/uploads/2018/02/OPOA_2.jpg'
 excerpt: I worked with Arts University Bournemouth to bring their alumni programme to life in print .
 ---
 As a writer and former features editor with a background in ‘big publishing’, it probably comes as no surprise that I’m a huge fan of magazines. When my former employers, [Arts University Bournemouth (AUB)](https://aub.ac.uk/), asked me to produce their new alumni magazine it was a bit of a dream come true.

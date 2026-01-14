@@ -2,7 +2,7 @@
 layout: post
 title:  "Writing the book on perfect presentations"
 categories: work
-hero-image: '/uploads/2017/01/ppp_ebook_spread.jpg'
+image: '/uploads/2017/01/ppp_ebook_spread.jpg'
 excerpt: I wrote a guide that covers everything you need to know about writing, designing and delivering perfect presentations.
 ---
 Around the tail-end of 2016 I had a spare week between client contracts, so I decided to use that time to scratch my own itch. To me, that meant sitting down to start writing a short book I’d sketched out about a year earlier.

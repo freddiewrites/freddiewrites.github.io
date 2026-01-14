@@ -2,7 +2,7 @@
 layout: post
 title:  "Seven freelancing tips that worked for me"
 categories: thoughts
-hero-image: '/uploads/2016/10/freddie-old-desk.jpg'
+image: '/uploads/2016/10/freddie-old-desk.jpg'
 excerpt: To mark a year of freelancing, I thought I’d share some advice I’ve followed that’s helped me along the way.
 ---
 A year ago, I quit my day job as a web editor for a university to be a freelance copywriter. Since then, it’s been the rollercoaster that every freelancer talks about. I’ve edited magazines, picked up awards and moved to a new city. I’ve also freaked out about who’ll pay my rent next month or if I’m even any good at what I’m doing at all, but that’s another story.
