@@ -48,6 +48,14 @@
   padding: var(--space-lg) var(--space-md);
   border-top: 1px solid var(--border-color);
   font-family: var(--font-ui);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
 }
 
 .footer-links {
@@ -250,6 +258,15 @@
 
   .nav-links {
     gap: var(--space-md);
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer-logo {
+    height: 32px;
   }
 
   .footer-links {
