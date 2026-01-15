@@ -68,13 +68,11 @@ strong, b {
 /* Links */
 a {
   color: var(--link-color);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: color var(--transition-fast), text-decoration-color var(--transition-medium);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 
   &:hover {
     color: var(--link-hover);
-    text-decoration-color: var(--link-hover);
   }
 
   &:focus-visible {
