@@ -76,6 +76,11 @@
   align-items: baseline;
   gap: var(--space-md);
   margin-bottom: var(--space-xs);
+  position: relative;
+
+  &:hover .post-title a {
+    color: var(--link-color);
+  }
 
   time {
     font-size: 0.9em;
@@ -96,8 +101,10 @@
       color: var(--text-color);
       transition: color var(--transition-fast);
 
-      &:hover {
-        color: var(--link-color);
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
       }
     }
   }
