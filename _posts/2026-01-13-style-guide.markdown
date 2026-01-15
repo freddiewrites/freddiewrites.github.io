@@ -120,12 +120,12 @@ Tables use the UI font for better readability of data and include subtle row sep
 
 Images are displayed at full width with subtle rounded corners:
 
-![A placeholder for demonstration](/assets/images/placeholder.jpg)
+![A placeholder for demonstration](/assets/images/freddie-portrait.jpg)
 
 For images with captions, use the figure element:
 
 <figure>
-  <img src="/assets/images/placeholder.jpg" alt="Descriptive alt text">
+  <img src="/assets/images/freddie-portrait.jpg" alt="Descriptive alt text">
   <figcaption>A caption describing the image and providing additional context.</figcaption>
 </figure>
 
