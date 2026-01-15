@@ -69,10 +69,11 @@ strong, b {
 a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 
   &:hover {
     color: var(--link-hover);
+    text-decoration: underline;
   }
 
   &:focus-visible {
