@@ -134,12 +134,14 @@ blockquote {
   background-color: var(--code-bg);
   border-radius: 0 4px 4px 0;
 
-  p {
-    margin-bottom: var(--space-sm);
-
+  p, ul, ol {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  p {
+    margin-bottom: var(--space-sm);
   }
 
   cite {
