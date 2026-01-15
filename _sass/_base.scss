@@ -123,8 +123,7 @@ figure {
 
   &.portrait {
     max-width: 280px;
-    float: right;
-    margin: 0 0 var(--space-md) var(--space-lg);
+    margin-left: auto;
   }
 }
 
