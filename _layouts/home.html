@@ -18,7 +18,14 @@ layout: default
       {% if post_count < post_limit %}
         {% assign year_has_posts = false %}
         {% for post in year_group.items %}
-          {% unless post.tags contains 'now' %}
+          {% assign skip_post = false %}
+          {% if post.tags contains 'now' %}
+            {% assign skip_post = true %}
+          {% endif %}
+          {% if jekyll.environment == 'production' and post.title == 'Style Guide' %}
+            {% assign skip_post = true %}
+          {% endif %}
+          {% unless skip_post %}
             {% assign year_has_posts = true %}
             {% break %}
           {% endunless %}
@@ -27,7 +34,14 @@ layout: default
           <h2>{{ year_group.name }}</h2>
         {% endif %}
         {% for post in year_group.items %}
-          {% unless post.tags contains 'now' %}
+          {% assign skip_post = false %}
+          {% if post.tags contains 'now' %}
+            {% assign skip_post = true %}
+          {% endif %}
+          {% if jekyll.environment == 'production' and post.title == 'Style Guide' %}
+            {% assign skip_post = true %}
+          {% endif %}
+          {% unless skip_post %}
             {% if post_count < post_limit %}
               {% include post-card.html %}
               {% assign post_count = post_count | plus: 1 %}
