@@ -249,9 +249,20 @@
   font-size: 0.95em;
 }
 
-/* Responsive navigation */
+/* Responsive navigation and footer */
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 0 var(--space-sm);
+  }
+
+  .site-footer {
+    padding: var(--space-lg) var(--space-sm);
+  }
+}
+
 @media (max-width: 480px) {
   .site-nav {
+    padding: 0 var(--space-sm);
     flex-direction: column;
     align-items: flex-start;
   }
@@ -261,6 +272,7 @@
   }
 
   .site-footer {
+    padding: var(--space-lg) var(--space-sm);
     flex-direction: column;
     gap: var(--space-md);
   }
