@@ -2,6 +2,6 @@
 layout: home
 ---
 
-Hello 👋 I'm Freddie Harrison. I'm a writer who cares about making things simple, accessible and a little more human.
+Hello 👋 I'm Freddie Harrison. I’m a writer, accidental marketer and former technology journalist. I currently lead marketing at [Sketch](https://www.sketch.com/).
 
-Right now, I lead on Product Marketing at [Sketch](https://www.sketch.com). I'm a writer turned full-stack marketer who lives in Buckinghamshire (UK) with my lovely wife and son.
+Here, I write about what I’ve been thinking, seeing and reading. You can also [read more about me](/about) and find out [what I’m doing now](/now), if that’s your thing.
