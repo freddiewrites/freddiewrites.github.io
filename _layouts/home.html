@@ -9,7 +9,7 @@ layout: default
   <hr class="home-divider">
 
   <section class="posts">
-    <h2>Recent Writing</h2>
+    <h2>Latest posts</h2>
     {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
     {% assign post_count = 0 %}
     {% assign post_limit = 15 %}
@@ -51,6 +51,6 @@ layout: default
       {% endif %}
     {% endfor %}
 
-    <a href="/posts/" class="all-posts-link">All Posts &rarr;</a>
+    <a href="/posts/" class="all-posts-link">All posts &rarr;</a>
   </section>
 </div>
