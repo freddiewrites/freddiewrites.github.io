@@ -13,6 +13,14 @@ layout: null
   },
   "items": [
     {% for post in site.posts limit: 30 %}
+    {% assign skip_post = false %}
+    {% if post.tags contains 'now' %}
+      {% assign skip_post = true %}
+    {% endif %}
+    {% if jekyll.environment == 'production' and post.title == 'Style Guide' %}
+      {% assign skip_post = true %}
+    {% endif %}
+    {% unless skip_post %}
     {
       "id": "{{ site.url }}{{ post.url }}",
       "url": "{{ site.url }}{{ post.url }}",
@@ -21,6 +29,7 @@ layout: null
       "date_published": "{{ post.date | date_to_xmlschema }}"{% if post.categories.size > 0 %},
       "tags": {{ post.categories | jsonify }}{% endif %}
     }{% unless forloop.last %},{% endunless %}
+    {% endunless %}
     {% endfor %}
   ]
 }

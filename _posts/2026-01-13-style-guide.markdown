@@ -3,6 +3,7 @@ layout: post
 title: "Style Guide"
 categories: reference
 excerpt: A comprehensive guide to all styled elements available in posts.
+# This post is hidden in production but visible locally
 ---
 
 This post demonstrates all the typographic and structural elements available for writing. Use it as a reference when composing new posts.
