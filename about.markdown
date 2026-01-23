@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <figure class="portrait">
-  <img src="/assets/images/freddie-portrait.jpg" alt="Freddie Harrison smiling outdoors">
+  <img src="/assets/images/freddie-portrait.jpg" alt="Freddie Harrison smiling outdoors" width="1179" height="1180">
   <figcaption>Photo: <a href="https://www.naomijanephotography.com">Naomi Jane</a></figcaption>
 </figure>
 
