@@ -17,6 +17,9 @@ social:
   links:
     - https://twitter.com/freddiewrites
 
+# Default social preview image
+image: /assets/images/social-image.png
+
 # Build settings
 markdown: kramdown
 
