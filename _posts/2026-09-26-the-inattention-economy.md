@@ -2,7 +2,7 @@
 layout: post
 title: "The Inattention Economy"
 categories: thoughts
-excerpt: When everyone's already run out of attention to give, the old tricks for getting it stop working.
+excerpt: It’s harder than ever for us to pay attention, and that makes it harder than ever for anyone to get our attention.
 ---
 
 It’s harder than ever for us to pay attention, and that makes it harder than ever for anyone to get our attention.
