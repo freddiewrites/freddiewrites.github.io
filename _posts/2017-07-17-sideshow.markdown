@@ -7,7 +7,7 @@ excerpt: After a few years of freelancing, I’m going full-time for one of my c
 **TL;DR I’m out of the freelance game and working for an awesome agency**
 
 <figure>
-  <img src="/uploads/2018/02/sideshpw-ice-cream.jpg" alt="A hand holding up a traditional ice cream with chocolate flake">
+  <img src="/uploads/2018/02/sideshpw-ice-cream.jpg" alt="A hand holding up a traditional ice cream with chocolate flake" srcset="/uploads/2018/02/sideshpw-ice-cream-960.jpg 960w, /uploads/2018/02/sideshpw-ice-cream.jpg 1920w" sizes="(min-width: 1056px) 960px, 100vw" width="1920" height="1920" loading="lazy" decoding="async">
   <figcaption>The Sideshow team knows how to celebrate</figcaption>
 </figure>
 

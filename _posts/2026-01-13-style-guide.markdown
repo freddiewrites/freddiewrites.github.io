@@ -131,7 +131,7 @@ Images are displayed at full width with subtle rounded corners:
 For images with captions, use the figure element:
 
 <figure>
-  <img src="/assets/images/freddie-portrait.jpg" alt="Descriptive alt text">
+  <img src="/assets/images/freddie-portrait.jpg" alt="Descriptive alt text" width="800" height="801" loading="lazy" decoding="async">
   <figcaption>A caption describing the image and providing additional context.</figcaption>
 </figure>
 

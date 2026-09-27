@@ -8,7 +8,7 @@ excerpt: A personal highlight of my freelancing career, writing for Kai Brach’
 I’ve long been a fan of Kai Brach’s [Offscreen Magazine](https://www.offscreenmag.com/). My background in technology journalism gave me a serious appreciation for how the publication approaches the subject. It’s calm, considered and contains a healthy dose of skepticism. When Kai asked me if I could work on a piece for issue 16 of the magazine — effectively of re-launch, with an all-new design and fresh editorial — I was overjoyed!
 
 <figure>
-  <img src="/uploads/2018/02/Offscreen_1.jpg" alt="Offscreen Magazine issue 16 showing the front and back covers">
+  <img src="/uploads/2018/02/Offscreen_1.jpg" alt="Offscreen Magazine issue 16 showing the front and back covers" srcset="/uploads/2018/02/Offscreen_1-960.jpg 960w, /uploads/2018/02/Offscreen_1.jpg 1300w" sizes="(min-width: 1056px) 960px, 100vw" width="1300" height="867" loading="lazy" decoding="async">
   <figcaption>Offscreen issue 16 marked a fresh start for the publication</figcaption>
 </figure>
 

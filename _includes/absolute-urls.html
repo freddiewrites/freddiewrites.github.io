@@ -1,0 +1,1 @@
+{% comment %}Outputs include.html with root-relative src, srcset and href URLs made absolute, for feed readers.{% endcomment %}{{ include.html | replace: 'src="/', abs_src | replace: 'href="/', abs_href | replace: 'srcset="/', abs_srcset | replace: 'w, /', abs_next }}

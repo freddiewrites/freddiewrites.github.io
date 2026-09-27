@@ -20,7 +20,7 @@ Are you convinced yet? Good. Now, let’s get down to the business of writing gr
 ---------------
 
 <figure>
-  <img src="/uploads/2018/02/good-app-release-notes.jpeg" alt="Three iPhones showing release notes from Swarm, DICE, and SpareRoom">
+  <img src="/uploads/2018/02/good-app-release-notes.jpeg" alt="Three iPhones showing release notes from Swarm, DICE, and SpareRoom" width="1000" height="682" loading="lazy" decoding="async">
   <figcaption>The good: Swarm, DICE, and SpareRoom get it right</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ What makes these so great? A few things:
 ---------------
 
 <figure>
-  <img src="/uploads/2018/02/bad-app-release-notes.jpeg" alt="Three iPhones showing release notes from Snapchat, Google Maps, and Fantastical">
+  <img src="/uploads/2018/02/bad-app-release-notes.jpeg" alt="Three iPhones showing release notes from Snapchat, Google Maps, and Fantastical" width="1000" height="682" loading="lazy" decoding="async">
   <figcaption>The average: Snapchat, Google Maps, and Fantastical miss opportunities</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ These are all pretty average examples of release notes — in every sense. T
 ---------------
 
 <figure>
-  <img src="/uploads/2018/02/ugly-app-release-notes.jpeg" alt="Three iPhones showing lazy release notes from Facebook, Instagram, and Messenger">
+  <img src="/uploads/2018/02/ugly-app-release-notes.jpeg" alt="Three iPhones showing lazy release notes from Facebook, Instagram, and Messenger" width="1000" height="682" loading="lazy" decoding="async">
   <figcaption>The ugly: Facebook, Instagram, and Messenger phone it in</figcaption>
 </figure>
 
