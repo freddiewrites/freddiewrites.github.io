@@ -44,7 +44,7 @@ image: /uploads/2026/10/editing.jpg   # optional hero image
 
 - **`excerpt`** shows on the homepage and in link previews. Always write one.
 - **`categories`** become tags, like “in Thoughts,” and each one gets a page at `/tags/name/`. Existing ones: `thoughts`, `work`, `personal`.
-- **`image`** is optional. It shows full width under the title.
+- **`image`** is optional. It shows full width under the title and becomes the preview image when the post is shared. Posts without one use the fh image (`assets/images/social-image.png`) in link previews.
 
 ### Formatting
 

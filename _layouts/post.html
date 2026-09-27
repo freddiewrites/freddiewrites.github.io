@@ -20,14 +20,16 @@ layout: default
         </span>
       {% endif %}
     </div>
-    {% if page.image %}
+    {% comment %}The default social image (set in _config.yml) is for link previews, not a hero.{% endcomment %}
+    {% assign hero_src = page.image.path | default: page.image %}
+    {% if hero_src and hero_src != "/assets/images/social-image.png" %}
       {% comment %}Offer a 960px copy (photo-960.jpg) to smaller screens when one exists. Hero originals are about 1920px wide.{% endcomment %}
-      {% assign hero_parts = page.image | split: "." %}
+      {% assign hero_parts = hero_src | split: "." %}
       {% assign hero_ext = hero_parts | last %}
       {% assign hero_small = hero_parts | pop | join: "." | append: "-960." | append: hero_ext %}
       {% assign hero_small_file = site.static_files | where: "path", hero_small | first %}
       <figure class="post-hero">
-        <img src="{{ page.image }}" alt="{{ page.title }}"{% if hero_small_file %} srcset="{{ hero_small }} 960w, {{ page.image }} 1920w" sizes="(min-width: 1056px) 960px, 100vw"{% endif %} fetchpriority="high">
+        <img src="{{ hero_src }}" alt="{{ page.title }}"{% if hero_small_file %} srcset="{{ hero_small }} 960w, {{ hero_src }} 1920w" sizes="(min-width: 1056px) 960px, 100vw"{% endif %} fetchpriority="high">
       </figure>
     {% endif %}
   </header>
