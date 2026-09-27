@@ -1,22 +1,9 @@
-/* Page fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Main content container */
 main {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   min-height: calc(100vh - 200px); /* Reserve space for header/footer */
-  animation: fadeIn var(--transition-medium) both;
 }
 
 /* Page and Post layouts */
@@ -26,18 +13,97 @@ main {
   }
 }
 
+.page > h1 {
+  margin-bottom: var(--space-md);
+}
+
 
 /* Home page layout */
 .home {
   .intro {
-    margin-bottom: 0;
+    margin: var(--space-md) 0 0;
     font-size: 1.1em;
+
+    /* The first paragraph is the masthead */
+    > p:first-child {
+      font-size: clamp(1.45em, 1em + 1.6vw, 1.85em);
+      line-height: 1.3;
+      letter-spacing: -0.012em;
+      text-wrap: balance;
+      margin-bottom: var(--space-md);
+    }
   }
 
   .home-divider {
     border: none;
     border-top: 1px solid var(--border-color);
-    margin: var(--space-lg) 0;
+    margin: var(--space-xl) 0 var(--space-lg);
+  }
+}
+
+/* Subheadings inside posts and pages get room to breathe */
+:is(.post-content, .page) {
+  > h2 {
+    margin-top: var(--space-2xl);
+  }
+
+  > h3 {
+    margin-top: var(--space-xl);
+  }
+}
+
+/* Opening paragraph of a post */
+.post-content > p:first-child {
+  font-size: 1.2em;
+  line-height: 1.55;
+}
+
+/* Images in posts break out of the text column on wider screens */
+@media (min-width: 800px) {
+  .post-content > figure,
+  .post-content > p:has(> img:only-child),
+  .post-header .post-hero {
+    width: min(var(--wide-width), 100vw - 2 * var(--space-xl));
+    margin-left: 50%;
+    translate: -50% 0;
+  }
+
+  /* Shrink figures to their image so captions line up with it */
+  .post-content > figure {
+    width: fit-content;
+
+    img {
+      max-width: min(var(--wide-width), 100vw - 2 * var(--space-xl));
+    }
+  }
+}
+
+.post-content > figure img,
+.post-content > p > img:only-child,
+.post-hero img {
+  max-height: 85vh;
+  width: auto;
+  margin-inline: auto;
+}
+
+/* About page */
+.lede {
+  font-size: 1.4em;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin-bottom: var(--space-lg);
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 720px) {
+  .page > figure.portrait {
+    float: right;
+    width: 220px;
+    margin: 6px 0 var(--space-md) var(--space-lg);
   }
 }
 
@@ -63,12 +129,5 @@ main {
 @media (max-width: 480px) {
   main {
     padding: var(--space-sm) var(--space-sm);
-  }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  main {
-    animation: none;
   }
 }

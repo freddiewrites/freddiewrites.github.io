@@ -1,5 +1,6 @@
+{% assign card_date_format = include.date_format | default: "%d %b" %}
 <article class="post-card">
-  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b" }}</time>
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: card_date_format }}</time>
   <h3 class="post-title">
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </h3>

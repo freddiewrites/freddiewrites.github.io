@@ -8,47 +8,15 @@ layout: default
 
   <hr class="home-divider">
 
-  <section class="posts">
-    <h2>Latest posts</h2>
-    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-    {% assign post_count = 0 %}
-    {% assign post_limit = 15 %}
-
-    {% for year_group in posts_by_year %}
-      {% if post_count < post_limit %}
-        {% assign year_has_posts = false %}
-        {% for post in year_group.items %}
-          {% assign skip_post = false %}
-          {% if post.tags contains 'now' %}
-            {% assign skip_post = true %}
-          {% endif %}
-          {% if jekyll.environment == 'production' and post.title == 'Style Guide' %}
-            {% assign skip_post = true %}
-          {% endif %}
-          {% unless skip_post %}
-            {% assign year_has_posts = true %}
-            {% break %}
-          {% endunless %}
-        {% endfor %}
-        {% if year_has_posts %}
-          <h2>{{ year_group.name }}</h2>
-        {% endif %}
-        {% for post in year_group.items %}
-          {% assign skip_post = false %}
-          {% if post.tags contains 'now' %}
-            {% assign skip_post = true %}
-          {% endif %}
-          {% if jekyll.environment == 'production' and post.title == 'Style Guide' %}
-            {% assign skip_post = true %}
-          {% endif %}
-          {% unless skip_post %}
-            {% if post_count < post_limit %}
-              {% include post-card.html %}
-              {% assign post_count = post_count | plus: 1 %}
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
+  <section class="latest" aria-labelledby="latest-heading">
+    <h2 id="latest-heading" class="section-label">Latest posts</h2>
+    {% include visible-posts.html %}
+    {% for post in visible_posts limit: 5 %}
+      <article class="latest-post">
+        <h3 class="latest-post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+        {% if post.excerpt %}<p class="latest-post-excerpt">{{ post.excerpt | strip_html | strip }}</p>{% endif %}
+      </article>
     {% endfor %}
 
     <a href="/posts/" class="all-posts-link">All posts &rarr;</a>

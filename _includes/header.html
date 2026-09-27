@@ -1,10 +1,12 @@
+{% assign section = page.url | split: "/" | slice: 1 | first %}
+{% if page.layout == "post" or page.layout == "tag" %}{% assign section = "posts" %}{% endif %}
 <header class="site-header">
   <nav class="site-nav">
-    <a href="/" class="site-title">{{ site.title }}</a>
+    <a href="/" class="site-title" aria-label="{{ site.title }}, home">{% include fh-logo.svg class="site-logo" %}</a>
     <div class="nav-links">
-      <a href="/about/">About</a>
-      <a href="/now/">Now</a>
-      <a href="/posts/">Posts</a>
+      <a href="/about/"{% if section == "about" %} class="is-active"{% endif %}{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
+      <a href="/now/"{% if section == "now" %} class="is-active"{% endif %}{% if page.url == "/now/" %} aria-current="page"{% endif %}>Now</a>
+      <a href="/posts/"{% if section == "posts" %} class="is-active"{% endif %}{% if page.url == "/posts/" %} aria-current="page"{% endif %}>Posts</a>
     </div>
   </nav>
 </header>

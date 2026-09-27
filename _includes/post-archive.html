@@ -1,0 +1,14 @@
+{% comment %}Year-grouped list of `include.posts`, newest first.{% endcomment %}
+{% assign posts_by_year = include.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+<div class="archive">
+  {% for year_group in posts_by_year %}
+    <section class="archive-year">
+      <h2>{{ year_group.name }}</h2>
+      <div class="archive-posts">
+        {% for post in year_group.items %}
+          {% include post-card.html %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>

@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-variant-numeric: oldstyle-nums proportional-nums;
   line-height: var(--line-height-base);
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -21,19 +22,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background-color: var(--selection-bg);
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   margin-top: var(--space-lg);
   margin-bottom: var(--space-sm);
-  line-height: 1.3;
+  line-height: 1.25;
   font-weight: 600;
-  font-family: var(--font-ui);
+  font-family: var(--font-body);
   letter-spacing: -0.01em;
+  font-variant-numeric: lining-nums;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: 2.2em;
-  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
 
 h2 {
@@ -58,6 +66,7 @@ h6 {
 
 p {
   margin-bottom: var(--space-md);
+  text-wrap: pretty;
 }
 
 /* Strong and emphasis */
@@ -82,6 +91,19 @@ a {
   }
 }
 
+/* Links in running text get an underline so they don't rely on color alone */
+:is(.post-content, .page, .intro) :is(p, li, dd, td, figcaption, blockquote) a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: var(--underline-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 /* Lists */
 ul, ol {
   margin-bottom: var(--space-md);
@@ -90,6 +112,10 @@ ul, ol {
 
 li {
   margin-bottom: var(--space-xs);
+
+  &::marker {
+    color: var(--link-color);
+  }
 
   > ul, > ol {
     margin-top: var(--space-xs);
@@ -128,11 +154,10 @@ figure {
 
 /* Blockquotes */
 blockquote {
-  margin: var(--space-md) 0;
-  padding: var(--space-sm) var(--space-md);
-  border-left: 3px solid var(--link-color);
-  background-color: var(--code-bg);
-  border-radius: 0 4px 4px 0;
+  margin: var(--space-lg) 0;
+  padding: 0 0 0 var(--space-md);
+  border-left: 2px solid var(--link-color);
+  font-style: italic;
 
   p, ul, ol {
     &:last-child {
@@ -147,13 +172,33 @@ blockquote {
   cite {
     display: block;
     margin-top: var(--space-sm);
-    font-size: 0.9em;
+    font-size: 0.85em;
     color: var(--text-muted);
     font-style: normal;
+    font-family: var(--font-ui);
 
     &::before {
       content: "— ";
     }
+  }
+}
+
+/* Pull quotes: add {: .pullquote} under a blockquote in Markdown */
+blockquote.pullquote {
+  margin: var(--space-xl) 0;
+  padding: var(--space-md) 0 0;
+  border: 0;
+  background: linear-gradient(var(--link-color), var(--link-color)) top left / 48px 3px no-repeat;
+  font-size: 1.45em;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    font-size: 0.6em;
   }
 }
 
@@ -164,8 +209,20 @@ hr {
   margin: var(--space-lg) 0;
 }
 
+/* In running text, a rule is a section break: three small plum squares */
+:is(.post-content, .page) hr {
+  border: 0;
+  width: 40px;
+  height: 4px;
+  margin: var(--space-xl) auto;
+  background-image: linear-gradient(to right, var(--link-color) 4px, transparent 4px);
+  background-size: 18px 4px;
+  clear: both;
+}
+
 /* Tables */
 table {
+  font-variant-numeric: lining-nums tabular-nums;
   display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -306,11 +363,9 @@ kbd {
   &::before {
     content: "Footnotes";
     display: block;
-    font-family: var(--font-ui);
     font-weight: 600;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.08em;
     color: var(--text-muted);
     margin-bottom: var(--space-sm);
   }
