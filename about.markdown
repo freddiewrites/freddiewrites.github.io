@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: "I’m a writer turned full-stack marketer who cares about making things simple, accessible and human."
 permalink: /about/
 ---
 

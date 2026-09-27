@@ -1,6 +1,7 @@
 ---
 layout: now
 title: What I’m doing now
+description: "What I’m working on, reading and thinking about right now."
 permalink: /now/
 ---
 

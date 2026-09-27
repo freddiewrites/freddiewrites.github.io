@@ -1,9 +1,10 @@
 title: Freddie Harrison
 email: freddie@freddiewrit.es
 description: >-
-  Hello 👋 I'm Freddie Harrison. I'm a writer who cares about making things simple, accessible and a little more human.
+  I’m Freddie Harrison, a writer, accidental marketer and former technology journalist. I lead marketing at Sketch.
 url: 'https://freddiewrit.es'
 timezone: Europe/London
+locale: en_GB
 permalink: /journal/:year/:slug/
 
 # SEO & Social
@@ -12,13 +13,24 @@ twitter:
 author:
   name: Freddie Harrison
   twitter: freddiewrites
+  url: https://freddiewrit.es/about/
 social:
   name: Freddie Harrison
   links:
     - https://twitter.com/freddiewrites
+    - https://www.linkedin.com/in/fharrison/
 
-# Default social preview image
-image: /assets/images/social-image.png
+# Default social preview image. jekyll-seo-tag only reads `image` from each
+# page, so it's set as a default here. A post's own `image:` replaces it.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/images/social-image.png
+        width: 1200
+        height: 630
+        alt: The fh marque in white on a plum background
 
 # Build settings
 markdown: kramdown
