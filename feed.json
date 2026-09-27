@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+{% capture abs_src %}src="{{ site.url }}/{% endcapture %}{% capture abs_href %}href="{{ site.url }}/{% endcapture %}{% capture abs_srcset %}srcset="{{ site.url }}/{% endcapture %}{% capture abs_next %}w, {{ site.url }}/{% endcapture %}
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": {{ site.title | jsonify }},
@@ -25,7 +26,8 @@ layout: null
       "id": "{{ site.url }}{{ post.url }}",
       "url": "{{ site.url }}{{ post.url }}",
       "title": {{ post.title | jsonify }},
-      "content_html": {{ post.content | jsonify }},
+      {% capture feed_content %}{% include absolute-urls.html html=post.content %}{% endcapture %}
+      "content_html": {{ feed_content | jsonify }},
       "date_published": "{{ post.date | date_to_xmlschema }}"{% if post.categories.size > 0 %},
       "tags": {{ post.categories | jsonify }}{% endif %}
     }{% unless forloop.last %},{% endunless %}

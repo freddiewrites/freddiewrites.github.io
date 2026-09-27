@@ -2,6 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
+{% capture abs_src %}src="{{ site.url }}/{% endcapture %}{% capture abs_href %}href="{{ site.url }}/{% endcapture %}{% capture abs_srcset %}srcset="{{ site.url }}/{% endcapture %}{% capture abs_next %}w, {{ site.url }}/{% endcapture %}
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title | xml_escape }}</title>
   <subtitle>{{ site.description | xml_escape }}</subtitle>
@@ -27,7 +28,8 @@ layout: null
     <published>{{ post.date | date_to_xmlschema }}</published>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.url }}</id>
-    <content type="html">{{ post.content | xml_escape }}</content>
+    {% capture feed_content %}{% include absolute-urls.html html=post.content %}{% endcapture %}
+    <content type="html">{{ feed_content | xml_escape }}</content>
     <author>
       <name>{{ site.author.name | xml_escape }}</name>
     </author>
