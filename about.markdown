@@ -10,6 +10,7 @@ permalink: /about/
 </figure>
 
 **I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
+{: .lede}
 
 I’ve spent over a decade using words to make things simple, accessible, and human. In that time I’ve worked for universities, charities, tech products, and two of the UK’s most valuable brands.
 

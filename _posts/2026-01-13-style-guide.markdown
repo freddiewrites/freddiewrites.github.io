@@ -82,6 +82,11 @@ Blockquotes can also include citations:
 >
 > <cite>Charles Eames</cite>
 
+For a pull quote, add `{: .pullquote}` on the line directly after the blockquote:
+
+> In a world where everyone wants everything in its softest, chewiest, easiest-to-swallow form, it’s an act of defiance to roll out a complete meal.
+{: .pullquote}
+
 ## Code Blocks
 
 For longer code examples, use fenced code blocks:

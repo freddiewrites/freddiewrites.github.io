@@ -16,8 +16,13 @@
 }
 
 .site-title {
-  font-size: 1.2em;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 1.25em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--text-color);
   transition: color var(--transition-fast);
 
@@ -46,6 +51,14 @@
       text-underline-offset: 0.4em;
     }
   }
+}
+
+/* The fh marque next to the site name */
+.site-logo {
+  display: block;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
 }
 
 /* Footer */
@@ -120,6 +133,7 @@
   .post-title {
     margin: 0;
     font-size: 1em;
+    text-wrap: pretty;
     font-family: var(--font-body);
     font-weight: 400;
 
@@ -136,28 +150,40 @@
   }
 }
 
-/* Year headers in posts section */
-.posts h2 {
-  font-family: var(--font-ui);
-  font-size: 1em;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-xs);
-  color: var(--text-muted);
+/* Year-grouped archive (Posts and tag pages) */
+.archive-year {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
 
-  &:first-of-type {
-    margin-top: 0;
+  h2 {
+    font-family: var(--font-ui);
+    font-size: 1em;
+    font-weight: 600;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-xs);
   }
 }
 
-/* Small uppercase label for home page sections */
+@media (min-width: 640px) {
+  .archive-year {
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    align-items: baseline;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+/* Small-caps label for page sections */
 .section-label {
-  font-family: var(--font-ui);
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 600;
-  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
   letter-spacing: 0.08em;
   color: var(--text-muted);
   margin: 0 0 var(--space-md);
@@ -301,6 +327,7 @@
 
 /* Post meta */
 .post-meta {
+  font-variant-numeric: lining-nums;
   color: var(--text-muted);
   font-family: var(--font-ui);
   font-size: 0.95em;
@@ -308,6 +335,19 @@
 
 .meta-sep {
   margin: 0 0.1em;
+}
+
+/* Tag page header */
+.tag-header {
+  margin-bottom: var(--space-lg);
+
+  .section-label {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    margin: 0 0 var(--space-xs);
+  }
 }
 
 /* End of post mark */
@@ -342,9 +382,9 @@
 
 .post-nav-label {
   display: block;
-  font-size: 0.8em;
+  font-family: var(--font-body);
   font-weight: 600;
-  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
   letter-spacing: 0.08em;
   color: var(--text-muted);
   margin-bottom: 4px;
@@ -375,11 +415,21 @@
 
 @media (max-width: 480px) {
   .site-nav {
-    gap: var(--space-sm);
+    gap: 12px;
   }
 
   .nav-links {
-    gap: var(--space-sm);
+    gap: 12px;
+  }
+
+  .site-title {
+    font-size: 1.1em;
+    gap: 8px;
+  }
+
+  .site-logo {
+    width: 26px;
+    height: 26px;
   }
 
   .post-nav {
