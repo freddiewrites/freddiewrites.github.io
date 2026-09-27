@@ -4,7 +4,7 @@ Run after `jekyll build`. It reads .jekyll-cache/og-cards.json and writes one
 1200x630 PNG per entry into _site. The GitHub Actions workflow runs it before
 publishing; locally, run `python3 scripts/og_cards.py` after a build to see them.
 
-Layout: the marque and name sit top left, with the title below. The bottom of
+Layout: the marque sits top left, with the title below. The bottom of
 the card stays clear because X overlays the site's domain in the bottom-left
 corner of preview images.
 """
@@ -30,12 +30,6 @@ MARQUE_SIZE = 56
 def serif(size):
     font = ImageFont.truetype(str(FONTS / "fh-serif-roman.woff2"), size)
     font.set_variation_by_axes([600, 60])  # semibold, display optical size
-    return font
-
-
-def sans(size, weight):
-    font = ImageFont.truetype(str(FONTS / "fh-sans-roman.woff2"), size)
-    font.set_variation_by_axes([weight])
     return font
 
 
@@ -75,8 +69,6 @@ def draw_card(title, out_path, marque):
     draw = ImageDraw.Draw(im)
 
     im.paste(marque, (PAD, PAD), marque)
-    draw.text((PAD + MARQUE_SIZE + 18, PAD + MARQUE_SIZE / 2), "Freddie Harrison",
-              font=sans(30, 600), fill=CREAM, anchor="lm")
 
     font, size, lines = fit_title(title, W - 2 * PAD)
     y = PAD + MARQUE_SIZE + 44
