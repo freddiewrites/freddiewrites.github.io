@@ -20,16 +20,16 @@ layout: default
         </span>
       {% endif %}
     </div>
-    {% comment %}page.hero is the post's own image, set by _plugins/og_cards.rb. page.image may be a generated preview card.{% endcomment %}
-    {% assign hero_src = page.hero %}
-    {% if hero_src %}
-      {% comment %}Offer a 960px copy (photo-960.jpg) to smaller screens when one exists. Hero originals are about 1920px wide.{% endcomment %}
-      {% assign hero_parts = hero_src | split: "." %}
+    {% comment %}page.hero is the post's own image with its real size, set by _plugins/hero_images.rb. page.image may be a generated preview card.{% endcomment %}
+    {% assign hero = page.hero %}
+    {% if hero %}
+      {% comment %}Offer a 960px copy (photo-960.jpg) to smaller screens when one exists.{% endcomment %}
+      {% assign hero_parts = hero.path | split: "." %}
       {% assign hero_ext = hero_parts | last %}
       {% assign hero_small = hero_parts | pop | join: "." | append: "-960." | append: hero_ext %}
       {% assign hero_small_file = site.static_files | where: "path", hero_small | first %}
       <figure class="post-hero">
-        <img src="{{ hero_src }}" alt="{{ page.title }}"{% if hero_small_file %} srcset="{{ hero_small }} 960w, {{ hero_src }} 1920w" sizes="(min-width: 1056px) 960px, 100vw"{% endif %} fetchpriority="high">
+        <img src="{{ hero.path }}" alt="{{ page.title }}"{% if hero.width %} width="{{ hero.width }}" height="{{ hero.height }}"{% endif %}{% if hero_small_file and hero.width %} srcset="{{ hero_small }} 960w, {{ hero.path }} {{ hero.width }}w" sizes="(min-width: 1056px) 960px, 100vw"{% endif %} fetchpriority="high">
       </figure>
     {% endif %}
   </header>
