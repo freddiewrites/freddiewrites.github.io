@@ -209,15 +209,22 @@ hr {
   margin: var(--space-lg) 0;
 }
 
-/* In running text, a rule is a section break: three small plum squares */
+/* In running text, a rule is a section break: a dinkus (* * *) */
 :is(.post-content, .page) hr {
   border: 0;
-  width: 40px;
-  height: 4px;
-  margin: var(--space-xl) auto;
-  background-image: linear-gradient(to right, var(--link-color) 4px, transparent 4px);
-  background-size: 18px 4px;
+  height: auto;
+  margin: var(--space-xl) 0;
+  overflow: visible;
+  text-align: center;
   clear: both;
+
+  &::after {
+    content: "*\2003*\2003*";
+    font-family: var(--font-body);
+    font-size: 1.25em;
+    line-height: 1;
+    color: var(--text-muted);
+  }
 }
 
 /* Tables */
