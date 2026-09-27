@@ -105,7 +105,7 @@
 .post-card {
   display: flex;
   align-items: baseline;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   margin-bottom: var(--space-xs);
   position: relative;
 
@@ -117,7 +117,7 @@
     font-size: 0.9em;
     color: var(--text-muted);
     flex-shrink: 0;
-    min-width: 4.5em;
+    min-width: 3.5em;
     font-family: var(--font-ui);
     font-variant-numeric: tabular-nums;
   }
@@ -142,11 +142,18 @@
   }
 }
 
+/* Dates with a year (404 page) need a wider column */
+.posts .post-card time {
+  min-width: 6em;
+}
+
 /* Year-grouped archive (Posts and tag pages) */
 .archive-year {
-  border-top: 1px solid var(--border-color);
-  padding-top: var(--space-sm);
   margin-bottom: var(--space-lg);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   h2 {
     font-family: var(--font-ui);
@@ -162,7 +169,7 @@
 @media (min-width: 640px) {
   .archive-year {
     display: grid;
-    grid-template-columns: 5em 1fr;
+    grid-template-columns: 4em 1fr;
     align-items: baseline;
 
     h2 {
@@ -430,17 +437,12 @@
   }
 
   .site-footer {
-    padding: var(--space-lg) var(--space-sm);
     flex-direction: column;
-    gap: var(--space-md);
-
-    &::before {
-      left: var(--space-sm);
-      right: var(--space-sm);
-    }
+    align-items: flex-start;
+    gap: var(--space-xs);
   }
 
   .footer-links {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
