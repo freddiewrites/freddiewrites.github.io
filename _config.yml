@@ -35,6 +35,12 @@ defaults:
 # Build settings
 markdown: kramdown
 
+# Repository files that shouldn't be published. Jekyll adds these to its
+# own defaults (Gemfile, vendor and so on).
+exclude:
+  - README.md
+  - scripts/
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
