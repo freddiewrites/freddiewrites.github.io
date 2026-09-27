@@ -191,6 +191,11 @@
 /* Latest posts on the home page */
 .latest-post {
   margin-bottom: var(--space-lg);
+  position: relative;
+
+  &:hover .latest-post-title a {
+    color: var(--link-color);
+  }
 
   time {
     display: block;
@@ -207,8 +212,10 @@
   a {
     color: var(--text-color);
 
-    &:hover {
-      color: var(--link-color);
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
     }
   }
 }
