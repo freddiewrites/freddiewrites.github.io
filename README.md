@@ -44,7 +44,7 @@ image: /uploads/2026/10/editing.jpg   # optional hero image
 
 - **`excerpt`** shows on the homepage and in link previews. Always write one.
 - **`categories`** become tags, like “in Thoughts,” and each one gets a page at `/tags/name/`. Existing ones: `thoughts`, `work`, `personal`.
-- **`image`** is optional. It shows full width under the title and becomes the preview image when the post is shared. Posts without one use the fh image (`assets/images/social-image.png`) in link previews.
+- **`image`** is optional. It shows full width under the title and becomes the preview image when the post is shared. Posts without one get a generated preview card with the title (see below).
 
 ### Formatting
 
@@ -84,6 +84,24 @@ sips -Z 960 photo.jpg --out photo-960.jpg
 ```
 
 For a hero image, the post template finds the `-960` copy automatically. For images in the body of a post, add `srcset` and `sizes` to the `<img>` tag, as in `_posts/2017-03-17-offscreen.markdown`.
+
+## Preview cards
+
+When a post is shared on X, LinkedIn, Slack and elsewhere, the preview image is a plum card with the post title in the serif. Nothing needs doing when you write a post. The cards are made automatically when the site is published:
+
+1. `_plugins/og_cards.rb` gives each post and page a card, unless it has its own `image`, and lists the cards to draw.
+2. After the build, `scripts/og_cards.py` draws them into `_site/assets/og/`. The GitHub workflow runs this step before publishing.
+
+The homepage and Now updates keep the fh image. The bottom of each card is left empty on purpose, because X puts the site’s domain over the bottom-left corner.
+
+To see the cards locally, build the site, then run the script. It needs Python 3 and Pillow (`pip3 install -r scripts/requirements.txt`):
+
+```sh
+bundle exec jekyll build
+python3 scripts/og_cards.py
+```
+
+The cards then appear in `_site/assets/og/`. They don’t show up in `jekyll serve`, which rebuilds the site without them.
 
 ## Updating the Now page
 
