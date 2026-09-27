@@ -2,7 +2,8 @@
 # previews, and writes the list of cards to draw. scripts/og_cards.py draws
 # them into _site after the build (see .github/workflows/jekyll.yml).
 #
-# - Posts with their own `image:` keep it as their preview and hero.
+# - Posts with their own `image:` keep it as their preview (and hero, see
+#   hero_images.rb).
 # - The homepage keeps the default fh image set in _config.yml.
 # - Everything else with a title gets a card: posts, pages and tag pages.
 #   Now updates are skipped, since they only appear on /now/.
@@ -23,10 +24,9 @@ module OgCards
       cards = []
 
       site.posts.docs.each do |post|
-        own = own_image(post.data["image"])
-        post.data["hero"] = own
-        # Now updates only appear on /now/, which gets its own card
-        next if own || title_of(post).empty? || Array(post.data["tags"]).include?("now")
+        # Posts with their own image keep it (hero_images.rb sets it as the hero).
+        # Now updates only appear on /now/, which gets its own card.
+        next if own_image(post.data["image"]) || title_of(post).empty? || Array(post.data["tags"]).include?("now")
 
         cards << assign(post, smarty)
       end
