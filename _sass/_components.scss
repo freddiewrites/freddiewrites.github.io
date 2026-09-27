@@ -16,13 +16,7 @@
 }
 
 .site-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-body);
-  font-size: 1.25em;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  display: block;
   color: var(--text-color);
   transition: color var(--transition-fast);
 
@@ -53,12 +47,11 @@
   }
 }
 
-/* The fh marque next to the site name */
+/* The fh marque stands in for the site name */
 .site-logo {
   display: block;
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
 }
 
 /* Footer */
@@ -82,11 +75,10 @@
   }
 }
 
-.footer-logo {
-  display: block;
-  width: 36px;
-  height: 36px;
-  color: var(--text-color);
+.footer-copyright {
+  margin: 0;
+  color: var(--text-muted);
+  font-variant-numeric: lining-nums;
 }
 
 .footer-links {
@@ -422,14 +414,9 @@
     gap: 12px;
   }
 
-  .site-title {
-    font-size: 1.1em;
-    gap: 8px;
-  }
-
   .site-logo {
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
   }
 
   .post-nav {
@@ -451,10 +438,6 @@
       left: var(--space-sm);
       right: var(--space-sm);
     }
-  }
-
-  .footer-logo {
-    height: 32px;
   }
 
   .footer-links {
