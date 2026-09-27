@@ -36,6 +36,18 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Draw preview cards
+        run: |
+          pip install -r scripts/requirements.txt
+          python scripts/og_cards.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

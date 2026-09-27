@@ -20,9 +20,9 @@ layout: default
         </span>
       {% endif %}
     </div>
-    {% comment %}The default social image (set in _config.yml) is for link previews, not a hero.{% endcomment %}
-    {% assign hero_src = page.image.path | default: page.image %}
-    {% if hero_src and hero_src != "/assets/images/social-image.png" %}
+    {% comment %}page.hero is the post's own image, set by _plugins/og_cards.rb. page.image may be a generated preview card.{% endcomment %}
+    {% assign hero_src = page.hero %}
+    {% if hero_src %}
       {% comment %}Offer a 960px copy (photo-960.jpg) to smaller screens when one exists. Hero originals are about 1920px wide.{% endcomment %}
       {% assign hero_parts = hero_src | split: "." %}
       {% assign hero_ext = hero_parts | last %}
