@@ -8,6 +8,8 @@
   --border-color: #E3E0DB;        /* warm light gray for borders */
   --code-bg: #EFEDE8;             /* subtle warm gray for code */
   --mark-bg: #FFF3CD;             /* warm yellow highlight */
+  --underline-color: rgba(157, 78, 126, 0.35); /* plum at low opacity */
+  --selection-bg: rgba(157, 78, 126, 0.18);
 
   /* Spacing */
   --space-xs: 8px;
@@ -23,7 +25,7 @@
   --font-ui: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-base: 18px;
   --line-height-base: 1.7;
-  --content-width: 750px;
+  --content-width: 680px;           /* ~70 characters per line of body text */
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -40,5 +42,7 @@
     --border-color: #3A3835;      /* warm dark gray for borders */
     --code-bg: #2A2926;           /* dark warm gray for code */
     --mark-bg: #5C4A1F;           /* muted yellow highlight */
+    --underline-color: rgba(168, 123, 148, 0.45);
+    --selection-bg: rgba(168, 123, 148, 0.3);
   }
 }
