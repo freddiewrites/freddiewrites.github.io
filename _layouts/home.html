@@ -9,9 +9,9 @@ layout: default
   <hr class="home-divider">
 
   <section class="latest" aria-labelledby="latest-heading">
-    <h2 id="latest-heading" class="section-label">Latest posts</h2>
+    <h2 id="latest-heading" class="section-label">Latest post</h2>
     {% include visible-posts.html %}
-    {% for post in visible_posts limit: 5 %}
+    {% for post in visible_posts limit: 1 %}
       <article class="latest-post">
         <h3 class="latest-post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
