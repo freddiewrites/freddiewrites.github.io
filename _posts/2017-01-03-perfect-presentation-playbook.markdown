@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing the book on perfect presentations"
-categories: work
+categories: [work]
 image: '/uploads/2017/01/ppp_ebook_spread.jpg'
 excerpt: I wrote a guide that covers everything you need to know about writing, designing and delivering perfect presentations.
 ---

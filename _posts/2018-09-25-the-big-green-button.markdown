@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The big green button"
-categories: thoughts
+categories: [thoughts]
 excerpt: Why writers can spot the obvious improvements and your product people can’t. 
 ---
 In the latest issue of [Offscreen Magazine](https://www.offscreenmag.com/), [Amber Case](https://www.caseorganic.com/) tells an interesting story about a Xerox PARC anthropologist called Lucy Suchman. The story goes that Suchman was tasked with working out why customers found their photocopiers so difficult to understand and use.

@@ -1,0 +1,106 @@
+# Pages CMS configuration (https://pagescms.org/docs/configuration/)
+# Sign in at app.pagescms.org to edit posts and pages from any browser.
+
+# Uploaded images go in uploads/ and are linked as /uploads/...
+media:
+  input: uploads
+  output: /uploads
+  rename: safe
+  categories: [image]
+
+settings:
+  # Keep front matter the editor doesn't know about (tags, vimeoId,
+  # permalink and so on) instead of dropping it on save.
+  content:
+    merge: true
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      fields: [title, date]
+      primary: title
+      search: [title, excerpt]
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: post
+      - name: title
+        label: Title
+        type: string
+      - name: categories
+        label: Categories
+        type: select
+        options:
+          multiple: true
+          values: [thoughts, work, personal, reference]
+      - name: excerpt
+        label: Excerpt
+        type: text
+        description: One or two sentences for the homepage, feeds and link previews.
+      - name: image
+        label: Hero image
+        type: image
+        description: Optional. Keep photos 1920px wide or smaller.
+      # The body is edited as plain Markdown, not in a rich-text editor,
+      # so pull quotes, figures and Liquid tags stay exactly as written.
+      - name: body
+        label: Body
+        type: code
+        options:
+          format: markdown
+
+  - name: pages
+    label: Pages
+    type: group
+    items:
+      - name: home
+        label: Home
+        type: file
+        path: index.markdown
+        fields:
+          - name: body
+            label: Body
+            type: code
+            options:
+              format: markdown
+      - name: about
+        label: About
+        type: file
+        path: about.markdown
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: description
+            label: Description
+            type: text
+            description: Shown in search results and link previews.
+          - name: body
+            label: Body
+            type: code
+            options:
+              format: markdown
+      - name: now
+        label: Now
+        type: file
+        path: now.md
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: description
+            label: Description
+            type: text
+            description: Shown in search results and link previews.
+          - name: body
+            label: Body
+            type: code
+            options:
+              format: markdown

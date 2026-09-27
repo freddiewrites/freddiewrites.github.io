@@ -36,14 +36,14 @@ Create a file in `_posts/` named with the date and a short slug, like `2026-10-0
 ---
 layout: post
 title: "On editing"
-categories: thoughts
+categories: [thoughts]
 excerpt: One or two sentences for the homepage, feeds and social previews.
 image: /uploads/2026/10/editing.jpg   # optional hero image
 ---
 ```
 
 - **`excerpt`** shows on the homepage and in link previews. Always write one.
-- **`categories`** become tags, like “in Thoughts,” and each one gets a page at `/tags/name/`. Existing ones: `thoughts`, `work`, `personal`.
+- **`categories`** become tags, like “in Thoughts,” and each one gets a page at `/tags/name/`. Existing ones: `thoughts`, `work`, `personal`. Write them as a list, even when there’s only one, so the Pages CMS editor can read them. If you add a new category, add it to `.pages.yml` too.
 - **`image`** is optional. It shows full width under the title and becomes the preview image when the post is shared. Posts without one get a generated preview card with the title (see below).
 
 ### Formatting
@@ -113,3 +113,13 @@ layout: post
 tags: [now]
 ---
 ```
+
+## Editing from your phone
+
+For quick edits away from the Mac, use [Pages CMS](https://app.pagescms.org). Sign in with GitHub, open this repository and pick the `main` branch. Posts and the Home, About and Now pages are listed in the sidebar. Everything it can edit is set in `.pages.yml`.
+
+- **Saving publishes.** Each save is a commit to `main`, so the site rebuilds and the change is live a minute or two later.
+- **The body is plain Markdown**, the same text as the file. Pull quotes, figures and Liquid tags all stay as written.
+- **New posts** get a date-stamped filename from the title, like `2026-10-04-on-editing.md`.
+- **Now updates** can be edited here but not created, because the editor doesn’t show `tags`. Create new ones on the Mac or through Claude Code. The “Now” entry under Pages is the intro text on `/now/`, not the updates.
+- **Images** you upload go straight into `uploads/` without being resized, so resize big photos on the phone first.

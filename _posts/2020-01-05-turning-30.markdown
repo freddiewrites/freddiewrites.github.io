@@ -2,7 +2,7 @@
 layout: post
 title: "30"
 date: 2020-01-05
-categories: personal
+categories: [personal]
 excerpt: A few thoughts on how it felt to turn 30 and what the first three decades of life are all about.
 ---
 I turned 30 this month — hooray! 🎉 In the lead up to my birthday, lots of people asked me how I felt about this milestone. Was I worried? Was I anxious? Honestly, I’ve felt none of these things. Here’s where I did land with it…

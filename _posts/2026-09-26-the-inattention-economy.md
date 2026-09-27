@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Inattention Economy"
-categories: thoughts
+categories: [thoughts]
 excerpt: It’s harder than ever for us to pay attention, and that makes it harder than ever for anyone to get our attention.
 ---
 

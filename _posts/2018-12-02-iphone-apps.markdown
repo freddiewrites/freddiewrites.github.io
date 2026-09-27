@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Apps that make my iPhone better"
-categories: thoughts
+categories: [thoughts]
 excerpt: A round up of the apps that I rely on to make my iPhone more useful.
 ---
 Back in September, I wrote about some of the [apps that make my Mac better](https://freddiewrit.es/apps-that-make-my-mac-better/). So I figured it’d make sense to do the same for iOS. Or more specifically, my iPhone.

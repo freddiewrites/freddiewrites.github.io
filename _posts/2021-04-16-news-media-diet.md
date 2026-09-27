@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My news media diet"
-categories: personal
+categories: [personal]
 excerpt: The news makes me anxious, so I’ve changed how I consume it.
 ---
 

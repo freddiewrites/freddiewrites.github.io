@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Making social media painful"
-categories: personal
+categories: [personal]
 excerpt: Man from UK uses one weird trick to cut down on social media usage. Silicon Valley hates him!
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Seven freelancing tips that worked for me"
-categories: thoughts
+categories: [thoughts]
 image: '/uploads/2016/10/freddie-old-desk.jpg'
 excerpt: To mark a year of freelancing, I thought I’d share some advice I’ve followed that’s helped me along the way.
 ---

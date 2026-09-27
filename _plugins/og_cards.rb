@@ -54,7 +54,7 @@ module OgCards
     # The image the author set in front matter, or nil for none or the default
     def own_image(image)
       path = image.is_a?(Hash) ? image["path"] : image
-      path unless path.nil? || path == DEFAULT_IMAGE
+      path unless path.to_s.strip.empty? || path == DEFAULT_IMAGE
     end
 
     def assign(item, smarty)

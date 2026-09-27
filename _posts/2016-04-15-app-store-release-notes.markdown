@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing great app store release notes"
-categories: thoughts
+categories: [thoughts]
 excerpt: If you’re an indie developer trying to make yoiur mark on the App Store, don’t ignore your release notes.
 ---
 ### Learning from the good, the average and the ugly

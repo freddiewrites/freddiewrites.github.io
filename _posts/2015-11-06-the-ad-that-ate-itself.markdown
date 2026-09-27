@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The ad that ate itself"
-categories: thoughts
+categories: [thoughts]
 excerpt: Dissecting the iconic John Lewis Christmas ad, and wondering what comes next for the format.
 ---
 John Lewis, we have a problem. The annual Christmas ad is starting to show its age. This isn’t a blow-by-blow post-mortem of [#ManOnTheMoon](https://www.youtube.com/watch?v=wuz2ILq4UeA), though.

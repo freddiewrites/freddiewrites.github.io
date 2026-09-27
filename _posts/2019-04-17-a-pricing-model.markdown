@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A pricing model for freelancers and agencies"
-categories: thoughts
+categories: [thoughts]
 excerpt: A pricing model that clients would hate and no agency would ever be brave enough to adopt.
 ---
 Most agencies and freelancers price their work like this:

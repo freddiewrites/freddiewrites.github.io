@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Style Guide"
-categories: reference
+categories: [reference]
 excerpt: A comprehensive guide to all styled elements available in posts.
 # This post is hidden in production but visible locally
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing for one of the web’s most respected publications"
-categories: work
+categories: [work]
 image: '/uploads/2018/02/Offscreen_2.jpg'
 excerpt: A personal highlight of my freelancing career, writing for Kai Brach’s Offscreen Magazine.
 ---

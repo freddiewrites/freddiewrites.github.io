@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Helping Sketch find their voice"
-categories: work
+categories: [work]
 image: '/uploads/2018/02/Sketch-Website-Photo-by-Bram-Naus-on-Unsplash.jpg'
 excerpt: Before I joined Sketch as a full-time employee, they asked me to help shape their voice.
 ---
