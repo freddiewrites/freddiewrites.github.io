@@ -19,6 +19,12 @@ layout: default
       </article>
     {% endfor %}
 
+    <div class="recent-posts">
+      {% for post in visible_posts offset: 1 limit: 4 %}
+        {% include post-card.html date_format="%-d %b %Y" %}
+      {% endfor %}
+    </div>
+
     <a href="/posts/" class="all-posts-link">All posts &rarr;</a>
   </section>
 </div>

@@ -4,7 +4,7 @@
 }
 
 .site-nav {
-  max-width: var(--content-width);
+  max-width: var(--frame-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
   display: flex;
@@ -56,7 +56,7 @@
 
 /* Footer */
 .site-footer {
-  max-width: var(--content-width);
+  max-width: var(--frame-width);
   margin: var(--space-xl) auto 0;
   padding: var(--space-lg) var(--space-md);
   font-family: var(--font-ui);
@@ -225,6 +225,15 @@
   color: var(--text-muted);
 }
 
+/* Earlier posts under the latest one on the home page */
+.recent-posts {
+  margin-bottom: var(--space-md);
+
+  .post-card time {
+    min-width: 5.5em;
+  }
+}
+
 /* All posts link */
 .all-posts-link {
   display: inline-block;
@@ -296,7 +305,7 @@
   font-size: 0.9em;
   color: var(--text-muted);
   flex-shrink: 0;
-  min-width: 6.5em;
+  min-width: 5.5em;
   font-family: var(--font-ui);
   font-variant-numeric: tabular-nums;
 }
