@@ -13,11 +13,11 @@ permalink: /about/
 **I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
 {: .lede}
 
-I’ve spent over a decade using words to make things simple, accessible, and human. In that time I’ve worked for universities, charities, tech products, and two of the UK’s most valuable brands.
+I’ve spent over a decade working on copy, content and comms for universities, charities, tech products, and two of the UK’s most valuable brands.
 
-Right now I lead on product marketing for [Sketch](https://www.sketch.com), where we're helping people to design better products.
+Right now, I’m working on [Elyx](https://www.elyx.design) and [Sketch](https://www.sketch.com).
 
-I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. When I'm not working, I'm reading, walking, lifting weights, or nerding out about making coffee.
+I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. Outside of work, I'm usually reading, walking, lifting weights, or nerding out about making coffee.
 
 ---------------
 
@@ -38,7 +38,7 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 
 <ul class="experience-list">
   <li class="experience-item">
-    <span class="experience-years">2020–now</span>
+    <span class="experience-years">2020–Now</span>
     <div class="experience-details">
       <div class="experience-role">Marketing Lead, Sketch</div>
       <div class="experience-summary">Leading marketing for the design tool used by thousands — from freelancers to the Fortune 500.</div>
