@@ -6,6 +6,14 @@ main {
   min-height: calc(100vh - 200px); /* Reserve space for header/footer */
 }
 
+/* On wide screens the text column sits on the left edge of the nav and footer */
+@media (min-width: 800px) {
+  main {
+    margin-left: max(0px, calc((100% - var(--frame-width)) / 2));
+    margin-right: auto;
+  }
+}
+
 /* Page and Post layouts */
 .page, .post {
   h1 {
@@ -63,9 +71,8 @@ main {
   .post-content > figure,
   .post-content > p:has(> img:only-child),
   .post-header .post-hero {
-    width: min(var(--wide-width), 100vw - 2 * var(--space-xl));
-    margin-left: 50%;
-    translate: -50% 0;
+    width: min(var(--wide-width) - 2 * var(--space-md), 100vw - 2 * var(--space-xl));
+    margin-left: 0;
   }
 
   /* Shrink figures to their image so captions line up with it */
@@ -73,7 +80,7 @@ main {
     width: fit-content;
 
     img {
-      max-width: min(var(--wide-width), 100vw - 2 * var(--space-xl));
+      max-width: min(var(--wide-width) - 2 * var(--space-md), 100vw - 2 * var(--space-xl));
     }
   }
 }
