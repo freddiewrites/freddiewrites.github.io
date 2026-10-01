@@ -23,7 +23,9 @@ I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. Ou
 
 Previously, I was a senior writer at Sideshow (now [Gain](https://www.thisisgain.com)), a freelance copywriter, and a web editor for [Arts University Bournemouth](https://aub.ac.uk/).
 
-As a journalism graduate from [Bournemouth University](https://www.bournemouth.ac.uk/), I cut my teeth at iCreate Magazine, where I co-authored the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11) and worked my way up to Features Editor.
+I got my start at iCreate Magazine, where I co-authored the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11) and worked my way up to Features Editor.
+
+I graduated from the renowned Multi-Media Journalism course at [Bournemouth University](https://www.bournemouth.ac.uk/).
 
 My work has won awards from Computer Arts, the Chartered Institute of Marketing and HEIST, among others.
 
@@ -37,6 +39,13 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
 ### Experience
 
 <ul class="experience-list">
+  <li class="experience-item">
+    <span class="experience-years">2026–Now</span>
+    <div class="experience-details">
+      <div class="experience-role">Elyx</div>
+      <div class="experience-summary">Defining Elyx’s early voice and communications. Bringing the product out of stealth and into private beta.</div>
+    </div>
+  </li>
   <li class="experience-item">
     <span class="experience-years">2020–Now</span>
     <div class="experience-details">
