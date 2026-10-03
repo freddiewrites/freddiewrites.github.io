@@ -257,13 +257,9 @@
 .newsletter-form {
   display: grid;
   gap: var(--space-sm);
+  align-items: start;
   font-family: var(--font-ui);
   font-size: 0.95em;
-
-  /* Fields sit side by side, with the button below, on wider screens */
-  @media (min-width: 600px) {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .newsletter-field {
@@ -280,29 +276,49 @@
     font: inherit;
     color: var(--text-color);
     background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--input-border);
     border-radius: 4px;
     padding: 10px 12px;
     transition: border-color var(--transition-fast);
+
+    &:hover {
+      border-color: var(--text-muted);
+    }
 
     &:focus-visible {
       outline: 2px solid var(--link-color);
       outline-offset: 1px;
       border-color: var(--link-color);
     }
+
+    &[aria-invalid="true"] {
+      border-color: var(--error-color);
+      box-shadow: inset 0 0 0 1px var(--error-color);
+    }
+  }
+}
+
+.newsletter-error {
+  margin: 0;
+  font-size: 0.85em;
+  color: var(--error-color);
+
+  /* A small mark so the error doesn't rely on color alone */
+  &::before {
+    content: "! ";
+    font-weight: 700;
   }
 }
 
 .newsletter-button {
   justify-self: start;
-  grid-column: 1 / -1;
   font: inherit;
   font-weight: 600;
   color: var(--bg-color);
   background-color: var(--link-color);
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 11px 20px;
   cursor: pointer;
   transition: background-color var(--transition-fast);
 
@@ -313,6 +329,72 @@
   &:focus-visible {
     outline: 2px solid var(--link-color);
     outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+}
+
+.newsletter-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--text-muted);
+
+  &:empty {
+    display: none;
+  }
+}
+
+/* Option 1: a soft panel, fields side by side, button below */
+.newsletter--panel {
+  position: relative;
+  padding: var(--space-lg);
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  /* Plum square, like the end-of-post mark */
+  &::before {
+    content: "";
+    position: absolute;
+    top: var(--space-lg);
+    left: 0;
+    width: 4px;
+    height: 1.6em;
+    background-color: var(--link-color);
+  }
+
+  .newsletter-button {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 600px) {
+    .newsletter-form {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 599px) {
+    padding: var(--space-md);
+  }
+}
+
+/* Option 2: open layout under a plum rule, everything on one row */
+.newsletter--inline {
+  border-top: 3px solid var(--link-color);
+  padding-top: var(--space-md);
+
+  @media (min-width: 600px) {
+    .newsletter-form {
+      grid-template-columns: 1fr 1.4fr auto;
+    }
+
+    /* Line the button up with the fields, not their labels */
+    .newsletter-button {
+      margin-top: calc(0.9em * 1.7 + 4px);
+    }
   }
 }
 
