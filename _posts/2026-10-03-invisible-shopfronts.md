@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Invisible Shopfront"
+title: "Invisible Shopfronts"
 categories: thoughts
 excerpt: Everything is your shopfront now. The best thing you can do is get out of the way.
 ---
