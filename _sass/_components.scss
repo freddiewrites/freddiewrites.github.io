@@ -356,29 +356,29 @@
 
 /* A soft panel around the form on the home page */
 .newsletter {
-  position: relative;
-  padding: var(--space-lg);
+  --newsletter-padding: var(--space-lg);
+  padding: var(--newsletter-padding);
   background-color: var(--code-bg);
   border: 1px solid var(--border-color);
   border-radius: 10px;
 
-  /* Plum bar beside the heading, like the end-of-post mark */
-  &::before {
-    content: "";
-    position: absolute;
-    top: var(--space-lg);
-    left: 0;
-    width: 4px;
-    height: 1.6em;
-    background-color: var(--link-color);
+  /* Plum bar on the panel's edge, as tall as the heading however it wraps */
+  .newsletter-title {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.1em;
+      bottom: 0.1em;
+      left: calc(-1 * var(--newsletter-padding));
+      width: 4px;
+      background-color: var(--link-color);
+    }
   }
 
   @media (max-width: 599px) {
-    padding: var(--space-md);
-
-    &::before {
-      top: var(--space-md);
-    }
+    --newsletter-padding: var(--space-md);
   }
 }
 
