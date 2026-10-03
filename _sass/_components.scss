@@ -302,12 +302,6 @@
   margin: 0;
   font-size: 0.85em;
   color: var(--error-color);
-
-  /* A small mark so the error doesn't rely on color alone */
-  &::before {
-    content: "! ";
-    font-weight: 700;
-  }
 }
 
 .newsletter-button {
@@ -347,15 +341,15 @@
   }
 }
 
-/* Option 1: a soft panel, fields side by side, button below */
-.newsletter--panel {
+/* A soft panel, fields side by side, button below */
+.newsletter {
   position: relative;
   padding: var(--space-lg);
   background-color: var(--code-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: 10px;
 
-  /* Plum square, like the end-of-post mark */
+  /* Plum bar beside the heading, like the end-of-post mark */
   &::before {
     content: "";
     position: absolute;
@@ -378,22 +372,9 @@
 
   @media (max-width: 599px) {
     padding: var(--space-md);
-  }
-}
 
-/* Option 2: open layout under a plum rule, everything on one row */
-.newsletter--inline {
-  border-top: 3px solid var(--link-color);
-  padding-top: var(--space-md);
-
-  @media (min-width: 600px) {
-    .newsletter-form {
-      grid-template-columns: 1fr 1.4fr auto;
-    }
-
-    /* Line the button up with the fields, not their labels */
-    .newsletter-button {
-      margin-top: calc(0.9em * 1.7 + 4px);
+    &::before {
+      top: var(--space-md);
     }
   }
 }
