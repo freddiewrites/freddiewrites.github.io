@@ -42,7 +42,7 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
   <li class="experience-item">
     <span class="experience-years">2026–Now</span>
     <div class="experience-details">
-      <div class="experience-role">Elyx</div>
+      <div class="experience-role">Founding Team Member, Elyx</div>
       <div class="experience-summary">Defining Elyx’s early voice and communications. Bringing the product out of stealth and into private beta.</div>
     </div>
   </li>
