@@ -13,7 +13,7 @@ permalink: /about/
 **I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
 {: .lede}
 
-I’ve spent over a decade creating content comms, and copy for universities, non-profits, SaaS products, and two of the UK’s most valuable brands.
+I’ve spent over a decade creating content, comms, and copy for universities, non-profits, SaaS products, and two of the UK’s most valuable brands.
 
 Right now, I’m working on [Elyx](https://www.elyx.design) and [Sketch](https://www.sketch.com).
 
