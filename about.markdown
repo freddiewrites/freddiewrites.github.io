@@ -57,7 +57,7 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
     <span class="experience-years">2017–2019</span>
     <div class="experience-details">
       <div class="experience-role">Senior Writer, Sideshow</div>
-      <div class="experience-summary">Writing for a Sideshow's roster of clients across tech, telecoms, and finance.</div>
+      <div class="experience-summary">Wrote for Sideshow's roster of clients across tech, telecoms, and finance.</div>
     </div>
   </li>
   <li class="experience-item">
