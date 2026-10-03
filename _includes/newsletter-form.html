@@ -1,6 +1,10 @@
-{% comment %}Newsletter signup panel. Used on the home page and /newsletter/{% endcomment %}
+{% comment %}
+  Newsletter signup panel. Used on the home page and /newsletter/.
+  Pass heading_level=1 where the panel is the page's main heading.
+{% endcomment %}
+{% assign heading = include.heading_level | default: 2 %}
 <section class="newsletter" aria-labelledby="newsletter-heading">
-  <h2 id="newsletter-heading" class="newsletter-title">From the desk of Freddie Harrison</h2>
+  <h{{ heading }} id="newsletter-heading" class="newsletter-title">From the desk of Freddie Harrison</h{{ heading }}>
   <p class="newsletter-blurb">Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime.</p>
   <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/freddiewrites" method="post" target="_blank">
     <div class="newsletter-field">
