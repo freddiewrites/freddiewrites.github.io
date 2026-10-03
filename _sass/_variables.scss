@@ -10,6 +10,8 @@
   --mark-bg: #FFF3CD;             /* warm yellow highlight */
   --underline-color: rgba(157, 78, 126, 0.35); /* plum at low opacity */
   --selection-bg: rgba(157, 78, 126, 0.18);
+  --input-border: #CFCAC3;        /* form fields, stronger than other borders */
+  --error-color: #B03A2E;         /* warm red for form errors */
 
   /* Spacing */
   --space-xs: 8px;
@@ -53,5 +55,7 @@
     --mark-bg: #5C4A1F;           /* muted yellow highlight */
     --underline-color: rgba(207, 134, 180, 0.45);
     --selection-bg: rgba(207, 134, 180, 0.3);
+    --input-border: #5A5652;
+    --error-color: #F0958A;
   }
 }
