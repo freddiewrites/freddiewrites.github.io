@@ -39,6 +39,8 @@ markdown: kramdown
 # own defaults (Gemfile, vendor and so on).
 exclude:
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
   - scripts/
 
 plugins:
