@@ -27,4 +27,23 @@ layout: default
 
     <a href="/posts/" class="all-posts-link">All posts &rarr;</a>
   </section>
+
+  <hr class="home-divider">
+
+  <section class="newsletter" aria-labelledby="newsletter-heading">
+    <h2 id="newsletter-heading" class="newsletter-title">From the desk of Freddie Harrison</h2>
+    <p class="newsletter-blurb">Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime.</p>
+    <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/freddiewrites" method="post">
+      <div class="newsletter-field">
+        <label for="newsletter-first-name">First name</label>
+        <input type="text" id="newsletter-first-name" name="metadata__first_name" autocomplete="given-name" required>
+      </div>
+      <div class="newsletter-field">
+        <label for="newsletter-email">Email</label>
+        <input type="email" id="newsletter-email" name="email" autocomplete="email" required>
+      </div>
+      <input type="hidden" name="embed" value="1">
+      <button type="submit" class="newsletter-button">Subscribe</button>
+    </form>
+  </section>
 </div>
