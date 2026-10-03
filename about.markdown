@@ -13,7 +13,7 @@ permalink: /about/
 **I'm a writer turned full-stack marketer who cares about making things simple, accessible and human.**
 {: .lede}
 
-I’ve spent over a decade working on copy, content and comms for universities, charities, tech products, and two of the UK’s most valuable brands.
+I’ve spent over a decade creating content comms, and copy for universities, non-profits, SaaS products, and two of the UK’s most valuable brands.
 
 Right now, I’m working on [Elyx](https://www.elyx.design) and [Sketch](https://www.sketch.com).
 
@@ -21,11 +21,11 @@ I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. Ou
 
 ---------------
 
-Previously, I was a senior writer at Sideshow (now [Gain](https://www.thisisgain.com)), a freelance copywriter, and a web editor for [Arts University Bournemouth](https://aub.ac.uk/).
+Previously, I was a senior writer at Sideshow (now [Gain](https://www.thisisgain.com)), a freelance copywriter, and web editor for Arts University Bournemouth’s [award-winning website](https://aub.ac.uk/).
 
 I got my start at iCreate Magazine, where I co-authored the iTunes bestseller [iCloud for Beginners](https://itunes.apple.com/us/book/icloud-for-beginners/id497723676?mt=11) and worked my way up to Features Editor.
 
-I graduated from the renowned Multi-Media Journalism course at [Bournemouth University](https://www.bournemouth.ac.uk/).
+I graduated from the renowned Multi-Media Journalism degree at [Bournemouth University](https://www.bournemouth.ac.uk/).
 
 My work has won awards from Computer Arts, the Chartered Institute of Marketing and HEIST, among others.
 
