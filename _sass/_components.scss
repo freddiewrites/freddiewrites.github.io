@@ -260,6 +260,16 @@
   align-items: start;
   font-family: var(--font-ui);
   font-size: 0.95em;
+
+  /* Fields and button share a row on wider screens */
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1.4fr auto;
+
+    /* Line the button up with the fields, not their labels */
+    .newsletter-button {
+      margin-top: calc(0.9em * 1.7 + 4px);
+    }
+  }
 }
 
 .newsletter-field {
@@ -344,7 +354,7 @@
   }
 }
 
-/* A soft panel. Fields and button share a row on wider screens */
+/* A soft panel around the form on the home page */
 .newsletter {
   position: relative;
   padding: var(--space-lg);
@@ -361,17 +371,6 @@
     width: 4px;
     height: 1.6em;
     background-color: var(--link-color);
-  }
-
-  @media (min-width: 600px) {
-    .newsletter-form {
-      grid-template-columns: 1fr 1.4fr auto;
-    }
-
-    /* Line the button up with the fields, not their labels */
-    .newsletter-button {
-      margin-top: calc(0.9em * 1.7 + 4px);
-    }
   }
 
   @media (max-width: 599px) {
@@ -603,4 +602,27 @@
   .footer-links {
     justify-content: flex-start;
   }
+}
+
+/* Newsletter page */
+.signup-title {
+  margin: var(--space-md) 0 var(--space-md);
+  font-size: clamp(2.2em, 1.6em + 2.4vw, 3em);
+  line-height: 1.1;
+}
+
+.signup-blurb {
+  margin-bottom: var(--space-xl);
+  font-size: 1.25em;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.signup-note {
+  margin: var(--space-2xl) 0 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-ui);
+  font-size: 0.95em;
+  color: var(--text-muted);
 }
