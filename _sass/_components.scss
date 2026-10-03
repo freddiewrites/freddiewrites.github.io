@@ -266,6 +266,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  /* Let fields shrink below the browser's default input width */
+  min-width: 0;
 
   label {
     color: var(--text-muted);
@@ -273,6 +275,7 @@
   }
 
   input {
+    min-width: 0;
     font: inherit;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -341,7 +344,7 @@
   }
 }
 
-/* A soft panel, fields side by side, button below */
+/* A soft panel. Fields and button share a row on wider screens */
 .newsletter {
   position: relative;
   padding: var(--space-lg);
@@ -360,13 +363,14 @@
     background-color: var(--link-color);
   }
 
-  .newsletter-button {
-    grid-column: 1 / -1;
-  }
-
   @media (min-width: 600px) {
     .newsletter-form {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.4fr auto;
+    }
+
+    /* Line the button up with the fields, not their labels */
+    .newsletter-button {
+      margin-top: calc(0.9em * 1.7 + 4px);
     }
   }
 
