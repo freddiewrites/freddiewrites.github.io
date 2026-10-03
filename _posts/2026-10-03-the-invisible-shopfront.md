@@ -2,7 +2,7 @@
 layout: post
 title: "The Invisible Shopfront"
 categories: thoughts
-excerpt: Even businesses that don’t exist in the physical realm have shopfronts. In fact, they have more than one.
+excerpt: Everything is your shopfront now. The best thing you can do is get out of the way.
 ---
 
 As a kid I was obsessed with shopfronts. As a passenger in my mum’s car on trips through our town, I spent most of my time absorbing every shopfront I saw. What did they sell? Did they invest much in their signage? Was it consistent?
