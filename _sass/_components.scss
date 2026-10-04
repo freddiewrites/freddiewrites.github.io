@@ -371,8 +371,9 @@
       position: absolute;
       top: 0.1em;
       bottom: 0.1em;
-      left: calc(-1 * var(--newsletter-padding));
-      width: 4px;
+      /* The extra 1px pulls it over the panel border to the outer edge */
+      left: calc(-1 * var(--newsletter-padding) - 1px);
+      width: 5px;
       background-color: var(--link-color);
     }
   }
