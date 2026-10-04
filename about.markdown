@@ -17,7 +17,7 @@ I’ve spent over a decade creating content, comms, and copy for universities, n
 
 Right now, I’m working on [Elyx](https://www.elyx.design) and [Sketch](https://www.sketch.com).
 
-I work remotely but live in Buckinghamshire (UK) with my lovely wife and son. Outside of work, I'm usually reading, walking, lifting weights, or nerding out about making coffee.
+I work remotely and live in Buckinghamshire (UK) with my lovely wife and son. Outside of work, I'm usually reading, walking, lifting weights, or nerding out about making coffee.
 
 ---------------
 
@@ -77,7 +77,7 @@ Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct 
   <li class="experience-item">
     <span class="experience-years">2011–2013</span>
     <div class="experience-details">
-      <div class="experience-role">Staff Writer → Features Editor, iCreate Magazine</div>
+      <div class="experience-role">Features Editor, iCreate Magazine</div>
       <div class="experience-summary">Started as a staff writer, promoted to features editor. Co-authored the iTunes bestseller iCloud for Beginners.</div>
     </div>
   </li>
