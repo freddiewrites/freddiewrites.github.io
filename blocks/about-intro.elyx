@@ -1,0 +1,62 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+import "blocks/portrait.elyx" as portraits
+
+// The top of the About page. From 720px up the portrait floats right of the
+// lede and first paragraph. Elyx can't wrap text around a float, so the text
+// beside it is the lede and first paragraph, and later paragraphs run full width.
+export aboutIntro = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  overflow: .visible,
+  padding-right: 252px,
+  children: [aboutPortrait, introText],
+
+  aboutPortrait = frame : portraits.portrait {
+    top: 6px,
+    right: 0px,
+    ignore-stack: .true
+  }
+
+  introText = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+    children: [aboutLede, firstParagraph],
+
+    aboutLede = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      contents: "I’m a writer turned full-stack marketer who cares about making things simple, accessible and human.",
+      font-size: typeTokens.fontSizes.title-lg,
+      font-family: typeTokens.fonts.font-body,
+      font-style: "Medium",
+      line-height: typeTokens.lineHeights.pullquote,
+      letter-spacing: -1%
+    }
+
+    firstParagraph = text : textStyles.paragraph {
+      width: 100%,
+      contents: "I’ve spent over a decade creating content, comms, and copy for universities, non-profits, SaaS products, and two of the UK’s most valuable brands."
+    }
+  }
+}
+
+// On phones the portrait sits above the text, up to 280px wide.
+@context(media="mobile")
+export mobileAboutIntro = frame : aboutIntro {
+  left: 0px,
+  top: 420px,
+  width: 358px,
+  padding-right: 0px,
+  layout.item-gap: lengthTokens.spacing.space-md,
+
+  aboutPortrait {
+    ignore-stack: .nil
+  }
+}

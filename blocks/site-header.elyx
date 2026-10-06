@@ -1,15 +1,16 @@
 import "tokens/colors.elyx" as colorTokens
 import "tokens/lengths.elyx" as lengthTokens
-import "tokens/typography.elyx" as typeTokens
 import "resources/icons/fh-logo.svg" as fhLogo
+import "controls/nav-link.elyx" as navLinks
 
 // The site header from _includes/header.html: the FH marque and the main nav.
+// Spacing and logo size come from tokens, so phones need no separate layout.
 export siteHeader = frame {
   width: lengthTokens.sizes.frame-width,
   height: .auto,
   layout: {justify-content: .space-between, align-items: .center},
-  padding: lengthTokens.spacing.space-md,
-  children: [siteLogo, navLinks],
+  padding: [lengthTokens.spacing.space-md, lengthTokens.insets.frame-padding],
+  children: [siteLogo, navGroup],
 
   siteLogo = asset {
     width: lengthTokens.sizes.logo-size,
@@ -18,34 +19,25 @@ export siteHeader = frame {
     contents: fhLogo
   }
 
-  navLinks = frame {
+  navGroup = frame {
     width: .auto,
     height: .auto,
-    layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+    layout: {align-items: .center, item-gap: lengthTokens.insets.nav-gap},
+    overflow: .visible,
     children: [aboutLink, nowLink, postsLink],
 
-    aboutLink = text {
-      fill: colorTokens.colors.text-color,
-      contents: "About",
-      font-size: typeTokens.fontSizes.body,
-      font-family: typeTokens.fonts.font-ui,
-      line-height: typeTokens.lineHeights.body
+    aboutLink = frame : navLinks.navLink {
+      linkLabel {
+        contents: "About"
+      }
     }
 
-    nowLink = text {
-      fill: colorTokens.colors.text-color,
-      contents: "Now",
-      font-size: typeTokens.fontSizes.body,
-      font-family: typeTokens.fonts.font-ui,
-      line-height: typeTokens.lineHeights.body
+    nowLink = frame : navLinks.navLink {
+      linkLabel {
+        contents: "Now"
+      }
     }
 
-    postsLink = text {
-      fill: colorTokens.colors.text-color,
-      contents: "Posts",
-      font-size: typeTokens.fontSizes.body,
-      font-family: typeTokens.fonts.font-ui,
-      line-height: typeTokens.lineHeights.body
-    }
+    postsLink = frame : navLinks.navLink {}
   }
 }

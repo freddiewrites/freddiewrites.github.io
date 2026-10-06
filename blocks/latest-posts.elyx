@@ -1,0 +1,104 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+import "controls/post-card.elyx" as postCards
+
+// The “Latest posts” section of _layouts/home.html: the newest post with its
+// excerpt, the next four as post cards, and a link to the archive.
+export latestPosts = frame {
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+  children: [sectionLabel, postList],
+
+  sectionLabel = text : textStyles.sectionLabel {
+    contents: "Latest posts"
+  }
+
+  postList = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+    children: [latestPost, recentPosts, allPostsLink],
+
+    latestPost = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+      children: [latestHeading, latestExcerpt],
+
+      latestHeading = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: 4px},
+        children: [latestTitle, latestDate],
+
+        latestTitle = text : textStyles.heading3 {
+          width: 100%,
+          contents: "Invisible Shopfronts",
+          font-size: typeTokens.fontSizes.title-lg
+        }
+
+        latestDate = text : textStyles.postMeta {
+          contents: "3 October 2026",
+          font-size: typeTokens.fontSizes.meta,
+          font-features: .oldstyle-figures
+        }
+      }
+
+      latestExcerpt = text : textStyles.mutedParagraph {
+        width: 100%,
+        contents: "Everything is your shopfront now. The best thing you can do is get out of the way."
+      }
+    }
+
+    recentPosts = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+      children: [inattentionCard, yearCard, newsDietCard, socialMediaCard],
+
+      inattentionCard = frame : postCards.postCard {
+        width: 100%
+      }
+
+      yearCard = frame : postCards.postCard {
+        width: 100%,
+
+        postDate {
+          contents: "17 Apr 2025"
+        }
+
+        postTitle {
+          contents: "2024"
+        }
+      }
+
+      newsDietCard = frame : postCards.postCard {
+        width: 100%,
+
+        postDate {
+          contents: "16 Apr 2021"
+        }
+
+        postTitle {
+          contents: "My news media diet"
+        }
+      }
+
+      socialMediaCard = frame : postCards.postCard {
+        width: 100%,
+
+        postDate {
+          contents: "3 Apr 2021"
+        }
+
+        postTitle {
+          contents: "Making social media painful"
+        }
+      }
+    }
+
+    allPostsLink = text : textStyles.uiLink {}
+  }
+}

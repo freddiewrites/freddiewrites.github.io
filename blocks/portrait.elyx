@@ -1,0 +1,38 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "assets/images/freddie-portrait.jpg" as portraitPhoto
+
+// The About page portrait (figure.portrait) with its photo credit.
+// 220px wide and floated right on wide screens; up to 280px on phones.
+export portrait = frame {
+  left: 0px,
+  top: 0px,
+  width: lengthTokens.sizes.portrait-width,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+  children: [portraitImage, portraitCredit],
+
+  portraitImage = frame {
+    width: lengthTokens.sizes.portrait-width,
+    height: lengthTokens.sizes.portrait-width,
+    fill: {image: {ref: portraitPhoto}},
+    corner-radius: lengthTokens.radii.radius-sm
+  }
+
+  // A plain text layer, so the credit link can be underlined.
+  portraitCredit = text {
+    width: 100%,
+    fill: colorTokens.colors.text-muted,
+    subrange: {
+      range: [7, 17],
+      underline: .single,
+      fill: colorTokens.colors.link-color
+    },
+    contents: "Photo: Naomi Jane",
+    font-size: typeTokens.fontSizes.meta,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    align: .right
+  }
+}

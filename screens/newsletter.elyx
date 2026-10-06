@@ -1,0 +1,119 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/page-layout.elyx" as layouts
+import "blocks/site-footer.elyx" as footer
+import "controls/text-styles.elyx" as textStyles
+import "blocks/newsletter.elyx" as newsletter
+
+// The newsletter signup page (newsletter.html) in _layouts/default.html.
+// Blocks sit 48px apart, the gap under the blurb.
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export newsletterPage = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [insert(pageContent, after = .nil)]
+  }
+
+  pageContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xl},
+    overflow: .visible,
+    children: [signupIntro, signupForm, signupNote],
+
+    signupIntro = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+      padding-top: lengthTokens.spacing.space-md,
+      children: [signupTitle, signupBlurb],
+
+      signupTitle = text : textStyles.heading1 {
+        width: 100%,
+        contents: "From the desk of Freddie Harrison",
+        font-size: typeTokens.fontSizes.signup-title,
+        line-height: typeTokens.lineHeights.signup-title
+      }
+
+      signupBlurb = text : textStyles.mutedParagraph {
+        width: 100%,
+        contents: "Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime.",
+        font-size: typeTokens.fontSizes.signup-blurb,
+        line-height: typeTokens.lineHeights.signup-blurb
+      }
+    }
+
+    // The fields share the column 1fr : 1.4fr : auto.
+    signupForm = frame : newsletter.newsletterForm {
+      width: 100%,
+
+      firstNameField {
+        width: 205px
+      }
+
+      emailField {
+        width: 287px
+      }
+    }
+
+    // 64px above the rule (48px gap + 16px padding), 32px below it.
+    signupNote = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column},
+      padding-top: lengthTokens.spacing.space-sm,
+      children: signupNoteBody,
+
+      signupNoteBody = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column},
+        border: {color: colorTokens.colors.border-color, sides: .top},
+        padding-top: lengthTokens.spacing.space-lg,
+        children: signupNoteText,
+
+        signupNoteText = text : textStyles.postMeta {
+          width: 100%,
+          contents: "When you hit Subscribe, Buttondown, the service I use to send the newsletter, opens in a new tab to finish signing you up. You’ll get an email asking you to confirm your address, and once you have, the next issue will land in your inbox.",
+          font-features: .oldstyle-figures
+        }
+      }
+    }
+  }
+}
+
+@context(theme="dark")
+newsletterPageDark = frame : newsletterPage {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+newsletterPageMobile = frame : newsletterPage {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+
+  main {
+    pageContent {
+      @with-variant(newsletter.mobileNewsletterForm)
+      signupForm {}
+    }
+  }
+}
+
+@context(media="mobile", theme="dark")
+newsletterPageMobileDark = frame : newsletterPageMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

@@ -1,0 +1,49 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A table body cell from _base.scss: sans text, 16px padding, a row separator below.
+export tableCell = frame {
+  left: 0px,
+  top: 0px,
+  width: 128px,
+  height: .auto,
+  layout: {direction: .column},
+  border: {color: colorTokens.colors.border-color, sides: .bottom},
+  padding: lengthTokens.spacing.space-sm,
+  children: cellText,
+
+  cellText = text {
+    width: 100%,
+    fill: colorTokens.colors.text-color,
+    contents: "Cell",
+    font-size: typeTokens.fontSizes.ui,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    font-features: [.lining-figures, .tabular-figures]
+  }
+}
+
+// The last row has no separator.
+@variant
+export lastRowCell = frame : tableCell {
+  left: 0px,
+  top: 64px,
+  border[0].visible: .false
+}
+
+// A header cell: small uppercase muted label over a 2px rule.
+@variant
+export headerCell = frame : tableCell {
+  left: 0px,
+  top: 128px,
+  border[0].width: 2px,
+
+  cellText {
+    fill[0].color: colorTokens.colors.text-muted,
+    contents: "HEADER",
+    font-size: typeTokens.fontSizes.small,
+    font-style: "SemiBold",
+    letter-spacing: 3%
+  }
+}

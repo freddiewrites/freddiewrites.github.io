@@ -1,0 +1,29 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "controls/text-styles.elyx" as textStyles
+
+// A term and its definition. Stack these 16px apart.
+export definitionItem = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  children: [term, definition],
+
+  term = text : textStyles.termText {
+    width: 100%
+  }
+
+  definition = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column},
+    padding-left: lengthTokens.spacing.space-md,
+    children: definitionText,
+
+    definitionText = text : textStyles.paragraph {
+      width: 100%,
+      contents: "The art and technique of arranging type."
+    }
+  }
+}

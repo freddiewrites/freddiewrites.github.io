@@ -1,0 +1,41 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A main-nav link from _includes/header.html.
+export navLink = frame {
+  width: .auto,
+  height: .auto,
+  layout: {direction: .column},
+  overflow: .visible,
+  children: [linkLabel, activeUnderline],
+
+  linkLabel = text {
+    fill: colorTokens.colors.text-color,
+    contents: "Posts",
+    font-size: typeTokens.fontSizes.body,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body
+  }
+
+  // The plum underline under the current section (2px, offset 0.4em).
+  activeUnderline = frame {
+    left: 0px,
+    right: 0px,
+    bottom: 1px,
+    height: 2px,
+    display: .none,
+    ignore-stack: .true,
+    fill: colorTokens.colors.link-color
+  }
+}
+
+// The link for the section you're in.
+@variant
+export activeNavLink = frame : navLink {
+  left: 0px,
+  top: 48px,
+
+  activeUnderline {
+    display: .visible
+  }
+}

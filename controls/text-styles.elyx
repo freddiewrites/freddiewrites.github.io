@@ -1,0 +1,219 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+
+// Text styles from _base.scss and _components.scss. Instance these instead of
+// restyling text: `title = text : textStyles.heading1 {contents: "…"}`.
+// Body copy uses oldstyle figures; headings and UI text use lining figures.
+export heading1 = text {
+  left: 0px,
+  top: 0px,
+  fill: colorTokens.colors.text-color,
+  contents: "Heading 1",
+  font-size: typeTokens.fontSizes.h1,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.h1,
+  letter-spacing: -1.5%,
+  font-features: .lining-figures
+}
+
+export heading2 = text {
+  left: 0px,
+  top: 72px,
+  fill: colorTokens.colors.text-color,
+  contents: "Heading 2",
+  font-size: typeTokens.fontSizes.h2,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.heading,
+  letter-spacing: -1%,
+  font-features: .lining-figures
+}
+
+export heading3 = text {
+  left: 0px,
+  top: 128px,
+  fill: colorTokens.colors.text-color,
+  contents: "Heading 3",
+  font-size: typeTokens.fontSizes.h3,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.heading,
+  letter-spacing: -1%,
+  font-features: .lining-figures
+}
+
+export heading4 = text {
+  left: 0px,
+  top: 176px,
+  fill: colorTokens.colors.text-color,
+  contents: "Heading 4",
+  font-size: typeTokens.fontSizes.h4,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.heading,
+  letter-spacing: -1%,
+  font-features: .lining-figures
+}
+
+export heading5 = text {
+  left: 0px,
+  top: 216px,
+  fill: colorTokens.colors.text-color,
+  contents: "Heading 5",
+  font-size: typeTokens.fontSizes.body,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.heading,
+  letter-spacing: -1%,
+  font-features: .lining-figures
+}
+
+// h6 is the only heading in the muted color.
+@variant
+export heading6 = text : heading5 {
+  left: 0px,
+  top: 256px,
+  contents: "Heading 6",
+  fill[0].color: colorTokens.colors.text-muted
+}
+
+// Running text. Set width: 100% on instances so it wraps in the column.
+export paragraph = text {
+  left: 0px,
+  top: 296px,
+  fill: colorTokens.colors.text-color,
+  contents: "Paragraph text in the reading serif.",
+  font-size: typeTokens.fontSizes.body,
+  font-family: typeTokens.fonts.font-body,
+  line-height: typeTokens.lineHeights.body,
+  font-features: .oldstyle-figures
+}
+
+// The muted paragraph used for excerpts and blurbs.
+@variant
+export mutedParagraph = text : paragraph {
+  left: 0px,
+  top: 336px,
+  contents: "Muted paragraph text for excerpts and blurbs.",
+  fill[0].color: colorTokens.colors.text-muted
+}
+
+// The opening paragraph of a post.
+export lede = text {
+  left: 0px,
+  top: 376px,
+  fill: colorTokens.colors.text-color,
+  contents: "The opening paragraph of a post.",
+  font-size: typeTokens.fontSizes.lede,
+  font-family: typeTokens.fonts.font-body,
+  line-height: typeTokens.lineHeights.lede,
+  font-features: .oldstyle-figures
+}
+
+// Small-caps label above a section (“Latest posts”, “Topic”, “Older”).
+export sectionLabel = text {
+  left: 0px,
+  top: 424px,
+  fill: colorTokens.colors.text-muted,
+  contents: "Section label",
+  font-size: typeTokens.fontSizes.body,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "SemiBold",
+  letter-spacing: 8%,
+  font-features: [.capitals-to-small-capitals, .small-capitals]
+}
+
+// Dates, reading time and counts under a title.
+export postMeta = text {
+  left: 0px,
+  top: 464px,
+  fill: colorTokens.colors.text-muted,
+  contents: "13 January 2026 · 4 min read",
+  font-size: typeTokens.fontSizes.ui,
+  font-family: typeTokens.fonts.font-ui,
+  line-height: typeTokens.lineHeights.body,
+  font-features: .lining-figures
+}
+
+// Figure captions, right-aligned under the image.
+export caption = text {
+  left: 0px,
+  top: 504px,
+  fill: colorTokens.colors.text-muted,
+  contents: "A caption describing the image.",
+  font-size: typeTokens.fontSizes.meta,
+  font-family: typeTokens.fonts.font-ui,
+  line-height: typeTokens.lineHeights.body,
+  align: .right
+}
+
+// A sans link such as “All posts →”.
+export uiLink = text {
+  left: 0px,
+  top: 544px,
+  fill: colorTokens.colors.link-color,
+  contents: "All posts →",
+  font-size: typeTokens.fontSizes.ui,
+  font-family: typeTokens.fonts.font-ui,
+  line-height: typeTokens.lineHeights.body
+}
+
+// Paragraphs inside a blockquote are italic.
+export quoteParagraph = text {
+  left: 0px,
+  top: 584px,
+  fill: colorTokens.colors.text-color,
+  contents: "Quoted text in italics.",
+  font-size: typeTokens.fontSizes.body,
+  font-family: typeTokens.fonts.font-body,
+  font-style: "Italic",
+  line-height: typeTokens.lineHeights.body,
+  font-features: .oldstyle-figures
+}
+
+// A blockquote citation, with its leading em dash.
+export citation = text {
+  left: 0px,
+  top: 624px,
+  fill: colorTokens.colors.text-muted,
+  contents: "— Charles Eames",
+  font-size: typeTokens.fontSizes.label,
+  font-family: typeTokens.fonts.font-ui,
+  line-height: typeTokens.lineHeights.body
+}
+
+// Text inside a code block.
+export codeText = text {
+  left: 0px,
+  top: 664px,
+  fill: colorTokens.colors.text-color,
+  contents: "body { line-height: 1.7; }",
+  font-size: typeTokens.fontSizes.code,
+  font-family: typeTokens.fonts.font-mono,
+  line-height: typeTokens.lineHeights.code
+}
+
+// A definition-list term.
+export termText = text {
+  left: 0px,
+  top: 704px,
+  fill: colorTokens.colors.text-color,
+  contents: "Typography",
+  font-size: typeTokens.fontSizes.body,
+  font-family: typeTokens.fonts.font-ui,
+  font-style: "SemiBold",
+  line-height: typeTokens.lineHeights.body
+}
+
+// Footnote text: smaller and muted.
+export footnoteText = text {
+  left: 0px,
+  top: 744px,
+  fill: colorTokens.colors.text-muted,
+  contents: "A footnote.",
+  font-size: typeTokens.fontSizes.meta,
+  font-family: typeTokens.fonts.font-body,
+  line-height: typeTokens.lineHeights.body,
+  font-features: .oldstyle-figures
+}

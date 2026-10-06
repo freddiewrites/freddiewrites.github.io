@@ -1,0 +1,38 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// The footnotes list Kramdown adds at the end of a post: a rule, a small-caps
+// label and the numbered notes, 32px below the post text.
+// noteList is a slot for numbered list items using textStyles.footnoteText.
+export footnotes = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding-top: lengthTokens.spacing.space-lg,
+  children: footnotesBody,
+
+  footnotesBody = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+    border: {color: colorTokens.colors.border-color, sides: .top},
+    padding-top: lengthTokens.spacing.space-md,
+    children: [footnotesLabel, noteList],
+
+    footnotesLabel = text : textStyles.sectionLabel {
+      contents: "Footnotes",
+      font-size: typeTokens.fontSizes.meta
+    }
+
+    noteList = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+      slot: .true
+    }
+  }
+}

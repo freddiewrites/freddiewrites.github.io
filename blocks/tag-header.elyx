@@ -1,0 +1,34 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "controls/text-styles.elyx" as textStyles
+
+// The heading of a tag page (_layouts/tag.html): “Topic”, the tag name and a
+// post count, with 32px below.
+export tagHeader = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding-bottom: lengthTokens.spacing.space-lg,
+  children: [topicLabel, titleGroup],
+
+  topicLabel = text : textStyles.sectionLabel {
+    contents: "Topic"
+  }
+
+  titleGroup = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+    children: [tagTitle, postCount],
+
+    tagTitle = text : textStyles.heading1 {
+      width: 100%,
+      contents: "Thoughts"
+    }
+
+    postCount = text : textStyles.postMeta {
+      contents: "13 posts"
+    }
+  }
+}

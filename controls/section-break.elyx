@@ -1,0 +1,23 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A horizontal rule in posts and pages, drawn as a dinkus (* * *).
+// 48px margins: 24px gap + 24px padding.
+export sectionBreak = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, align-items: .center},
+  padding: [lengthTokens.spacing.space-md, 0px],
+  children: dinkus,
+
+  dinkus = text {
+    fill: colorTokens.colors.text-muted,
+    contents: "* * *",
+    font-size: typeTokens.fontSizes.dinkus,
+    font-family: typeTokens.fonts.font-body,
+    line-height: 1
+  }
+}

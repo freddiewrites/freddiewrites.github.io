@@ -1,0 +1,33 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// An award in the About page's awards list: the year, then the award.
+// The year sits in the left padding (49px + 24px gap).
+export awardItem = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding-left: 73px,
+  children: [awardYear, awardName],
+
+  awardYear = text {
+    left: 0px,
+    top: 2px,
+    width: 49px,
+    ignore-stack: .true,
+    fill: colorTokens.colors.text-muted,
+    contents: "2017",
+    font-size: typeTokens.fontSizes.meta,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    font-features: .tabular-figures
+  }
+
+  awardName = text : textStyles.paragraph {
+    width: 100%,
+    contents: "HEIST Awards — Best Use of Innovation"
+  }
+}

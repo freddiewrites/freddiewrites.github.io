@@ -1,0 +1,67 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/post-card.elyx" as postCards
+
+// A year of posts from _includes/post-archive.html. From 640px up the year
+// sits in its own 4em column. Stack years 32px apart.
+// yearPosts is a slot for post cards (dates as “03 Oct”, 57px date column).
+export archiveYear = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+  padding-left: 72px,
+  children: [yearLabel, yearPosts],
+
+  // In the left padding on wide screens; above the posts on phones.
+  yearLabel = text {
+    left: 0px,
+    top: 4px,
+    width: 72px,
+    ignore-stack: .true,
+    fill: colorTokens.colors.text-muted,
+    contents: "2026",
+    font-size: typeTokens.fontSizes.body,
+    font-family: typeTokens.fonts.font-ui,
+    font-style: "SemiBold",
+    line-height: typeTokens.lineHeights.heading,
+    font-features: [.lining-figures, .tabular-figures]
+  }
+
+  yearPosts = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+    slot: .true,
+    children: examplePost,
+
+    examplePost = frame : postCards.postCard {
+      width: 100%,
+      padding-left: 73px,
+
+      postDate {
+        width: 57px,
+        contents: "03 Oct"
+      }
+
+      postTitle {
+        contents: "Invisible Shopfronts"
+      }
+    }
+  }
+}
+
+// Below 640px the year sits above its posts.
+@context(media="mobile")
+export mobileArchiveYear = frame : archiveYear {
+  left: 0px,
+  top: 120px,
+  width: 358px,
+  padding-left: 0px,
+
+  yearLabel {
+    ignore-stack: .nil
+  }
+}

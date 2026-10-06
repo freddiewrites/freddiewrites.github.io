@@ -1,0 +1,18 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "controls/text-styles.elyx" as textStyles
+
+// A fenced code block (pre). Long lines clip; on the site they scroll sideways.
+export codeBlock = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  fill: colorTokens.colors.code-bg,
+  corner-radius: lengthTokens.radii.radius-sm,
+  padding: [lengthTokens.spacing.space-sm, lengthTokens.spacing.space-md],
+  children: code,
+
+  code = text : textStyles.codeText {}
+}

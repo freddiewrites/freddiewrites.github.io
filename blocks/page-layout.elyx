@@ -1,0 +1,38 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "blocks/site-header.elyx" as header
+import "blocks/site-footer.elyx" as footer
+
+// The shell from _layouts/default.html: header, the main text column and footer.
+// Screens insert their content into the main slot.
+export pageLayout = frame {
+  width: lengthTokens.sizes.screen-width,
+  height: .auto,
+  layout: {direction: .column},
+  fill: colorTokens.colors.bg-color,
+  padding: [0px, lengthTokens.insets.screen-gutter],
+  children: [siteHeader, main, siteFooter],
+
+  siteHeader = frame : header.siteHeader {
+    width: 100%
+  }
+
+  // The text column sits on the left edge of the nav and footer.
+  main = frame {
+    width: 100%,
+    height: .auto,
+    max-width: lengthTokens.sizes.content-width,
+    layout: {direction: .column},
+    overflow: .visible,
+    slot: .true,
+    padding: [
+      lengthTokens.insets.main-padding,
+      lengthTokens.insets.frame-padding,
+      lengthTokens.insets.main-bottom
+    ]
+  }
+
+  siteFooter = frame : footer.siteFooter {
+    width: 100%
+  }
+}

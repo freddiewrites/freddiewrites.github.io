@@ -1,0 +1,47 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// A role in the About page's experience list: years, then role and summary.
+// The years sit in the left padding (89px + 24px gap) so the details wrap in
+// the remaining width.
+export experienceItem = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding-left: 113px,
+  children: [years, details],
+
+  years = text {
+    left: 0px,
+    top: 1px,
+    width: 89px,
+    ignore-stack: .true,
+    fill: colorTokens.colors.text-muted,
+    contents: "2020–Now",
+    font-size: typeTokens.fontSizes.meta,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    font-features: .tabular-figures
+  }
+
+  details = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: 2px},
+    children: [role, summary],
+
+    role = text : textStyles.termText {
+      width: 100%,
+      contents: "Marketing Lead, Sketch"
+    }
+
+    summary = text : textStyles.mutedParagraph {
+      width: 100%,
+      contents: "Leading marketing for the design tool used by thousands — from freelancers to the Fortune 500.",
+      font-size: typeTokens.fontSizes.ui
+    }
+  }
+}

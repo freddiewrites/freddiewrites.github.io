@@ -10,14 +10,38 @@ export spacing = tokens {
 }
 
 // Layout widths at the 18px base size. content-width is 38rem.
+// Mobile values live in lengths-mobile.elyx.
 export sizes = tokens {
+  screen-width: 1024,
   content-width: 684,
   wide-width: 960,
   frame-width: 960,
+  // Post images break out of the text column: min(wide-width - 48, 100vw - 96).
+  breakout-width: 912,
+  // Images cap at 85vh, assuming a 1024 x 768 window.
+  image-max: 653,
+  // The floated About portrait.
+  portrait-width: 220,
   logo-size: 40
 }
 
+// Responsive padding and gaps from _layout.scss and _components.scss.
+export insets = tokens {
+  // Space either side of the 960px frame at a 1024px screen.
+  screen-gutter: 32,
+  // Side padding of the header, footer and main column.
+  frame-padding: 24,
+  // Top and bottom padding of the main column.
+  main-padding: 32,
+  // Main padding plus the footer's 48px top margin.
+  main-bottom: 80,
+  panel-padding: 32,
+  nav-gap: 24
+}
+
 export radii = tokens {
+  radius-xs: 2,
+  radius-code: 3,
   radius-sm: 4,
   radius-panel: 10
 }

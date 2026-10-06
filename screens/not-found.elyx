@@ -1,0 +1,126 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/page-layout.elyx" as layouts
+import "blocks/site-footer.elyx" as footer
+import "controls/text-styles.elyx" as textStyles
+import "controls/post-card.elyx" as postCards
+
+// The 404 page (404.md) in _layouts/page.html, with dates in a 6em column.
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export notFound = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [insert(pageContent, after = .nil)]
+  }
+
+  pageContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    overflow: .visible,
+    children: [pageTitle, nothingHere, suggestion, recentPosts],
+
+    pageTitle = text : textStyles.heading1 {
+      width: 100%,
+      contents: "Page not found"
+    }
+
+    nothingHere = text : textStyles.paragraph {
+      width: 100%,
+      contents: "There’s nothing here. The page may have moved when I rebuilt the site, or the link might be wrong."
+    }
+
+    suggestion = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      subrange: {
+        range: [18, 36],
+        underline: .single,
+        fill: colorTokens.colors.link-color
+      },
+      contents: "You could try the full list of posts, or start with something recent:",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      line-height: typeTokens.lineHeights.body,
+      font-features: .oldstyle-figures
+    }
+
+    recentPosts = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+      children: [shopfrontsCard, inattentionCard, yearCard],
+
+      shopfrontsCard = frame : postCards.postCard {
+        width: 100%,
+        padding-left: 113px,
+
+        postDate {
+          width: 97px,
+          contents: "03 Oct 2026"
+        }
+
+        postTitle {
+          contents: "Invisible Shopfronts"
+        }
+      }
+
+      inattentionCard = frame : postCards.postCard {
+        width: 100%,
+        padding-left: 113px,
+
+        postDate {
+          width: 97px,
+          contents: "28 Sep 2026"
+        }
+
+        postTitle {
+          contents: "The Inattention Economy"
+        }
+      }
+
+      yearCard = frame : postCards.postCard {
+        width: 100%,
+        padding-left: 113px,
+
+        postDate {
+          width: 97px,
+          contents: "17 Apr 2025"
+        }
+
+        postTitle {
+          contents: "2024"
+        }
+      }
+    }
+  }
+}
+
+@context(theme="dark")
+notFoundDark = frame : notFound {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+notFoundMobile = frame : notFound {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+}
+
+@context(media="mobile", theme="dark")
+notFoundMobileDark = frame : notFoundMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

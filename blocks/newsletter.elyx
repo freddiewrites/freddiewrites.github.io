@@ -3,9 +3,12 @@ import "tokens/lengths.elyx" as lengthTokens
 import "tokens/typography.elyx" as typeTokens
 import "controls/text-field.elyx" as fields
 import "controls/button.elyx" as buttons
+import "controls/text-styles.elyx" as textStyles
 
-// The signup fields from _includes/newsletter-fields.html, laid out in one row as on wider screens.
+// The signup fields from _includes/newsletter-fields.html, in one row as on screens 600px and wider.
 export newsletterForm = frame {
+  left: 0px,
+  top: 0px,
   width: 570px,
   height: .auto,
   layout: {align-items: .end, item-gap: lengthTokens.spacing.space-sm},
@@ -26,16 +29,35 @@ export newsletterForm = frame {
   subscribeButton = frame : buttons.button {}
 }
 
+// Below 600px the fields stack at full width and the button sits under them.
+@context(media="mobile")
+export mobileNewsletterForm = frame : newsletterForm {
+  left: 0px,
+  top: 120px,
+  width: 294px,
+  layout.align-items: .start,
+  layout.direction: .column,
+
+  firstNameField {
+    width: 100%
+  }
+
+  emailField {
+    width: 100%
+  }
+}
+
 // The homepage signup panel from _includes/newsletter-form.html.
 export newsletterPanel = frame {
-  top: 200px,
+  left: 640px,
+  top: 0px,
   width: 636px,
   height: .auto,
   layout: {direction: .column},
   fill: colorTokens.colors.code-bg,
   border: colorTokens.colors.border-color,
   corner-radius: lengthTokens.radii.radius-panel,
-  padding: lengthTokens.spacing.space-lg,
+  padding: lengthTokens.insets.panel-padding,
   children: [titleWrap, blurb, form],
 
   titleWrap = frame {
@@ -46,7 +68,7 @@ export newsletterPanel = frame {
     padding-bottom: lengthTokens.spacing.space-xs,
     children: [accentBar, newsletterTitle],
 
-    // The plum bar runs from the panel's outer edge, as tall as the heading.
+    // The plum bar runs from the panel's outer edge (padding + 1px border), as tall as the heading.
     accentBar = frame {
       left: -33px,
       top: 3px,
@@ -56,29 +78,37 @@ export newsletterPanel = frame {
       fill: colorTokens.colors.link-color
     }
 
-    newsletterTitle = text {
+    newsletterTitle = text : textStyles.heading3 {
       width: 100%,
-      fill: colorTokens.colors.text-color,
       contents: "From the desk of Freddie Harrison",
-      font-size: typeTokens.fontSizes.title-lg,
-      font-family: typeTokens.fonts.font-body,
-      font-style: "SemiBold",
-      line-height: typeTokens.lineHeights.heading,
-      letter-spacing: -1%
+      font-size: typeTokens.fontSizes.title-lg
     }
   }
 
-  blurb = text {
+  blurb = text : textStyles.mutedParagraph {
     width: 100%,
-    fill: colorTokens.colors.text-muted,
-    contents: "Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime.",
-    font-size: typeTokens.fontSizes.body,
-    font-family: typeTokens.fonts.font-body,
-    line-height: typeTokens.lineHeights.body
+    contents: "Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime."
   }
 
   form = frame : newsletterForm {
     width: 100%,
     padding-top: lengthTokens.spacing.space-md
+  }
+}
+
+// On phones the panel has 24px padding and the stacked form.
+@context(media="mobile")
+export mobileNewsletterPanel = frame : newsletterPanel {
+  left: 0px,
+  top: 460px,
+  width: 358px,
+
+  @with-variant(mobileNewsletterForm)
+  form {}
+
+  titleWrap {
+    accentBar {
+      left: -25px
+    }
   }
 }

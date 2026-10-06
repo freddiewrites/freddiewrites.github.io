@@ -1,0 +1,69 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// A blockquote with a plum left rule. Its 32px margins assume a 24px gap in
+// the surrounding column, so the outer frame adds 8px above and below.
+// quoteBody is a slot for quote paragraphs, lists and a citation.
+export blockquote = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding: [lengthTokens.spacing.space-xs, 0px],
+  children: quoteBody,
+
+  quoteBody = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+    border: {color: colorTokens.colors.link-color, width: 2px, sides: .left},
+    slot: .true,
+    padding-left: lengthTokens.spacing.space-md,
+    children: quoteText,
+
+    quoteText = text : textStyles.quoteParagraph {
+      width: 100%
+    }
+  }
+}
+
+// A pull quote (`{: .pullquote}`): bigger italic text under a short plum bar,
+// with 48px margins (24px gap + 24px padding).
+export pullQuote = frame {
+  left: 0px,
+  top: 200px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  overflow: .visible,
+  padding: [lengthTokens.spacing.space-md, 0px],
+  children: pullQuoteBody,
+
+  pullQuoteBody = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column},
+    padding-top: lengthTokens.spacing.space-md,
+    children: [pullQuoteBar, pullQuoteText],
+
+    pullQuoteBar = frame {
+      left: 0px,
+      top: 0px,
+      width: 48px,
+      height: 3px,
+      ignore-stack: .true,
+      fill: colorTokens.colors.link-color
+    }
+
+    pullQuoteText = text : textStyles.quoteParagraph {
+      width: 100%,
+      contents: "A pull quote.",
+      font-size: typeTokens.fontSizes.pullquote,
+      line-height: typeTokens.lineHeights.pullquote,
+      letter-spacing: -0.5%
+    }
+  }
+}

@@ -1,0 +1,535 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/page-layout.elyx" as layouts
+import "controls/nav-link.elyx" as navLinks
+import "blocks/site-footer.elyx" as footer
+import "controls/text-styles.elyx" as textStyles
+import "blocks/about-intro.elyx" as aboutIntros
+import "blocks/prose-section.elyx" as sections
+import "controls/section-break.elyx" as breaks
+import "controls/experience-item.elyx" as experience
+import "controls/award-item.elyx" as awards
+
+// The About page (about.markdown) in _layouts/page.html.
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export about = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [insert(pageContent, after = .nil)]
+  }
+
+  siteHeader {
+    navGroup {
+      @with-variant(navLinks.activeNavLink)
+      aboutLink {
+        left: .nil,
+        top: .nil
+      }
+    }
+  }
+
+  pageContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    overflow: .visible,
+    children: [
+      pageTitle,
+      intro,
+      currentWork,
+      homeLife,
+      historyBreak,
+      previousRoles,
+      firstJob,
+      education,
+      awardsSummary,
+      clientsBreak,
+      clients,
+      experienceBreak,
+      experienceSection,
+      awardsBreak,
+      awardsSection,
+      colophonBreak,
+      colophon
+    ],
+
+    pageTitle = text : textStyles.heading1 {
+      width: 100%,
+      contents: "About"
+    }
+
+    intro = frame : aboutIntros.aboutIntro {
+      width: 100%
+    }
+
+    currentWork = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      subrange: [
+        {
+          range: [26, 30],
+          underline: .single,
+          fill: colorTokens.colors.link-color
+        },
+        {
+          range: [35, 41],
+          underline: .single,
+          fill: colorTokens.colors.link-color
+        }
+      ],
+      contents: "Right now, I’m working on Elyx and Sketch.",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      line-height: typeTokens.lineHeights.body,
+      font-features: .oldstyle-figures
+    }
+
+    homeLife = text : textStyles.paragraph {
+      width: 100%,
+      contents: "I work remotely and live in Buckinghamshire (UK) with my lovely wife and son. Outside of work, I’m usually reading, walking, lifting weights, or nerding out about making coffee."
+    }
+
+    historyBreak = frame : breaks.sectionBreak {
+      width: 100%
+    }
+
+    previousRoles = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      subrange: [
+        {
+          range: [51, 55],
+          underline: .single,
+          fill: colorTokens.colors.link-color
+        },
+        {
+          range: [131, 152],
+          underline: .single,
+          fill: colorTokens.colors.link-color
+        }
+      ],
+      contents: "Previously, I was a senior writer at Sideshow (now Gain), a freelance copywriter, and web editor for Arts University Bournemouth’s award-winning website.",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      line-height: typeTokens.lineHeights.body,
+      font-features: .oldstyle-figures
+    }
+
+    firstJob = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      subrange: {
+        range: [78, 98],
+        underline: .single,
+        fill: colorTokens.colors.link-color
+      },
+      contents: "I got my start at iCreate Magazine, where I co-authored the iTunes bestseller iCloud for Beginners and worked my way up to Features Editor.",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      line-height: typeTokens.lineHeights.body,
+      font-features: .oldstyle-figures
+    }
+
+    education = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      subrange: {
+        range: [63, 85],
+        underline: .single,
+        fill: colorTokens.colors.link-color
+      },
+      contents: "I graduated from the renowned Multi-Media Journalism degree at Bournemouth University.",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      line-height: typeTokens.lineHeights.body,
+      font-features: .oldstyle-figures
+    }
+
+    awardsSummary = text : textStyles.paragraph {
+      width: 100%,
+      contents: "My work has won awards from Computer Arts, the Chartered Institute of Marketing and HEIST, among others."
+    }
+
+    clientsBreak = frame : breaks.sectionBreak {
+      width: 100%
+    }
+
+    clients = frame : sections.proseSubsection {
+      width: 100%,
+      padding-top: 0px,
+
+      subsectionBody {
+        overrides: [
+          insert(clientList, after = .nil),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Selected clients"
+      }
+
+      clientList = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Arts University Bournemouth, Bond & Coyne, Brunel University London, BT, Direct Line, EE, Experian, Future Publishing, Harper Adams University, HSBC, Investec Asset Management, Sketch, Kingston University, Visa."
+      }
+    }
+
+    experienceBreak = frame : breaks.sectionBreak {
+      width: 100%
+    }
+
+    experienceSection = frame : sections.proseSubsection {
+      width: 100%,
+      padding-top: 0px,
+
+      subsectionBody {
+        overrides: [
+          insert(experienceList, after = .nil),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Experience"
+      }
+
+      experienceList = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+        children: [
+          elyxRole,
+          sketchRole,
+          sideshowRole,
+          freelanceRole,
+          aubRole,
+          icreateRole
+        ],
+
+        elyxRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2026–Now"
+          }
+
+          details {
+            role {
+              contents: "Founding Team Member, Elyx"
+            }
+
+            summary {
+              contents: "Defining Elyx’s early voice and communications. Bringing the product out of stealth and into private beta."
+            }
+          }
+        }
+
+        sketchRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2020–Now"
+          }
+
+          details {
+            role {
+              contents: "Marketing Lead, Sketch"
+            }
+
+            summary {
+              contents: "Leading marketing for the design tool used by thousands — from freelancers to the Fortune 500."
+            }
+          }
+        }
+
+        sideshowRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2017–2019"
+          }
+
+          details {
+            role {
+              contents: "Senior Writer, Sideshow"
+            }
+
+            summary {
+              contents: "Wrote for Sideshow’s roster of clients across tech, telecoms, and finance."
+            }
+          }
+        }
+
+        freelanceRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2015–2017"
+          }
+
+          details {
+            role {
+              contents: "Freelance Copywriter"
+            }
+
+            summary {
+              contents: "Independent work for universities, charities, and creative agencies."
+            }
+          }
+        }
+
+        aubRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2013–2015"
+          }
+
+          details {
+            role {
+              contents: "Web Editor, Arts University Bournemouth"
+            }
+
+            summary {
+              contents: "Led content strategy and copy for an award-winning website and app launch."
+            }
+          }
+        }
+
+        icreateRole = frame : experience.experienceItem {
+          width: 100%,
+
+          years {
+            contents: "2011–2013"
+          }
+
+          details {
+            role {
+              contents: "Features Editor, iCreate Magazine"
+            }
+
+            summary {
+              contents: "Started as a staff writer, promoted to features editor. Co-authored the iTunes bestseller iCloud for Beginners."
+            }
+          }
+        }
+      }
+    }
+
+    awardsBreak = frame : breaks.sectionBreak {
+      width: 100%
+    }
+
+    awardsSection = frame : sections.proseSubsection {
+      width: 100%,
+      padding-top: 0px,
+
+      subsectionBody {
+        overrides: [
+          insert(awardList, after = .nil),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Awards"
+      }
+
+      awardList = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+        children: [
+          heistInnovation,
+          brandImpactEducation,
+          heistEmployer,
+          cimGrandPrix,
+          cimInnovation,
+          brandImpactCampaign,
+          heistCreativity,
+          heistWebsite
+        ],
+
+        heistInnovation = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2017"
+          }
+
+          awardName {
+            contents: "HEIST Awards — Best Use of Innovation"
+          }
+        }
+
+        brandImpactEducation = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2016"
+          }
+
+          awardName {
+            contents: "Brand Impact Awards — Education"
+          }
+        }
+
+        heistEmployer = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2016"
+          }
+
+          awardName {
+            contents: "HEIST Awards — Employer Marketing Initiative"
+          }
+        }
+
+        cimGrandPrix = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2015"
+          }
+
+          awardName {
+            contents: "CIM Excellence Awards — Chair’s Grand Prix"
+          }
+        }
+
+        cimInnovation = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2015"
+          }
+
+          awardName {
+            contents: "CIM Excellence Awards — Innovation"
+          }
+        }
+
+        brandImpactCampaign = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2014"
+          }
+
+          awardName {
+            contents: "Brand Impact Awards — Best Education Campaign"
+          }
+        }
+
+        heistCreativity = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2014"
+          }
+
+          awardName {
+            contents: "Heist Awards — Creativity and Innovation"
+          }
+        }
+
+        heistWebsite = frame : awards.awardItem {
+          width: 100%,
+
+          awardYear {
+            contents: "2014"
+          }
+
+          awardName {
+            contents: "Heist Awards — Best Website"
+          }
+        }
+      }
+    }
+
+    colophonBreak = frame : breaks.sectionBreak {
+      width: 100%
+    }
+
+    colophon = frame : sections.proseSubsection {
+      width: 100%,
+      padding-top: 0px,
+
+      subsectionBody {
+        overrides: [
+          insert(colophonText, after = .nil),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Colophon"
+      }
+
+      colophonText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {
+            range: [21, 27],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          },
+          {
+            range: [45, 57],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          },
+          {
+            range: [94, 105],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          }
+        ],
+        contents: "This website runs on Jekyll and is hosted on GitHub Pages. I built it with a lot of help from Claude Code. There are no trackers or analytics.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+  }
+}
+
+@context(theme="dark")
+aboutDark = frame : about {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+aboutMobile = frame : about {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+
+  main {
+    pageContent {
+      @with-variant(aboutIntros.mobileAboutIntro)
+      intro {}
+    }
+  }
+}
+
+@context(media="mobile", theme="dark")
+aboutMobileDark = frame : aboutMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

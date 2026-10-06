@@ -1,0 +1,43 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "controls/post-nav-link.elyx" as navLinks
+
+// Older and newer post links from _layouts/post.html, in two equal columns.
+export postNav = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {item-gap: lengthTokens.spacing.space-md},
+  children: [olderLink, newerLink],
+
+  olderLink = frame : navLinks.postNavLink {}
+
+  newerLink = frame : navLinks.newerPostNavLink {}
+}
+
+// Below 480px the links stack, newer first, both left-aligned.
+@context(media="mobile")
+export mobilePostNav = frame : postNav {
+  left: 0px,
+  top: 120px,
+  width: 358px,
+  layout.direction: .column,
+  overrides: [move(postNav.newerLink, after = .nil)],
+
+  olderLink {
+    width: 100%
+  }
+
+  @with-variant(navLinks.postNavLink)
+  newerLink {
+    width: 100%,
+
+    navTitle {
+      contents: "The Inattention Economy"
+    }
+
+    navLabel {
+      contents: "Newer"
+    }
+  }
+}

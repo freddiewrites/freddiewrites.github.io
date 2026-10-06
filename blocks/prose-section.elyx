@@ -1,0 +1,77 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// Post and page sections. A heading sits 16px above its body, and body
+// blocks are 24px apart (the paragraph margin). Sections are meant to sit in
+// a column with 24px gaps, so the extra space above each heading is padding.
+// An h2 section. Put these 64px apart (h2 margin-top in post content).
+export proseSection = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+  overflow: .visible,
+  children: [sectionHeading, sectionBody],
+
+  sectionHeading = text : textStyles.heading2 {
+    width: 100%
+  }
+
+  sectionBody = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    overflow: .visible,
+    slot: .true,
+    children: sectionText,
+
+    sectionText = text : textStyles.paragraph {
+      width: 100%,
+      contents: "Section text."
+    }
+  }
+}
+
+// An h3 subsection: 48px above the heading (24px gap + 24px padding).
+export proseSubsection = frame {
+  left: 0px,
+  top: 200px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+  overflow: .visible,
+  padding-top: lengthTokens.spacing.space-md,
+  children: [subsectionHeading, subsectionBody],
+
+  subsectionHeading = text : textStyles.heading3 {
+    width: 100%
+  }
+
+  subsectionBody = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    overflow: .visible,
+    slot: .true,
+    children: subsectionText,
+
+    subsectionText = text : textStyles.paragraph {
+      width: 100%,
+      contents: "Subsection text."
+    }
+  }
+}
+
+// An h4 to h6 subsection: 32px above the heading (24px gap + 8px padding).
+@variant
+export minorSubsection = frame : proseSubsection {
+  left: 0px,
+  top: 400px,
+  padding-top: lengthTokens.spacing.space-xs,
+
+  subsectionHeading {
+    font-size: typeTokens.fontSizes.h4
+  }
+}

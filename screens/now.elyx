@@ -1,0 +1,149 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "blocks/page-layout.elyx" as layouts
+import "controls/nav-link.elyx" as navLinks
+import "blocks/site-footer.elyx" as footer
+import "controls/text-styles.elyx" as textStyles
+import "blocks/prose-section.elyx" as sections
+
+// The Now page (now.md, _layouts/now.html), showing the latest Now update
+// (_posts/2026-10-03-october-2026.md).
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export now = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [insert(pageContent, after = .nil)]
+  }
+
+  siteHeader {
+    navGroup {
+      @with-variant(navLinks.activeNavLink)
+      nowLink {
+        left: .nil,
+        top: .nil
+      }
+    }
+  }
+
+  pageContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    overflow: .visible,
+    children: [pageTitle, lastUpdated, fatherhood, reading, rest],
+
+    pageTitle = text : textStyles.heading1 {
+      width: 100%,
+      contents: "What I’m doing now"
+    }
+
+    lastUpdated = text : textStyles.postMeta {
+      contents: "Last updated: 3 October 2026"
+    }
+
+    fatherhood = frame : sections.proseSubsection {
+      width: 100%,
+
+      subsectionBody {
+        overrides: [
+          insert(fatherhoodText1, after = .nil),
+          insert(fatherhoodText2, after = fatherhoodText1),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Enjoying fatherhood"
+      }
+
+      fatherhoodText1 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "My son is four now and just started school. I really struggled with my role as a father for the first three years of his life, but now I feel like I’m really settling into it and we have a great bond."
+      }
+
+      fatherhoodText2 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Seeing him come from school and be excited to keep learning is probably the most excited I’ve been since he was born. I’m looking forward to the world his early education is unlocking for him."
+      }
+    }
+
+    reading = frame : sections.proseSubsection {
+      width: 100%,
+
+      subsectionBody {
+        overrides: [
+          insert(readingText1, after = .nil),
+          insert(readingText2, after = readingText1),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Chipping away at my reading goal"
+      }
+
+      readingText1 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "I’m halfway through my reading goal but well over halfway through the year. I’m hoping some upcoming holiday will give me a chance to catch up."
+      }
+
+      readingText2 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "I’m really trying to put down my phone in the evenings and weekends and read instead but I’m finding it harder and harder these days. Kinda scary!"
+      }
+    }
+
+    rest = frame : sections.proseSubsection {
+      width: 100%,
+
+      subsectionBody {
+        overrides: [
+          insert(restText1, after = .nil),
+          insert(restText2, after = restText1),
+          remove(sections.proseSubsection.subsectionBody.subsectionText)
+        ]
+      }
+
+      subsectionHeading {
+        contents: "Prioritising rest"
+      }
+
+      restText1 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "I spent a lot of my life trying to fit as much as possible into my free time but as I get older I’ve realised how important it is to slow down and enjoy my days off."
+      }
+
+      restText2 = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Most of the time that’s spent hanging with my wife and son, sometimes it’s going for walks with my best friend, sometimes it’s watching TV shows with my wife. Right now we’re hooked on Celebrity Traitors, Strictly Come Dancing, The Great British Bake Off and Taskmaster. It’s a good season for TV."
+      }
+    }
+  }
+}
+
+@context(theme="dark")
+nowDark = frame : now {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+nowMobile = frame : now {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+}
+
+@context(media="mobile", theme="dark")
+nowMobileDark = frame : nowMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

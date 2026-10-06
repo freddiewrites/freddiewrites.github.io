@@ -1,19 +1,20 @@
 import "tokens/colors.elyx" as colorTokens
 import "tokens/lengths.elyx" as lengthTokens
 import "tokens/typography.elyx" as typeTokens
+import "tokens/lengths-mobile.elyx" as lengths-mobile
 
 // The site footer from _includes/footer.html. The top rule is inset to line up with the header.
 export siteFooter = frame {
   width: lengthTokens.sizes.frame-width,
   height: .auto,
   layout: {justify-content: .space-between, align-items: .center},
-  padding: [lengthTokens.spacing.space-lg, lengthTokens.spacing.space-md],
+  padding: [lengthTokens.spacing.space-lg, lengthTokens.insets.frame-padding],
   children: [footerRule, copyright, footerLinks],
 
   footerRule = frame {
-    left: lengthTokens.spacing.space-md,
+    left: lengthTokens.insets.frame-padding,
     top: 0px,
-    right: lengthTokens.spacing.space-md,
+    right: lengthTokens.insets.frame-padding,
     height: 1px,
     ignore-stack: .true,
     fill: colorTokens.colors.border-color
@@ -115,4 +116,15 @@ export siteFooter = frame {
       line-height: typeTokens.lineHeights.body
     }
   }
+}
+
+// On phones the copyright and links stack, left-aligned.
+@context(media="mobile")
+export mobileSiteFooter = frame : siteFooter {
+  left: 0px,
+  top: 140px,
+  width: lengths-mobile.mobileSizes.screen-width,
+  layout.align-items: .start,
+  layout.direction: .column,
+  layout.item-gap: lengthTokens.spacing.space-xs
 }

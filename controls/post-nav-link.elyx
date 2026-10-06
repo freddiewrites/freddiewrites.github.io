@@ -1,0 +1,45 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// An “Older” or “Newer” link at the end of a post.
+export postNavLink = frame {
+  left: 0px,
+  top: 0px,
+  width: 306px,
+  height: .auto,
+  layout: {direction: .column, item-gap: 4px},
+  children: [navLabel, navTitle],
+
+  navLabel = text : textStyles.sectionLabel {
+    width: 100%,
+    contents: "Older"
+  }
+
+  navTitle = text {
+    width: 100%,
+    fill: colorTokens.colors.text-color,
+    contents: "2024",
+    font-size: typeTokens.fontSizes.body,
+    font-family: typeTokens.fonts.font-body,
+    font-style: "SemiBold",
+    line-height: typeTokens.lineHeights.pullquote
+  }
+}
+
+// The newer post sits in the right column, right-aligned.
+@variant
+export newerPostNavLink = frame : postNavLink {
+  left: 0px,
+  top: 80px,
+
+  navLabel {
+    contents: "Newer",
+    align: .right
+  }
+
+  navTitle {
+    contents: "The Inattention Economy",
+    align: .right
+  }
+}

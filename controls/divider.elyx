@@ -1,0 +1,17 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+
+// The homepage rule (.home-divider), with its 48px space above and 32px below.
+export divider = frame {
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  padding: [lengthTokens.spacing.space-xl, 0px, lengthTokens.spacing.space-lg],
+  children: rule,
+
+  rule = frame {
+    width: 100%,
+    height: 1px,
+    fill: colorTokens.colors.border-color
+  }
+}

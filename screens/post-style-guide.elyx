@@ -1,0 +1,1629 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/page-layout.elyx" as layouts
+import "controls/nav-link.elyx" as navLinks
+import "blocks/site-footer.elyx" as footer
+import "blocks/post-header.elyx" as postHeaders
+import "controls/text-styles.elyx" as textStyles
+import "blocks/prose-section.elyx" as sections
+import "blocks/blockquote.elyx" as quotes
+import "blocks/code-block.elyx" as codeBlocks
+import "blocks/figure.elyx" as figures
+import "blocks/footnotes.elyx" as footnoteBlocks
+import "blocks/post-nav.elyx" as postNavs
+import "controls/list-item.elyx" as listItems
+import "controls/table-cell.elyx" as cells
+import "controls/section-break.elyx" as breaks
+import "controls/definition-item.elyx" as definitions
+import "controls/post-end-mark.elyx" as endMarks
+
+// The Style Guide post (_posts/2026-01-13-style-guide.markdown) in _layouts/post.html.
+// It shows every content style a post can use. The post is hidden on the live
+// site, so the older/newer links are the ones you see when building locally.
+// Text with inline styles (links, code, emphasis) uses plain text layers,
+// because subranges don't apply on text instances.
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export styleGuidePost = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [
+      insert(header, after = .nil),
+      insert(postContent, after = header),
+      insert(postFootnotes, after = postContent),
+      insert(endMark, after = postFootnotes),
+      insert(moreLinks, after = endMark)
+    ]
+  }
+
+  siteHeader {
+    navGroup {
+      @with-variant(navLinks.activeNavLink)
+      postsLink {
+        left: .nil,
+        top: .nil
+      }
+    }
+  }
+
+  header = frame : postHeaders.postHeader {
+    width: 100%
+  }
+
+  // Sections sit 64px apart, the h2 margin in post content.
+  postContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-2xl},
+    overflow: .visible,
+    children: [
+      lede,
+      headingsSection,
+      paragraphsSection,
+      listsSection,
+      quotesSection,
+      codeSection,
+      tablesSection,
+      imagesSection,
+      rulesSection,
+      definitionsSection,
+      footnotesSection,
+      combiningSection
+    ],
+
+    lede = text : textStyles.lede {
+      width: 100%,
+      contents: "This post demonstrates all the typographic and structural elements available for writing. Use it as a reference when composing new posts."
+    }
+
+    headingsSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(headingsIntro, after = .nil),
+          insert(thirdLevel, after = headingsIntro),
+          insert(fourthLevel, after = thirdLevel),
+          insert(fifthLevel, after = fourthLevel),
+          insert(sixthLevel, after = fifthLevel),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Headings"
+      }
+
+      headingsIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Headings help structure content and create a clear hierarchy. Here’s how each level looks:"
+      }
+
+      thirdLevel = frame : sections.proseSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(thirdLevelText, after = .nil),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          contents: "Third-Level Heading"
+        }
+
+        thirdLevelText = text : textStyles.paragraph {
+          width: 100%,
+          contents: "Use H3 for major subsections within an H2 section."
+        }
+      }
+
+      fourthLevel = frame : sections.minorSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(fourthLevelText, after = .nil),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          contents: "Fourth-Level Heading"
+        }
+
+        fourthLevelText = text : textStyles.paragraph {
+          width: 100%,
+          contents: "H4 works well for smaller groupings of content."
+        }
+      }
+
+      fifthLevel = frame : sections.minorSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(fifthLevelText, after = .nil),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          contents: "Fifth-Level Heading",
+          font-size: typeTokens.fontSizes.body
+        }
+
+        fifthLevelText = text : textStyles.paragraph {
+          width: 100%,
+          contents: "H5 is useful for minor divisions."
+        }
+      }
+
+      sixthLevel = frame : sections.minorSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(sixthLevelText, after = .nil),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          fill[0].color: colorTokens.colors.text-muted,
+          contents: "Sixth-Level Heading",
+          font-size: typeTokens.fontSizes.body
+        }
+
+        sixthLevelText = text : textStyles.paragraph {
+          width: 100%,
+          contents: "H6 appears in a muted tone, useful for annotations or minor notes."
+        }
+      }
+    }
+
+    paragraphsSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(readingText, after = .nil),
+          insert(emphasisText, after = readingText),
+          insert(linkText, after = emphasisText),
+          insert(codeText, after = linkText),
+          insert(abbrText, after = codeText),
+          insert(smallText, after = abbrText),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Paragraphs and Inline Elements"
+      }
+
+      readingText = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Regular paragraph text uses a serif typeface optimized for reading. The line length is constrained to approximately 65 characters for comfortable reading."
+      }
+
+      emphasisText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {range: [28, 35], font-style: "Italic"},
+          {range: [47, 51], font-style: "SemiBold"},
+          {range: [92, 104], font-style: "SemiBold Italic"}
+        ],
+        contents: "You can emphasize text with italics or make it bold for stronger emphasis. Combine them for bold italics when needed. You can also use highlighted text to draw attention to key phrases.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      linkText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: {
+          range: [11, 19],
+          underline: .single,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "Links like this one use the accent color and transition smoothly on hover.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      codeText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {
+            range: [27, 38],
+            font-size: typeTokens.fontSizes.code-inline,
+            font-family: typeTokens.fonts.font-mono
+          },
+          {
+            range: [84, 98],
+            font-size: typeTokens.fontSizes.code-inline,
+            font-family: typeTokens.fonts.font-mono
+          },
+          {
+            range: [154, 157],
+            font-size: typeTokens.fontSizes.code,
+            font-family: typeTokens.fonts.font-mono
+          },
+          {
+            range: [160, 165],
+            font-size: typeTokens.fontSizes.code,
+            font-family: typeTokens.fonts.font-mono
+          },
+          {
+            range: [168, 169],
+            font-size: typeTokens.fontSizes.code,
+            font-family: typeTokens.fonts.font-mono
+          }
+        ],
+        contents: "For technical writing, use inline code to reference variable names, file paths like /usr/local/bin, or short commands. Keyboard shortcuts can be shown as Cmd + Shift + P.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      abbrText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: {range: [19, 23], underline: .single},
+        contents: "Abbreviations like HTML show a dotted underline and reveal their meaning on hover.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      smallText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {
+            range: [17, 27],
+            font-size: typeTokens.fontSizes.code-inline,
+            fill: colorTokens.colors.text-muted
+          },
+          {range: [103, 104], font-size: typeTokens.fontSizes.small},
+          {
+            range: [116, 119],
+            font-size: typeTokens.fontSizes.small,
+            fill: colorTokens.colors.link-color
+          }
+        ],
+        contents: "You can also use small text for less prominent information, and subscripts for chemical formulas like H2O. Footnotes[1] are also supported and appear at the end of the post.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+
+    listsSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(unorderedLists, after = .nil),
+          insert(orderedLists, after = unorderedLists),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Lists"
+      }
+
+      unorderedLists = frame : sections.proseSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(unorderedIntro, after = .nil),
+            insert(bulletList, after = unorderedIntro),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          contents: "Unordered Lists"
+        }
+
+        unorderedIntro = text : textStyles.paragraph {
+          width: 100%,
+          contents: "Use unordered lists for items without a specific sequence:"
+        }
+
+        bulletList = frame {
+          width: 100%,
+          height: .auto,
+          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          children: [
+            bulletOne,
+            bulletTwo,
+            bulletThree,
+            bulletNested,
+            bulletFour
+          ],
+
+          bulletOne = frame : listItems.listItem {
+            width: 100%,
+
+            itemContent {
+              itemText {
+                contents: "First item in the list"
+              }
+            }
+          }
+
+          bulletTwo = frame : listItems.listItem {
+            width: 100%,
+
+            itemContent {
+              itemText {
+                contents: "Second item with more detail"
+              }
+            }
+          }
+
+          bulletThree = frame : listItems.listItem {
+            width: 100%,
+
+            itemContent {
+              itemText {
+                contents: "Third item containing a nested list:"
+              }
+            }
+          }
+
+          bulletNested = frame {
+            width: 100%,
+            height: .auto,
+            layout: {
+              direction: .column,
+              item-gap: lengthTokens.spacing.space-xs
+            },
+            padding-left: lengthTokens.spacing.space-md,
+            children: [bulletNestedOne, bulletNestedTwo, bulletNestedThree],
+
+            bulletNestedOne = frame : listItems.listItem {
+              width: 100%,
+
+              itemContent {
+                itemText {
+                  contents: "Nested item one"
+                }
+              }
+            }
+
+            bulletNestedTwo = frame : listItems.listItem {
+              width: 100%,
+
+              itemContent {
+                itemText {
+                  contents: "Nested item two"
+                }
+              }
+            }
+
+            bulletNestedThree = frame : listItems.listItem {
+              width: 100%,
+
+              itemContent {
+                itemText {
+                  contents: "Nested item three"
+                }
+              }
+            }
+          }
+
+          bulletFour = frame : listItems.listItem {
+            width: 100%,
+
+            itemContent {
+              itemText {
+                contents: "Fourth item back at the top level"
+              }
+            }
+          }
+        }
+      }
+
+      orderedLists = frame : sections.proseSubsection {
+        width: 100%,
+
+        subsectionBody {
+          overrides: [
+            insert(orderedIntro, after = .nil),
+            insert(stepList, after = orderedIntro),
+            remove(sections.proseSubsection.subsectionBody.subsectionText)
+          ]
+        }
+
+        subsectionHeading {
+          contents: "Ordered Lists"
+        }
+
+        orderedIntro = text : textStyles.paragraph {
+          width: 100%,
+          contents: "Use ordered lists when sequence matters:"
+        }
+
+        stepList = frame {
+          width: 100%,
+          height: .auto,
+          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          children: [stepOne, stepTwo, stepThree, stepNested, stepFour],
+
+          stepOne = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemContent {
+              itemText {
+                contents: "First step in the process"
+              }
+            }
+          }
+
+          stepTwo = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemMarker {
+              contents: "2."
+            }
+
+            itemContent {
+              itemText {
+                contents: "Second step with additional context"
+              }
+            }
+          }
+
+          stepThree = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemMarker {
+              contents: "3."
+            }
+
+            itemContent {
+              itemText {
+                contents: "Third step that includes sub-steps:"
+              }
+            }
+          }
+
+          stepNested = frame {
+            width: 100%,
+            height: .auto,
+            layout: {
+              direction: .column,
+              item-gap: lengthTokens.spacing.space-xs
+            },
+            padding-left: lengthTokens.spacing.space-md,
+            children: [stepSubA, stepSubB, stepSubC],
+
+            stepSubA = frame : listItems.numberedListItem {
+              width: 100%,
+
+              itemContent {
+                itemText {
+                  contents: "Sub-step A"
+                }
+              }
+            }
+
+            stepSubB = frame : listItems.numberedListItem {
+              width: 100%,
+
+              itemMarker {
+                contents: "2."
+              }
+
+              itemContent {
+                itemText {
+                  contents: "Sub-step B"
+                }
+              }
+            }
+
+            stepSubC = frame : listItems.numberedListItem {
+              width: 100%,
+
+              itemMarker {
+                contents: "3."
+              }
+
+              itemContent {
+                itemText {
+                  contents: "Sub-step C"
+                }
+              }
+            }
+          }
+
+          stepFour = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemMarker {
+              contents: "4."
+            }
+
+            itemContent {
+              itemText {
+                contents: "Final step to complete the process"
+              }
+            }
+          }
+        }
+      }
+    }
+
+    quotesSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(quotesIntro, after = .nil),
+          insert(ramsQuote, after = quotesIntro),
+          insert(citationIntro, after = ramsQuote),
+          insert(eamesQuote, after = citationIntro),
+          insert(pullQuoteIntro, after = eamesQuote),
+          insert(mealQuote, after = pullQuoteIntro),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Blockquotes"
+      }
+
+      quotesIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Use blockquotes for quotations or to highlight important passages:"
+      }
+
+      ramsQuote = frame : quotes.blockquote {
+        width: 100%,
+
+        quoteBody {
+          overrides: [
+            insert(ramsFirst, after = .nil),
+            insert(ramsSecond, after = ramsFirst),
+            remove(quotes.blockquote.quoteBody.quoteText)
+          ]
+        }
+
+        ramsFirst = text : textStyles.quoteParagraph {
+          width: 100%,
+          contents: "Good design is as little design as possible. Less, but better, because it concentrates on the essential aspects, and the products are not burdened with non-essentials."
+        }
+
+        ramsSecond = text : textStyles.quoteParagraph {
+          width: 100%,
+          contents: "Back to purity, back to simplicity."
+        }
+      }
+
+      citationIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Blockquotes can also include citations:"
+      }
+
+      eamesQuote = frame : quotes.blockquote {
+        width: 100%,
+
+        quoteBody {
+          overrides: [
+            insert(eamesText, after = .nil),
+            insert(eamesCite, after = eamesText),
+            remove(quotes.blockquote.quoteBody.quoteText)
+          ]
+        }
+
+        eamesText = text : textStyles.quoteParagraph {
+          width: 100%,
+          contents: "The details are not the details. They make the design."
+        }
+
+        eamesCite = text : textStyles.citation {}
+      }
+
+      pullQuoteIntro = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: {
+          range: [22, 36],
+          font-size: typeTokens.fontSizes.code-inline,
+          font-family: typeTokens.fonts.font-mono
+        },
+        contents: "For a pull quote, add {: .pullquote} on the line directly after the blockquote:",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      mealQuote = frame : quotes.pullQuote {
+        width: 100%,
+
+        pullQuoteBody {
+          pullQuoteText {
+            contents: "In a world where everyone wants everything in its softest, chewiest, easiest-to-swallow form, it’s an act of defiance to roll out a complete meal."
+          }
+        }
+      }
+    }
+
+    codeSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(codeIntro, after = .nil),
+          insert(cssExample, after = codeIntro),
+          insert(codeOutro, after = cssExample),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Code Blocks"
+      }
+
+      codeIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "For longer code examples, use fenced code blocks:"
+      }
+
+      cssExample = frame : codeBlocks.codeBlock {
+        width: 100%,
+
+        code {
+          contents: ":root {\n  --bg-color: #FAFAF8;\n  --text-color: #2D2926;\n  --link-color: #B5654A;\n}\n\nbody {\n  font-family: \"Source Serif 4\", Georgia, serif;\n  line-height: 1.7;\n  color: var(--text-color);\n  background-color: var(--bg-color);\n}"
+        }
+      }
+
+      codeOutro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Code blocks scroll horizontally when content exceeds the container width, which is useful for longer lines."
+      }
+    }
+
+    tablesSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(tableIntro, after = .nil),
+          insert(featureTable, after = tableIntro),
+          insert(tableOutro, after = featureTable),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Tables"
+      }
+
+      tableIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Tables are useful for presenting structured data:"
+      }
+
+      // Tables keep their natural width; on narrow screens the site scrolls them sideways.
+      featureTable = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column},
+        children: [
+          headerRow,
+          projectsRow,
+          storageRow,
+          supportRow,
+          apiRow,
+          ssoRow
+        ],
+
+        headerRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [
+            headerFeatureCell,
+            headerFreeCell,
+            headerProCell,
+            headerEnterpriseCell
+          ],
+
+          headerFeatureCell = frame : cells.headerCell {
+            width: 136px,
+
+            cellText {
+              contents: "FEATURE"
+            }
+          }
+
+          headerFreeCell = frame : cells.headerCell {
+            width: 128px,
+
+            cellText {
+              contents: "FREE PLAN",
+              align: .center
+            }
+          }
+
+          headerProCell = frame : cells.headerCell {
+            width: 128px,
+
+            cellText {
+              contents: "PRO PLAN",
+              align: .center
+            }
+          }
+
+          headerEnterpriseCell = frame : cells.headerCell {
+            width: 136px,
+
+            cellText {
+              contents: "ENTERPRISE",
+              align: .center
+            }
+          }
+        }
+
+        projectsRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [
+            projectsFeatureCell,
+            projectsFreeCell,
+            projectsProCell,
+            projectsEnterpriseCell
+          ],
+
+          projectsFeatureCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Projects"
+            }
+          }
+
+          projectsFreeCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "3",
+              align: .center
+            }
+          }
+
+          projectsProCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "Unlimited",
+              align: .center
+            }
+          }
+
+          projectsEnterpriseCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Unlimited",
+              align: .center
+            }
+          }
+        }
+
+        storageRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [
+            storageFeatureCell,
+            storageFreeCell,
+            storageProCell,
+            storageEnterpriseCell
+          ],
+
+          storageFeatureCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Storage"
+            }
+          }
+
+          storageFreeCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "1 GB",
+              align: .center
+            }
+          }
+
+          storageProCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "100 GB",
+              align: .center
+            }
+          }
+
+          storageEnterpriseCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Custom",
+              align: .center
+            }
+          }
+        }
+
+        supportRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [
+            supportFeatureCell,
+            supportFreeCell,
+            supportProCell,
+            supportEnterpriseCell
+          ],
+
+          supportFeatureCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Support"
+            }
+          }
+
+          supportFreeCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "Community",
+              align: .center
+            }
+          }
+
+          supportProCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "Email",
+              align: .center
+            }
+          }
+
+          supportEnterpriseCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Dedicated",
+              align: .center
+            }
+          }
+        }
+
+        apiRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [apiFeatureCell, apiFreeCell, apiProCell, apiEnterpriseCell],
+
+          apiFeatureCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "API Access"
+            }
+          }
+
+          apiFreeCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "No",
+              align: .center
+            }
+          }
+
+          apiProCell = frame : cells.tableCell {
+            width: 128px,
+
+            cellText {
+              contents: "Yes",
+              align: .center
+            }
+          }
+
+          apiEnterpriseCell = frame : cells.tableCell {
+            width: 136px,
+
+            cellText {
+              contents: "Yes",
+              align: .center
+            }
+          }
+        }
+
+        ssoRow = frame {
+          width: .auto,
+          height: .auto,
+          layout: {direction: .row},
+          children: [ssoFeatureCell, ssoFreeCell, ssoProCell, ssoEnterpriseCell],
+
+          ssoFeatureCell = frame : cells.lastRowCell {
+            width: 136px,
+
+            cellText {
+              contents: "SSO"
+            }
+          }
+
+          ssoFreeCell = frame : cells.lastRowCell {
+            width: 128px,
+
+            cellText {
+              contents: "No",
+              align: .center
+            }
+          }
+
+          ssoProCell = frame : cells.lastRowCell {
+            width: 128px,
+
+            cellText {
+              contents: "No",
+              align: .center
+            }
+          }
+
+          ssoEnterpriseCell = frame : cells.lastRowCell {
+            width: 136px,
+
+            cellText {
+              contents: "Yes",
+              align: .center
+            }
+          }
+        }
+      }
+
+      tableOutro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Tables use the UI font for better readability of data and include subtle row separators."
+      }
+    }
+
+    imagesSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(imagesIntro, after = .nil),
+          insert(portraitImage, after = imagesIntro),
+          insert(figureIntro, after = portraitImage),
+          insert(portraitFigure, after = figureIntro),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Images"
+      }
+
+      imagesIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Images are displayed at full width with subtle rounded corners:"
+      }
+
+      portraitImage = frame : figures.imageBlock {}
+
+      figureIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "For images with captions, use the figure element:"
+      }
+
+      portraitFigure = frame : figures.figure {
+        figureCaption {
+          contents: "A caption describing the image and providing additional context."
+        }
+      }
+    }
+
+    rulesSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(rulesIntro, after = .nil),
+          insert(rulesBreak, after = rulesIntro),
+          insert(rulesOutro, after = rulesBreak),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Horizontal Rules"
+      }
+
+      rulesIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Use horizontal rules to separate major sections:"
+      }
+
+      rulesBreak = frame : breaks.sectionBreak {
+        width: 100%
+      }
+
+      rulesOutro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "The rule above creates a clear visual break between sections without being too prominent."
+      }
+    }
+
+    definitionsSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(glossaryIntro, after = .nil),
+          insert(glossary, after = glossaryIntro),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Definition Lists"
+      }
+
+      glossaryIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Definition lists work well for glossaries or term explanations:"
+      }
+
+      glossary = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+        children: [typographyDefinition, kerningDefinition, leadingDefinition],
+
+        typographyDefinition = frame : definitions.definitionItem {
+          width: 100%,
+
+          term {
+            contents: "Typography"
+          }
+
+          definition {
+            definitionText {
+              contents: "The art and technique of arranging type to make written language legible, readable, and appealing when displayed."
+            }
+          }
+        }
+
+        kerningDefinition = frame : definitions.definitionItem {
+          width: 100%,
+
+          term {
+            contents: "Kerning"
+          }
+
+          definition {
+            definitionText {
+              contents: "The adjustment of space between individual letter pairs in a piece of text."
+            }
+          }
+        }
+
+        leadingDefinition = frame : definitions.definitionItem {
+          width: 100%,
+
+          term {
+            contents: "Leading"
+          }
+
+          definition {
+            definitionText {
+              contents: "The vertical space between lines of text, measured from baseline to baseline."
+            }
+          }
+        }
+      }
+    }
+
+    footnotesSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(footnotesUses, after = .nil),
+          insert(footnotesHowTo, after = footnotesUses),
+          insert(footnotesMulti, after = footnotesHowTo),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Footnotes"
+      }
+
+      footnotesUses = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: {
+          range: [156, 159],
+          font-size: typeTokens.fontSizes.small,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "Footnotes are useful for citations, asides, or supplementary information that would interrupt the flow of the main text. They use Kramdown’s footnote syntax[2].",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      footnotesHowTo = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {
+            range: [26, 39],
+            font-size: typeTokens.fontSizes.code-inline,
+            font-family: typeTokens.fonts.font-mono
+          },
+          {
+            range: [144, 182],
+            font-size: typeTokens.fontSizes.code-inline,
+            font-family: typeTokens.fonts.font-mono
+          }
+        ],
+        contents: "To create a footnote, add [^identifier] where you want the reference to appear, then define the footnote content elsewhere in the document with [^identifier]: Your footnote text here.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      footnotesMulti = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: {
+          range: [41, 44],
+          font-size: typeTokens.fontSizes.small,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "Footnotes can contain multiple paragraphs[3] and are automatically numbered and collected at the end of the post.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+
+    combiningSection = frame : sections.proseSection {
+      width: 100%,
+
+      sectionBody {
+        overrides: [
+          insert(combiningIntro, after = .nil),
+          insert(principlesQuote, after = combiningIntro),
+          insert(codeListIntro, after = principlesQuote),
+          insert(codeList, after = codeListIntro),
+          insert(closingBreak, after = codeList),
+          insert(closingText, after = closingBreak),
+          remove(sections.proseSection.sectionBody.sectionText)
+        ]
+      }
+
+      sectionHeading {
+        contents: "Combining Elements"
+      }
+
+      combiningIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Elements work together naturally. For example, a blockquote might contain a list:"
+      }
+
+      principlesQuote = frame : quotes.blockquote {
+        width: 100%,
+
+        quoteBody {
+          overrides: [
+            insert(principlesLead, after = .nil),
+            insert(principlesList, after = principlesLead),
+            remove(quotes.blockquote.quoteBody.quoteText)
+          ]
+        }
+
+        principlesLead = text : textStyles.quoteParagraph {
+          width: 100%,
+          contents: "When writing for the web, remember these principles:"
+        }
+
+        principlesList = frame {
+          width: 100%,
+          height: .auto,
+          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          children: [shortSentences, activeVoice, frontLoad, shortParagraphs],
+
+          shortSentences = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemContent {
+              overrides: [
+                insert(shortSentencesText, after = .nil),
+                remove(listItems.listItem.itemContent.itemText)
+              ]
+            }
+
+            shortSentencesText = text {
+              width: 100%,
+              fill: colorTokens.colors.text-color,
+              contents: "Keep sentences short",
+              font-size: typeTokens.fontSizes.body,
+              font-family: typeTokens.fonts.font-body,
+              font-style: "Italic",
+              line-height: typeTokens.lineHeights.body,
+              font-features: .oldstyle-figures
+            }
+          }
+
+          activeVoice = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemContent {
+              overrides: [
+                insert(activeVoiceText, after = .nil),
+                remove(listItems.listItem.itemContent.itemText)
+              ]
+            }
+
+            itemMarker {
+              contents: "2."
+            }
+
+            activeVoiceText = text {
+              width: 100%,
+              fill: colorTokens.colors.text-color,
+              contents: "Use active voice",
+              font-size: typeTokens.fontSizes.body,
+              font-family: typeTokens.fonts.font-body,
+              font-style: "Italic",
+              line-height: typeTokens.lineHeights.body,
+              font-features: .oldstyle-figures
+            }
+          }
+
+          frontLoad = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemContent {
+              overrides: [
+                insert(frontLoadText, after = .nil),
+                remove(listItems.listItem.itemContent.itemText)
+              ]
+            }
+
+            itemMarker {
+              contents: "3."
+            }
+
+            frontLoadText = text {
+              width: 100%,
+              fill: colorTokens.colors.text-color,
+              contents: "Front-load important information",
+              font-size: typeTokens.fontSizes.body,
+              font-family: typeTokens.fonts.font-body,
+              font-style: "Italic",
+              line-height: typeTokens.lineHeights.body,
+              font-features: .oldstyle-figures
+            }
+          }
+
+          shortParagraphs = frame : listItems.numberedListItem {
+            width: 100%,
+
+            itemContent {
+              overrides: [
+                insert(shortParagraphsText, after = .nil),
+                remove(listItems.listItem.itemContent.itemText)
+              ]
+            }
+
+            itemMarker {
+              contents: "4."
+            }
+
+            shortParagraphsText = text {
+              width: 100%,
+              fill: colorTokens.colors.text-color,
+              contents: "Break up long paragraphs",
+              font-size: typeTokens.fontSizes.body,
+              font-family: typeTokens.fonts.font-body,
+              font-style: "Italic",
+              line-height: typeTokens.lineHeights.body,
+              font-features: .oldstyle-figures
+            }
+          }
+        }
+      }
+
+      codeListIntro = text : textStyles.paragraph {
+        width: 100%,
+        contents: "Or a list might contain code:"
+      }
+
+      codeList = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+        children: [primaryColorItem, spacingItem, transitionItem],
+
+        primaryColorItem = frame : listItems.listItem {
+          width: 100%,
+
+          itemContent {
+            overrides: [
+              insert(primaryColorItemText, after = .nil),
+              remove(listItems.listItem.itemContent.itemText)
+            ]
+          }
+
+          primaryColorItemText = text {
+            width: 100%,
+            fill: colorTokens.colors.text-color,
+            subrange: {
+              range: [27, 48],
+              font-size: typeTokens.fontSizes.code-inline,
+              font-family: typeTokens.fonts.font-mono
+            },
+            contents: "Set the primary color with --link-color: #B5654A",
+            font-size: typeTokens.fontSizes.body,
+            font-family: typeTokens.fonts.font-body,
+            line-height: typeTokens.lineHeights.body,
+            font-features: .oldstyle-figures
+          }
+        }
+
+        spacingItem = frame : listItems.listItem {
+          width: 100%,
+
+          itemContent {
+            overrides: [
+              insert(spacingItemText, after = .nil),
+              remove(listItems.listItem.itemContent.itemText)
+            ]
+          }
+
+          spacingItemText = text {
+            width: 100%,
+            fill: colorTokens.colors.text-color,
+            subrange: {
+              range: [25, 35],
+              font-size: typeTokens.fontSizes.code-inline,
+              font-family: typeTokens.fonts.font-mono
+            },
+            contents: "Adjust spacing using the --space-md variable",
+            font-size: typeTokens.fontSizes.body,
+            font-family: typeTokens.fonts.font-body,
+            line-height: typeTokens.lineHeights.body,
+            font-features: .oldstyle-figures
+          }
+        }
+
+        transitionItem = frame : listItems.listItem {
+          width: 100%,
+
+          itemContent {
+            overrides: [
+              insert(transitionItemText, after = .nil),
+              remove(listItems.listItem.itemContent.itemText)
+            ]
+          }
+
+          transitionItemText = text {
+            width: 100%,
+            fill: colorTokens.colors.text-color,
+            subrange: {
+              range: [23, 51],
+              font-size: typeTokens.fontSizes.code-inline,
+              font-family: typeTokens.fonts.font-mono
+            },
+            contents: "Apply transitions with transition: color 150ms ease",
+            font-size: typeTokens.fontSizes.body,
+            font-family: typeTokens.fonts.font-body,
+            line-height: typeTokens.lineHeights.body,
+            font-features: .oldstyle-figures
+          }
+        }
+      }
+
+      closingBreak = frame : breaks.sectionBreak {
+        width: 100%
+      }
+
+      closingText = text : textStyles.paragraph {
+        width: 100%,
+        contents: "This style guide covers the core elements you’ll use most often. The styling is designed to be readable, consistent, and visually cohesive across all content types."
+      }
+    }
+  }
+
+  postFootnotes = frame : footnoteBlocks.footnotes {
+    width: 100%,
+
+    footnotesBody {
+      noteList {
+        overrides: [
+          insert(firstNote, after = .nil),
+          insert(secondNote, after = firstNote),
+          insert(thirdNote, after = secondNote)
+        ]
+      }
+    }
+
+    firstNote = frame : listItems.numberedListItem {
+      width: 100%,
+
+      itemContent {
+        overrides: [
+          insert(firstNoteText, after = .nil),
+          remove(listItems.listItem.itemContent.itemText)
+        ]
+      }
+
+      itemMarker {
+        font-size: typeTokens.fontSizes.meta
+      }
+
+      firstNoteText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-muted,
+        subrange: {
+          range: [58, 59],
+          font-size: typeTokens.fontSizes.small,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "This is a simple footnote demonstrating the basic syntax. ↩",
+        font-size: typeTokens.fontSizes.meta,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+
+    secondNote = frame : listItems.numberedListItem {
+      width: 100%,
+
+      itemContent {
+        overrides: [
+          insert(secondNoteText, after = .nil),
+          remove(listItems.listItem.itemContent.itemText)
+        ]
+      }
+
+      itemMarker {
+        contents: "2.",
+        font-size: typeTokens.fontSizes.meta
+      }
+
+      secondNoteText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-muted,
+        subrange: {
+          range: [159, 160],
+          font-size: typeTokens.fontSizes.small,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "Kramdown is the default Markdown processor used by Jekyll. It extends standard Markdown with additional features like footnotes, tables, and definition lists. ↩",
+        font-size: typeTokens.fontSizes.meta,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+
+    thirdNote = frame : listItems.numberedListItem {
+      width: 100%,
+
+      itemContent {
+        overrides: [
+          insert(thirdNoteText, after = .nil),
+          insert(thirdNoteText2, after = thirdNoteText),
+          remove(listItems.listItem.itemContent.itemText)
+        ]
+      }
+
+      itemMarker {
+        contents: "3.",
+        font-size: typeTokens.fontSizes.meta
+      }
+
+      thirdNoteText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-muted,
+        contents: "Footnotes can span multiple paragraphs by indenting subsequent paragraphs with four spaces.",
+        font-size: typeTokens.fontSizes.meta,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+
+      thirdNoteText2 = text {
+        width: 100%,
+        fill: colorTokens.colors.text-muted,
+        subrange: {
+          range: [147, 148],
+          font-size: typeTokens.fontSizes.small,
+          fill: colorTokens.colors.link-color
+        },
+        contents: "Like this second paragraph, which is still part of footnote 3. This is useful for longer explanatory notes or citations that require more context. ↩",
+        font-size: typeTokens.fontSizes.meta,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body,
+        font-features: .oldstyle-figures
+      }
+    }
+  }
+
+  endMark = frame : endMarks.postEndMark {
+    width: 100%
+  }
+
+  moreLinks = frame : postNavs.postNav {
+    width: 100%
+  }
+}
+
+@context(theme="dark")
+styleGuidePostDark = frame : styleGuidePost {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+styleGuidePostMobile = frame : styleGuidePost {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+
+  main {
+    @with-variant(postNavs.mobilePostNav)
+    moreLinks {}
+  }
+}
+
+@context(media="mobile", theme="dark")
+styleGuidePostMobileDark = frame : styleGuidePostMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

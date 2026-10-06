@@ -1,0 +1,33 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-styles.elyx" as textStyles
+
+// The post title and meta line from _layouts/post.html, with 48px below.
+// The category link has an underline; the meta line is a plain text layer
+// so it can carry that inline style.
+export postHeader = frame {
+  left: 0px,
+  top: 0px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+  padding-bottom: lengthTokens.spacing.space-xl,
+  children: [postTitle, postMeta],
+
+  postTitle = text : textStyles.heading1 {
+    width: 100%,
+    contents: "Style Guide"
+  }
+
+  postMeta = text {
+    width: 100%,
+    fill: colorTokens.colors.text-muted,
+    subrange: {range: [34, 43], underline: .single},
+    contents: "13 January 2026 · 4 min read · in Reference",
+    font-size: typeTokens.fontSizes.ui,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    font-features: .lining-figures
+  }
+}

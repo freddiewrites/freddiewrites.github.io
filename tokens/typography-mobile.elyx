@@ -1,0 +1,14 @@
+import "tokens/typography.elyx" as base
+
+// Smaller headings on phones, from the max-width: 768px block in _layout.scss.
+@context(media="mobile")
+__file__
+
+export mobileFontSizes = tokens : base.fontSizes {
+  // The newsletter page title scales with the viewport (clamp in _components.scss).
+  signup-title: 40,
+  h1: 32,
+  masthead: 29,
+  h2: 27,
+  h3: 22
+}

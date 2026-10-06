@@ -1,0 +1,44 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "controls/text-styles.elyx" as textStyles
+import "assets/images/freddie-portrait.jpg" as portraitPhoto
+
+// A post image on its own line. On wide screens it breaks out of the text
+// column and centers in the wider area; images cap at 85vh.
+export imageBlock = frame {
+  left: 0px,
+  top: 0px,
+  width: lengthTokens.sizes.breakout-width,
+  height: .auto,
+  layout: {direction: .column, align-items: .center},
+  children: image,
+
+  image = frame {
+    width: lengthTokens.sizes.image-max,
+    height: lengthTokens.sizes.image-max,
+    fill: {image: {ref: portraitPhoto}},
+    corner-radius: lengthTokens.radii.radius-sm
+  }
+}
+
+// A figure with a caption. It's as wide as the image, so the caption lines up
+// with the image's right edge. 32px margins: 24px gap + 8px padding.
+export figure = frame {
+  left: 0px,
+  top: 700px,
+  width: lengthTokens.sizes.image-max,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+  padding: [lengthTokens.spacing.space-xs, 0px],
+  children: [figureImage, figureCaption],
+
+  figureImage = frame {
+    width: lengthTokens.sizes.image-max,
+    height: lengthTokens.sizes.image-max,
+    fill: {image: {ref: portraitPhoto}},
+    corner-radius: lengthTokens.radii.radius-sm
+  }
+
+  figureCaption = text : textStyles.caption {
+    width: 100%
+  }
+}

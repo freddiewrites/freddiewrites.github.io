@@ -1,0 +1,343 @@
+import "tokens/lengths.elyx" as lengthTokens
+import "blocks/page-layout.elyx" as layouts
+import "controls/nav-link.elyx" as navLinks
+import "blocks/site-footer.elyx" as footer
+import "blocks/archive-year.elyx" as archives
+import "controls/post-card.elyx" as postCards
+import "blocks/tag-header.elyx" as tagHeaders
+
+// The Thoughts tag page (/tags/thoughts/, _layouts/tag.html).
+// Four boards: desktop light, desktop dark, mobile light and mobile dark.
+export thoughtsTag = frame : layouts.pageLayout {
+  left: 0px,
+  top: 0px,
+
+  main {
+    overrides: [insert(pageContent, after = .nil)]
+  }
+
+  siteHeader {
+    navGroup {
+      @with-variant(navLinks.activeNavLink)
+      postsLink {
+        left: .nil,
+        top: .nil
+      }
+    }
+  }
+
+  pageContent = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column},
+    overflow: .visible,
+    children: [header, archive],
+
+    header = frame : tagHeaders.tagHeader {
+      width: 100%
+    }
+
+    archive = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+      children: [year2026, year2019, year2018, year2016, year2015],
+
+      year2026 = frame : archives.archiveYear {
+        width: 100%,
+
+        yearPosts {
+          overrides: [
+            insert(invisibleShopfronts2026, after = .nil),
+            insert(theInattentionEconomy2026, after = invisibleShopfronts2026),
+            remove(archives.archiveYear.yearPosts.examplePost)
+          ]
+        }
+
+        invisibleShopfronts2026 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "03 Oct"
+          }
+
+          postTitle {
+            contents: "Invisible Shopfronts"
+          }
+        }
+
+        theInattentionEconomy2026 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "28 Sep"
+          }
+
+          postTitle {
+            contents: "The Inattention Economy"
+          }
+        }
+      }
+
+      year2019 = frame : archives.archiveYear {
+        width: 100%,
+
+        yearPosts {
+          overrides: [
+            insert(writeShorterSentences2019, after = .nil),
+            insert(aPricingModelFor2019, after = writeShorterSentences2019),
+            insert(theEverythingMachine2019, after = aPricingModelFor2019),
+            remove(archives.archiveYear.yearPosts.examplePost)
+          ]
+        }
+
+        yearLabel {
+          contents: "2019"
+        }
+
+        writeShorterSentences2019 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "23 Sep"
+          }
+
+          postTitle {
+            contents: "Write shorter sentences"
+          }
+        }
+
+        aPricingModelFor2019 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "17 Apr"
+          }
+
+          postTitle {
+            contents: "A pricing model for freelancers and agencies"
+          }
+        }
+
+        theEverythingMachine2019 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "04 Jan"
+          }
+
+          postTitle {
+            contents: "The everything machine"
+          }
+        }
+      }
+
+      year2018 = frame : archives.archiveYear {
+        width: 100%,
+
+        yearPosts {
+          overrides: [
+            insert(appsThatMakeMy2018, after = .nil),
+            insert(howToSpotThe2018, after = appsThatMakeMy2018),
+            insert(theBigGreenButton2018, after = howToSpotThe2018),
+            remove(archives.archiveYear.yearPosts.examplePost)
+          ]
+        }
+
+        yearLabel {
+          contents: "2018"
+        }
+
+        theBigGreenButton2018 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "25 Sep"
+          }
+
+          postTitle {
+            contents: "The big green button"
+          }
+        }
+
+        appsThatMakeMy2018 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "22 Sep"
+          }
+
+          postTitle {
+            contents: "Apps that make my Mac better"
+          }
+        }
+
+        howToSpotThe2018 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "16 Sep"
+          }
+
+          postTitle {
+            contents: "How to spot the passive voice"
+          }
+        }
+      }
+
+      year2016 = frame : archives.archiveYear {
+        width: 100%,
+
+        yearPosts {
+          overrides: [
+            insert(sevenFreelancingTipsThat2016, after = .nil),
+            insert(
+              writingGreatAppStore2016,
+              after = sevenFreelancingTipsThat2016
+            ),
+            remove(archives.archiveYear.yearPosts.examplePost)
+          ]
+        }
+
+        yearLabel {
+          contents: "2016"
+        }
+
+        sevenFreelancingTipsThat2016 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "01 Oct"
+          }
+
+          postTitle {
+            contents: "Seven freelancing tips that worked for me"
+          }
+        }
+
+        writingGreatAppStore2016 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "15 Apr"
+          }
+
+          postTitle {
+            contents: "Writing great app store release notes"
+          }
+        }
+      }
+
+      year2015 = frame : archives.archiveYear {
+        width: 100%,
+
+        yearPosts {
+          overrides: [
+            insert(theAdThatAte2015, after = .nil),
+            insert(appIsPerformingA2015, after = theAdThatAte2015),
+            remove(archives.archiveYear.yearPosts.examplePost)
+          ]
+        }
+
+        yearLabel {
+          contents: "2015"
+        }
+
+        theAdThatAte2015 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "06 Nov"
+          }
+
+          postTitle {
+            contents: "The ad that ate itself"
+          }
+        }
+
+        appIsPerformingA2015 = frame : postCards.postCard {
+          width: 100%,
+          padding-left: 73px,
+
+          postDate {
+            width: 57px,
+            contents: "24 Oct"
+          }
+
+          postTitle {
+            contents: "App is performing a database migration, please be patient"
+          }
+        }
+      }
+    }
+  }
+}
+
+@context(theme="dark")
+thoughtsTagDark = frame : thoughtsTag {
+  left: 1124px,
+  top: 0px
+}
+
+@context(media="mobile")
+thoughtsTagMobile = frame : thoughtsTag {
+  left: 2248px,
+  top: 0px,
+  width: 390px,
+
+  @with-variant(footer.mobileSiteFooter)
+  siteFooter {
+    left: .nil,
+    top: .nil
+  }
+
+  main {
+    pageContent {
+      archive {
+        @with-variant(archives.mobileArchiveYear)
+        year2015 {}
+
+        @with-variant(archives.mobileArchiveYear)
+        year2016 {}
+
+        @with-variant(archives.mobileArchiveYear)
+        year2018 {}
+
+        @with-variant(archives.mobileArchiveYear)
+        year2019 {}
+
+        @with-variant(archives.mobileArchiveYear)
+        year2026 {}
+      }
+    }
+  }
+}
+
+@context(media="mobile", theme="dark")
+thoughtsTagMobileDark = frame : thoughtsTagMobile {
+  left: 2738px,
+  top: 0px,
+  width: 390px
+}

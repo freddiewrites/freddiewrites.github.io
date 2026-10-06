@@ -1,16 +1,25 @@
 import "tokens/colors.elyx" as colorTokens
-import "tokens/lengths.elyx" as lengthTokens
 import "tokens/typography.elyx" as typeTokens
 
-// A dated post link from _includes/post-card.html, sized for the homepage list.
+// A dated post link from _includes/post-card.html.
+// The date sits in the card's left padding, so the title wraps in whatever
+// width is left. For a different date column, change postDate's width and the
+// card's padding-left together (date width + 16px).
+// Homepage: 89px (5.5em). Archive: 57px (3.5em). 404 page: 97px (6em).
 export postCard = frame {
-  width: 100%,
+  left: 0px,
+  top: 0px,
+  width: 636px,
   height: .auto,
-  layout: {align-items: .center, item-gap: lengthTokens.spacing.space-sm},
+  layout: {direction: .column},
+  padding-left: 105px,
   children: [postDate, postTitle],
 
   postDate = text {
-    min-width: 89px,
+    left: 0px,
+    top: 2px,
+    width: 89px,
+    ignore-stack: .true,
     fill: colorTokens.colors.text-muted,
     contents: "28 Sep 2026",
     font-size: typeTokens.fontSizes.meta,
@@ -20,6 +29,7 @@ export postCard = frame {
   }
 
   postTitle = text {
+    width: 100%,
     fill: colorTokens.colors.text-color,
     contents: "The Inattention Economy",
     font-size: typeTokens.fontSizes.body,

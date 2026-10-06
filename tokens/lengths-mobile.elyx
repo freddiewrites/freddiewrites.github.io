@@ -1,0 +1,23 @@
+import "tokens/lengths.elyx" as base
+
+// Phone widths (480px and below), from the max-width media queries in _sass.
+@context(media="mobile")
+__file__
+
+export mobileSizes = tokens : base.sizes {
+  screen-width: 390,
+  // Images fill the 358px text column on phones.
+  breakout-width: 358,
+  image-max: 358,
+  portrait-width: 280,
+  logo-size: 34
+}
+
+export mobileInsets = tokens : base.insets {
+  screen-gutter: 0,
+  frame-padding: 16,
+  main-padding: 16,
+  main-bottom: 64,
+  panel-padding: 24,
+  nav-gap: 12
+}
