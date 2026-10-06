@@ -1,0 +1,23 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// The plum button from the newsletter form.
+export button = frame {
+  width: .auto,
+  height: .auto,
+  layout: {justify-content: .center, align-items: .center},
+  fill: colorTokens.colors.link-color,
+  corner-radius: lengthTokens.radii.radius-sm,
+  padding: [11px, 20px],
+  children: buttonLabel,
+
+  buttonLabel = text {
+    fill: colorTokens.colors.bg-color,
+    contents: "Subscribe",
+    font-size: typeTokens.fontSizes.ui,
+    font-family: typeTokens.fonts.font-ui,
+    font-style: "SemiBold",
+    line-height: typeTokens.lineHeights.body
+  }
+}

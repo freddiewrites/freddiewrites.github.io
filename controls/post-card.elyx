@@ -1,0 +1,30 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A dated post link from _includes/post-card.html, sized for the homepage list.
+export postCard = frame {
+  width: 100%,
+  height: .auto,
+  layout: {align-items: .center, item-gap: lengthTokens.spacing.space-sm},
+  children: [postDate, postTitle],
+
+  postDate = text {
+    min-width: 89px,
+    fill: colorTokens.colors.text-muted,
+    contents: "28 Sep 2026",
+    font-size: typeTokens.fontSizes.meta,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body,
+    font-features: .tabular-figures
+  }
+
+  postTitle = text {
+    fill: colorTokens.colors.text-color,
+    contents: "The Inattention Economy",
+    font-size: typeTokens.fontSizes.body,
+    font-family: typeTokens.fonts.font-body,
+    line-height: typeTokens.lineHeights.body,
+    font-features: .oldstyle-figures
+  }
+}

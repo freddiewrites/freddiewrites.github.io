@@ -1,0 +1,287 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/swatch.elyx" as swatches
+
+// Every color token on the site background. darkColorPanel shows the same tokens in dark mode.
+export colorPanel = frame {
+  width: 1072px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+  fill: colorTokens.colors.bg-color,
+  border: colorTokens.colors.border-color,
+  corner-radius: lengthTokens.radii.radius-panel,
+  padding: lengthTokens.spacing.space-md,
+  children: [panelTitle, swatchGrid],
+
+  panelTitle = text {
+    fill: colorTokens.colors.text-color,
+    contents: "Light",
+    font-size: typeTokens.fontSizes.ui,
+    font-family: typeTokens.fonts.font-ui,
+    font-style: "SemiBold"
+  }
+
+  swatchGrid = frame {
+    width: 100%,
+    height: .auto,
+    layout: {
+      item-gap: lengthTokens.spacing.space-sm,
+      wrap: .true,
+      line-gap: lengthTokens.spacing.space-md
+    },
+    children: [
+      bgSwatch,
+      textSwatch,
+      mutedSwatch,
+      linkSwatch,
+      linkHoverSwatch,
+      borderSwatch,
+      codeBgSwatch,
+      markSwatch,
+      underlineSwatch,
+      selectionSwatch,
+      inputBorderSwatch,
+      errorSwatch
+    ]
+  }
+
+  bgSwatch = frame : swatches.swatch {}
+
+  textSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.text-color
+    }
+
+    tokenName {
+      contents: "text-color"
+    }
+
+    tokenValue {
+      contents: "#2D2926"
+    }
+  }
+
+  mutedSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.text-muted
+    }
+
+    tokenName {
+      contents: "text-muted"
+    }
+
+    tokenValue {
+      contents: "#6B6560"
+    }
+  }
+
+  linkSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.link-color
+    }
+
+    tokenName {
+      contents: "link-color"
+    }
+
+    tokenValue {
+      contents: "#9D4E7E"
+    }
+  }
+
+  linkHoverSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.link-hover
+    }
+
+    tokenName {
+      contents: "link-hover"
+    }
+
+    tokenValue {
+      contents: "#7A3D62"
+    }
+  }
+
+  borderSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.border-color
+    }
+
+    tokenName {
+      contents: "border-color"
+    }
+
+    tokenValue {
+      contents: "#E3E0DB"
+    }
+  }
+
+  codeBgSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.code-bg
+    }
+
+    tokenName {
+      contents: "code-bg"
+    }
+
+    tokenValue {
+      contents: "#EFEDE8"
+    }
+  }
+
+  markSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.mark-bg
+    }
+
+    tokenName {
+      contents: "mark-bg"
+    }
+
+    tokenValue {
+      contents: "#FFF3CD"
+    }
+  }
+
+  underlineSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.underline-color
+    }
+
+    tokenName {
+      contents: "underline-color"
+    }
+
+    tokenValue {
+      contents: "link-color, 35%"
+    }
+  }
+
+  selectionSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.selection-bg
+    }
+
+    tokenName {
+      contents: "selection-bg"
+    }
+
+    tokenValue {
+      contents: "link-color, 18%"
+    }
+  }
+
+  inputBorderSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.input-border
+    }
+
+    tokenName {
+      contents: "input-border"
+    }
+
+    tokenValue {
+      contents: "#CFCAC3"
+    }
+  }
+
+  errorSwatch = frame : swatches.swatch {
+    chip {
+      fill[0].color: colorTokens.colors.error-color
+    }
+
+    tokenName {
+      contents: "error-color"
+    }
+
+    tokenValue {
+      contents: "#B03A2E"
+    }
+  }
+}
+
+@context(theme="dark")
+export darkColorPanel = frame : colorPanel {
+  top: 400px,
+
+  panelTitle {
+    contents: "Dark"
+  }
+
+  swatchGrid {
+    bgSwatch {
+      tokenValue {
+        contents: "#1C1C1A"
+      }
+    }
+
+    textSwatch {
+      tokenValue {
+        contents: "#E8E6E3"
+      }
+    }
+
+    mutedSwatch {
+      tokenValue {
+        contents: "#9A9590"
+      }
+    }
+
+    linkSwatch {
+      tokenValue {
+        contents: "#CF86B4"
+      }
+    }
+
+    linkHoverSwatch {
+      tokenValue {
+        contents: "#E4B0D0"
+      }
+    }
+
+    borderSwatch {
+      tokenValue {
+        contents: "#3A3835"
+      }
+    }
+
+    codeBgSwatch {
+      tokenValue {
+        contents: "#2A2926"
+      }
+    }
+
+    markSwatch {
+      tokenValue {
+        contents: "#5C4A1F"
+      }
+    }
+
+    underlineSwatch {
+      tokenValue {
+        contents: "link-color, 45%"
+      }
+    }
+
+    selectionSwatch {
+      tokenValue {
+        contents: "link-color, 30%"
+      }
+    }
+
+    inputBorderSwatch {
+      tokenValue {
+        contents: "#5A5652"
+      }
+    }
+
+    errorSwatch {
+      tokenValue {
+        contents: "#F0958A"
+      }
+    }
+  }
+}

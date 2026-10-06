@@ -1,0 +1,488 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/color-panel.elyx" as colorPanels
+
+// An overview of the site's colors, type and spacing tokens.
+foundations = frame {
+  left: 0px,
+  top: 0px,
+  width: 1200px,
+  height: .auto,
+  layout: {direction: .column, item-gap: lengthTokens.spacing.space-2xl},
+  fill: colorTokens.colors.bg-color,
+  padding: lengthTokens.spacing.space-2xl,
+  children: [pageTitle, colorsSection, typeSection, spacingSection],
+
+  pageTitle = text {
+    fill: colorTokens.colors.text-color,
+    contents: "Foundations",
+    font-size: typeTokens.fontSizes.h1,
+    font-family: typeTokens.fonts.font-body,
+    font-style: "SemiBold",
+    line-height: typeTokens.lineHeights.h1,
+    letter-spacing: -1.5%
+  }
+
+  colorsSection = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    children: [colorsLabel, lightPanel, darkPanel],
+
+    colorsLabel = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Colors",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      font-style: "SemiBold",
+      letter-spacing: 8%,
+      font-features: [.capitals-to-small-capitals, .small-capitals]
+    }
+
+    lightPanel = frame : colorPanels.colorPanel {}
+
+    @context(theme="dark")
+    darkPanel = frame : colorPanels.darkColorPanel {}
+  }
+
+  typeSection = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    children: [
+      typeLabel,
+      h1Row,
+      mastheadRow,
+      h2Row,
+      titleRow,
+      h3Row,
+      introRow,
+      bodyRow,
+      uiRow,
+      metaRow,
+      sectionLabelRow
+    ],
+
+    typeLabel = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Type",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      font-style: "SemiBold",
+      letter-spacing: 8%,
+      font-features: [.capitals-to-small-capitals, .small-capitals]
+    }
+
+    h1Row = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [h1Caption, h1Sample],
+
+      h1Caption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "h1 · Serif SemiBold 43",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      h1Sample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "Invisible Shopfronts",
+        font-size: typeTokens.fontSizes.h1,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        line-height: typeTokens.lineHeights.h1,
+        letter-spacing: -1.5%
+      }
+    }
+
+    mastheadRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [mastheadCaption, mastheadSample],
+
+      mastheadCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Masthead · Serif 36",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      mastheadSample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "I’m a writer and accidental marketer",
+        font-size: typeTokens.fontSizes.masthead,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.masthead,
+        letter-spacing: -1.2%
+      }
+    }
+
+    h2Row = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [h2Caption, h2Sample],
+
+      h2Caption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "h2 · Serif SemiBold 29",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      h2Sample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "What I’m reading",
+        font-size: typeTokens.fontSizes.h2,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        line-height: typeTokens.lineHeights.heading,
+        letter-spacing: -1%
+      }
+    }
+
+    titleRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [titleCaption, titleSample],
+
+      titleCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Large title · Serif SemiBold 25",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      titleSample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "From the desk of Freddie Harrison",
+        font-size: typeTokens.fontSizes.title-lg,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        line-height: typeTokens.lineHeights.heading,
+        letter-spacing: -1%
+      }
+    }
+
+    h3Row = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [h3Caption, h3Sample],
+
+      h3Caption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "h3 · Serif SemiBold 23",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      h3Sample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "Books I read in 2019",
+        font-size: typeTokens.fontSizes.h3,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        line-height: typeTokens.lineHeights.heading,
+        letter-spacing: -1%
+      }
+    }
+
+    introRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [introCaption, introSample],
+
+      introCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Intro · Serif 20 / 1.7",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      introSample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "Here, I write about what I’ve been thinking, seeing and reading.",
+        font-size: typeTokens.fontSizes.intro,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body
+      }
+    }
+
+    bodyRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [bodyCaption, bodySample],
+
+      bodyCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Body · Serif 18 / 1.7",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      bodySample = text {
+        fill: colorTokens.colors.text-color,
+        contents: "Everything is your shopfront now. The best thing you can do is get out of the way.",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body
+      }
+    }
+
+    uiRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [uiCaption, uiSample],
+
+      uiCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "UI · Sans 17",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      uiSample = text {
+        fill: colorTokens.colors.link-color,
+        contents: "All posts →",
+        font-size: typeTokens.fontSizes.ui,
+        font-family: typeTokens.fonts.font-ui
+      }
+    }
+
+    metaRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [metaCaption, metaSample],
+
+      metaCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Meta · Sans 16",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      metaSample = text {
+        fill: colorTokens.colors.text-muted,
+        contents: "3 October 2026",
+        font-size: typeTokens.fontSizes.meta,
+        font-family: typeTokens.fonts.font-ui,
+        font-features: .oldstyle-figures
+      }
+    }
+
+    sectionLabelRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [sectionLabelCaption, sectionLabelSample],
+
+      sectionLabelCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "Section label · Serif small caps",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      sectionLabelSample = text {
+        fill: colorTokens.colors.text-muted,
+        contents: "Latest posts",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        letter-spacing: 8%,
+        font-features: [.capitals-to-small-capitals, .small-capitals]
+      }
+    }
+  }
+
+  spacingSection = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+    children: [spacingLabel, xsRow, smRow, mdRow, lgRow, xlRow, xxlRow, xxxlRow],
+
+    spacingLabel = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Spacing",
+      font-size: typeTokens.fontSizes.body,
+      font-family: typeTokens.fonts.font-body,
+      font-style: "SemiBold",
+      letter-spacing: 8%,
+      font-features: [.capitals-to-small-capitals, .small-capitals]
+    }
+
+    xsRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [xsCaption, xsBar],
+
+      xsCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-xs · 8",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      xsBar = frame {
+        width: lengthTokens.spacing.space-xs,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    smRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [smCaption, smBar],
+
+      smCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-sm · 16",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      smBar = frame {
+        width: lengthTokens.spacing.space-sm,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    mdRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [mdCaption, mdBar],
+
+      mdCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-md · 24",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      mdBar = frame {
+        width: lengthTokens.spacing.space-md,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    lgRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [lgCaption, lgBar],
+
+      lgCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-lg · 32",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      lgBar = frame {
+        width: lengthTokens.spacing.space-lg,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    xlRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [xlCaption, xlBar],
+
+      xlCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-xl · 48",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      xlBar = frame {
+        width: lengthTokens.spacing.space-xl,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    xxlRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [xxlCaption, xxlBar],
+
+      xxlCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-2xl · 64",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      xxlBar = frame {
+        width: lengthTokens.spacing.space-2xl,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+
+    xxxlRow = frame {
+      width: 100%,
+      height: .auto,
+      layout: {align-items: .center, item-gap: lengthTokens.spacing.space-md},
+      children: [xxxlCaption, xxxlBar],
+
+      xxxlCaption = text {
+        width: 220px,
+        fill: colorTokens.colors.text-muted,
+        contents: "space-3xl · 96",
+        font-size: typeTokens.fontSizes.label,
+        font-family: typeTokens.fonts.font-ui
+      }
+
+      xxxlBar = frame {
+        width: lengthTokens.spacing.space-3xl,
+        height: 16px,
+        fill: colorTokens.colors.link-color,
+        corner-radius: 2px
+      }
+    }
+  }
+}

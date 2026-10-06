@@ -1,0 +1,27 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A labeled, empty input from the newsletter form.
+export textField = frame {
+  width: 240px,
+  height: .auto,
+  layout: {direction: .column, item-gap: 4px},
+  children: [fieldLabel, inputBox],
+
+  fieldLabel = text {
+    fill: colorTokens.colors.text-muted,
+    contents: "Email",
+    font-size: typeTokens.fontSizes.label,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body
+  }
+
+  inputBox = frame {
+    width: 100%,
+    height: 51px,
+    fill: colorTokens.colors.bg-color,
+    border: colorTokens.colors.input-border,
+    corner-radius: lengthTokens.radii.radius-sm
+  }
+}

@@ -1,0 +1,16 @@
+// Light-mode colors, mirroring the custom properties in _sass/_variables.scss.
+// Dark-mode values live in colors-dark.elyx.
+export colors = tokens {
+  bg-color: rgb(97.25%, 96.47%, 94.5098%),
+  text-color: rgb(17.6471%, 16.0784%, 14.9%),
+  text-muted: rgb(41.96%, 39.6078%, 37.6471%),
+  link-color: rgb(61.5686%, 30.5882%, 49.41%),
+  link-hover: rgb(47.84%, 23.92%, 38.43%),
+  border-color: rgb(89.0196%, 87.84%, 85.88%),
+  code-bg: rgb(93.7255%, 92.94%, 90.98%),
+  mark-bg: rgb(100%, 95.29%, 80.39%),
+  underline-color: rgb(61.5686%, 30.5882%, 49.41%, 34.9%),
+  selection-bg: rgb(61.5686%, 30.5882%, 49.41%, 18.0392%),
+  input-border: rgb(81.1765%, 79.2157%, 76.47%),
+  error-color: rgb(69.0196%, 22.7451%, 18.0392%)
+}

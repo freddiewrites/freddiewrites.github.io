@@ -1,0 +1,23 @@
+// Spacing scale, from _sass/_variables.scss.
+export spacing = tokens {
+  space-xs: 8,
+  space-sm: 16,
+  space-md: 24,
+  space-lg: 32,
+  space-xl: 48,
+  space-2xl: 64,
+  space-3xl: 96
+}
+
+// Layout widths at the 18px base size. content-width is 38rem.
+export sizes = tokens {
+  content-width: 684,
+  wide-width: 960,
+  frame-width: 960,
+  logo-size: 40
+}
+
+export radii = tokens {
+  radius-sm: 4,
+  radius-panel: 10
+}

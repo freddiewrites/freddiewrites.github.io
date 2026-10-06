@@ -1,0 +1,237 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "blocks/site-header.elyx" as header
+import "blocks/site-footer.elyx" as footer
+import "blocks/newsletter.elyx" as newsletter
+import "controls/post-card.elyx" as postCards
+
+// The homepage (_layouts/home.html and index.markdown) at a 1024px desktop width, light mode.
+home = frame {
+  left: 0px,
+  top: 0px,
+  width: 1024px,
+  height: .auto,
+  layout: {direction: .column},
+  fill: colorTokens.colors.bg-color,
+  padding: [0px, 32px],
+  children: [siteHeader, mainContent, siteFooter],
+
+  siteHeader = frame : header.siteHeader {}
+
+  // The text column sits on the left edge of the nav and footer.
+  mainContent = frame {
+    width: lengthTokens.sizes.content-width,
+    height: .auto,
+    layout: {direction: .column},
+    padding: [56px, lengthTokens.spacing.space-md, 80px],
+    children: [intro, topDivider, latestSection, bottomDivider, newsletterPanel],
+
+    intro = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+      children: [masthead, introText],
+
+      masthead = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {range: [6, 8], font-family: "Apple Color Emoji"},
+          {
+            range: [90, 94],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          },
+          {
+            range: [99, 105],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          }
+        ],
+        contents: "Hello 👋 I’m Freddie Harrison. I’m a writer and accidental marketer, currently working on Elyx and Sketch.",
+        font-size: typeTokens.fontSizes.masthead,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.masthead,
+        letter-spacing: -1.2%
+      }
+
+      introText = text {
+        width: 100%,
+        fill: colorTokens.colors.text-color,
+        subrange: [
+          {
+            range: [78, 96],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          },
+          {
+            range: [110, 128],
+            underline: .single,
+            fill: colorTokens.colors.link-color
+          }
+        ],
+        contents: "Here, I write about what I’ve been thinking, seeing and reading. You can also read more about me and find out what I’m doing now, if that’s your thing.",
+        font-size: typeTokens.fontSizes.intro,
+        font-family: typeTokens.fonts.font-body,
+        line-height: typeTokens.lineHeights.body
+      }
+    }
+
+    topDivider = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column},
+      padding: [
+        lengthTokens.spacing.space-xl,
+        0px,
+        lengthTokens.spacing.space-lg
+      ],
+      children: topRule,
+
+      topRule = frame {
+        width: 100%,
+        height: 1px,
+        fill: colorTokens.colors.border-color
+      }
+    }
+
+    latestSection = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+      children: [sectionLabel, postList],
+
+      sectionLabel = text {
+        fill: colorTokens.colors.text-muted,
+        contents: "Latest posts",
+        font-size: typeTokens.fontSizes.body,
+        font-family: typeTokens.fonts.font-body,
+        font-style: "SemiBold",
+        letter-spacing: 8%,
+        font-features: [.capitals-to-small-capitals, .small-capitals]
+      }
+
+      postList = frame {
+        width: 100%,
+        height: .auto,
+        layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+        children: [latestPost, recentPosts, allPostsLink],
+
+        latestPost = frame {
+          width: 100%,
+          height: .auto,
+          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          children: [latestHeading, latestExcerpt],
+
+          latestHeading = frame {
+            width: 100%,
+            height: .auto,
+            layout: {direction: .column, item-gap: 4px},
+            children: [latestTitle, latestDate],
+
+            latestTitle = text {
+              width: 100%,
+              fill: colorTokens.colors.text-color,
+              contents: "Invisible Shopfronts",
+              font-size: typeTokens.fontSizes.title-lg,
+              font-family: typeTokens.fonts.font-body,
+              font-style: "SemiBold",
+              line-height: typeTokens.lineHeights.heading,
+              letter-spacing: -1%
+            }
+
+            latestDate = text {
+              fill: colorTokens.colors.text-muted,
+              contents: "3 October 2026",
+              font-size: typeTokens.fontSizes.meta,
+              font-family: typeTokens.fonts.font-ui,
+              line-height: typeTokens.lineHeights.body,
+              font-features: .oldstyle-figures
+            }
+          }
+
+          latestExcerpt = text {
+            width: 100%,
+            fill: colorTokens.colors.text-muted,
+            contents: "Everything is your shopfront now. The best thing you can do is get out of the way.",
+            font-size: typeTokens.fontSizes.body,
+            font-family: typeTokens.fonts.font-body,
+            line-height: typeTokens.lineHeights.body
+          }
+        }
+
+        recentPosts = frame {
+          width: 100%,
+          height: .auto,
+          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          children: [inattentionCard, yearCard, newsDietCard, socialMediaCard],
+
+          inattentionCard = frame : postCards.postCard {}
+
+          yearCard = frame : postCards.postCard {
+            postDate {
+              contents: "17 Apr 2025"
+            }
+
+            postTitle {
+              contents: "2024"
+            }
+          }
+
+          newsDietCard = frame : postCards.postCard {
+            postDate {
+              contents: "16 Apr 2021"
+            }
+
+            postTitle {
+              contents: "My news media diet"
+            }
+          }
+
+          socialMediaCard = frame : postCards.postCard {
+            postDate {
+              contents: "3 Apr 2021"
+            }
+
+            postTitle {
+              contents: "Making social media painful"
+            }
+          }
+        }
+
+        allPostsLink = text {
+          fill: colorTokens.colors.link-color,
+          contents: "All posts →",
+          font-size: typeTokens.fontSizes.ui,
+          font-family: typeTokens.fonts.font-ui,
+          line-height: typeTokens.lineHeights.body
+        }
+      }
+    }
+
+    bottomDivider = frame {
+      width: 100%,
+      height: .auto,
+      layout: {direction: .column},
+      padding: [
+        lengthTokens.spacing.space-xl,
+        0px,
+        lengthTokens.spacing.space-lg
+      ],
+      children: bottomRule,
+
+      bottomRule = frame {
+        width: 100%,
+        height: 1px,
+        fill: colorTokens.colors.border-color
+      }
+    }
+
+    newsletterPanel = frame : newsletter.newsletterPanel {
+      width: 100%
+    }
+  }
+
+  siteFooter = frame : footer.siteFooter {}
+}

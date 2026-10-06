@@ -1,0 +1,33 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/typography.elyx" as typeTokens
+
+// A color chip with its token name and value, for the foundations overview.
+export swatch = frame {
+  width: 132px,
+  height: .auto,
+  layout: {direction: .column, item-gap: 4px},
+  children: [chip, tokenName, tokenValue],
+
+  chip = frame {
+    width: 100%,
+    height: 64px,
+    fill: colorTokens.colors.bg-color,
+    border: colorTokens.colors.border-color,
+    corner-radius: 6px
+  }
+
+  tokenName = text {
+    fill: colorTokens.colors.text-color,
+    contents: "bg-color",
+    font-size: typeTokens.fontSizes.label,
+    font-family: typeTokens.fonts.font-ui,
+    font-style: "SemiBold"
+  }
+
+  tokenValue = text {
+    fill: colorTokens.colors.text-muted,
+    contents: "#F8F6F1",
+    font-size: typeTokens.fontSizes.label,
+    font-family: typeTokens.fonts.font-ui
+  }
+}

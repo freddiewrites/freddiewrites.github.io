@@ -1,0 +1,84 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+import "controls/text-field.elyx" as fields
+import "controls/button.elyx" as buttons
+
+// The signup fields from _includes/newsletter-fields.html, laid out in one row as on wider screens.
+export newsletterForm = frame {
+  width: 570px,
+  height: .auto,
+  layout: {align-items: .end, item-gap: lengthTokens.spacing.space-sm},
+  children: [firstNameField, emailField, subscribeButton],
+
+  firstNameField = frame : fields.textField {
+    width: 177px,
+
+    fieldLabel {
+      contents: "First name"
+    }
+  }
+
+  emailField = frame : fields.textField {
+    width: 249px
+  }
+
+  subscribeButton = frame : buttons.button {}
+}
+
+// The homepage signup panel from _includes/newsletter-form.html.
+export newsletterPanel = frame {
+  top: 200px,
+  width: 636px,
+  height: .auto,
+  layout: {direction: .column},
+  fill: colorTokens.colors.code-bg,
+  border: colorTokens.colors.border-color,
+  corner-radius: lengthTokens.radii.radius-panel,
+  padding: lengthTokens.spacing.space-lg,
+  children: [titleWrap, blurb, form],
+
+  titleWrap = frame {
+    width: 100%,
+    height: .auto,
+    layout: {direction: .column},
+    overflow: .visible,
+    padding-bottom: lengthTokens.spacing.space-xs,
+    children: [accentBar, newsletterTitle],
+
+    // The plum bar runs from the panel's outer edge, as tall as the heading.
+    accentBar = frame {
+      left: -33px,
+      top: 3px,
+      bottom: 11px,
+      width: 5px,
+      ignore-stack: .true,
+      fill: colorTokens.colors.link-color
+    }
+
+    newsletterTitle = text {
+      width: 100%,
+      fill: colorTokens.colors.text-color,
+      contents: "From the desk of Freddie Harrison",
+      font-size: typeTokens.fontSizes.title-lg,
+      font-family: typeTokens.fonts.font-body,
+      font-style: "SemiBold",
+      line-height: typeTokens.lineHeights.heading,
+      letter-spacing: -1%
+    }
+  }
+
+  blurb = text {
+    width: 100%,
+    fill: colorTokens.colors.text-muted,
+    contents: "Get an occasional email of things I’ve been reading, watching, thinking and discovering. No tracking. Unsubscribe anytime.",
+    font-size: typeTokens.fontSizes.body,
+    font-family: typeTokens.fonts.font-body,
+    line-height: typeTokens.lineHeights.body
+  }
+
+  form = frame : newsletterForm {
+    width: 100%,
+    padding-top: lengthTokens.spacing.space-md
+  }
+}

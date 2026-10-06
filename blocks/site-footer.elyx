@@ -1,0 +1,118 @@
+import "tokens/colors.elyx" as colorTokens
+import "tokens/lengths.elyx" as lengthTokens
+import "tokens/typography.elyx" as typeTokens
+
+// The site footer from _includes/footer.html. The top rule is inset to line up with the header.
+export siteFooter = frame {
+  width: lengthTokens.sizes.frame-width,
+  height: .auto,
+  layout: {justify-content: .space-between, align-items: .center},
+  padding: [lengthTokens.spacing.space-lg, lengthTokens.spacing.space-md],
+  children: [footerRule, copyright, footerLinks],
+
+  footerRule = frame {
+    left: lengthTokens.spacing.space-md,
+    top: 0px,
+    right: lengthTokens.spacing.space-md,
+    height: 1px,
+    ignore-stack: .true,
+    fill: colorTokens.colors.border-color
+  }
+
+  copyright = text {
+    fill: colorTokens.colors.text-muted,
+    contents: "© 2026 Freddie Harrison",
+    font-size: typeTokens.fontSizes.label,
+    font-family: typeTokens.fonts.font-ui,
+    line-height: typeTokens.lineHeights.body
+  }
+
+  footerLinks = frame {
+    width: .auto,
+    height: .auto,
+    layout: {align-items: .center, item-gap: 6px},
+    children: [
+      xLink,
+      sep1,
+      linkedInLink,
+      sep2,
+      emailLink,
+      sep3,
+      feedLink,
+      sep4,
+      newsletterLink
+    ],
+
+    xLink = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "X",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    sep1 = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "·",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    linkedInLink = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "LinkedIn",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    sep2 = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "·",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    emailLink = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Email",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    sep3 = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "·",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    feedLink = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Feed",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    sep4 = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "·",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+
+    newsletterLink = text {
+      fill: colorTokens.colors.text-muted,
+      contents: "Newsletter",
+      font-size: typeTokens.fontSizes.label,
+      font-family: typeTokens.fonts.font-ui,
+      line-height: typeTokens.lineHeights.body
+    }
+  }
+}

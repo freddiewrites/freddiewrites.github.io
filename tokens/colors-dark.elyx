@@ -1,0 +1,20 @@
+import "tokens/colors.elyx" as base
+
+// Dark-mode colors, from the prefers-color-scheme: dark block in _sass/_variables.scss.
+@context(theme="dark")
+__file__
+
+export darkColors = tokens : base.colors {
+  bg-color: rgb(10.98%, 10.98%, 10.1961%),
+  text-color: rgb(90.98%, 90.1961%, 89.0196%),
+  text-muted: rgb(60.39%, 58.43%, 56.47%),
+  link-color: rgb(81.1765%, 52.549%, 70.5882%),
+  link-hover: rgb(89.41%, 69.0196%, 81.5686%),
+  border-color: rgb(22.7451%, 21.96%, 20.78%),
+  code-bg: rgb(16.47%, 16.0784%, 14.9%),
+  mark-bg: rgb(36.0784%, 29.0196%, 12.1569%),
+  underline-color: rgb(81.1765%, 52.549%, 70.5882%, 45.098%),
+  selection-bg: rgb(81.1765%, 52.549%, 70.5882%, 30.1961%),
+  input-border: rgb(35.29%, 33.7255%, 32.1569%),
+  error-color: rgb(94.1176%, 58.43%, 54.1176%)
+}

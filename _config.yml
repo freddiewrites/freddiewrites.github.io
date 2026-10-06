@@ -42,6 +42,13 @@ exclude:
   - AGENTS.md
   - CLAUDE.md
   - scripts/
+  # Elyx design files
+  - elyx.json
+  - tokens/
+  - blocks/
+  - controls/
+  - screens/
+  - resources/
 
 plugins:
   - jekyll-seo-tag
