@@ -93,7 +93,14 @@ export home = frame : layouts.pageLayout {
   }
 
   newsletterPanel = frame : newsletter.newsletterPanel {
-    width: 100%
+    width: 100%,
+
+    titleWrap {
+      accentBar {
+        left: -31px,
+        width: 3px
+      }
+    }
   }
 }
 
