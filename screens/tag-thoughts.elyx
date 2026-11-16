@@ -8,6 +8,7 @@ import "blocks/tag-header.elyx" as tagHeaders
 
 // The Thoughts tag page (/tags/thoughts/, _layouts/tag.html).
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(thoughtsTagDark, thoughtsTagMobile)
 export thoughtsTag = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -29,8 +30,7 @@ export thoughtsTag = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column},
-    overflow: .visible,
+    layout: {stack: {direction: .column}},
     children: [header, archive],
 
     header = frame : tagHeaders.tagHeader {
@@ -40,7 +40,9 @@ export thoughtsTag = frame : layouts.pageLayout {
     archive = frame {
       width: 100%,
       height: .auto,
-      layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+      layout: {
+        stack: {direction: .column, item-gap: lengthTokens.spacing.space-lg}
+      },
       children: [year2026, year2019, year2018, year2016, year2015],
 
       year2026 = frame : archives.archiveYear {
@@ -301,6 +303,7 @@ thoughtsTagDark = frame : thoughtsTag {
   top: 0px
 }
 
+@variants(thoughtsTagMobileDark)
 @context(media="mobile")
 thoughtsTagMobile = frame : thoughtsTag {
   left: 2248px,

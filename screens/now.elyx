@@ -8,6 +8,7 @@ import "blocks/prose-section.elyx" as sections
 // The Now page (now.md, _layouts/now.html), showing the latest Now update
 // (_posts/2026-10-03-october-2026.md).
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(nowDark, nowMobile)
 export now = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -29,8 +30,9 @@ export now = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     children: [pageTitle, lastUpdated, fatherhood, reading, rest],
 
     pageTitle = text : textStyles.heading1 {
@@ -128,6 +130,7 @@ nowDark = frame : now {
   top: 0px
 }
 
+@variants(nowMobileDark)
 @context(media="mobile")
 nowMobile = frame : now {
   left: 2248px,

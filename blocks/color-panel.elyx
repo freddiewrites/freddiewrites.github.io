@@ -4,10 +4,11 @@ import "tokens/typography.elyx" as typeTokens
 import "controls/swatch.elyx" as swatches
 
 // Every color token on the site background. darkColorPanel shows the same tokens in dark mode.
+@variants(darkColorPanel)
 export colorPanel = frame {
   width: 1072px,
   height: .auto,
-  layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+  layout: {stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}},
   fill: colorTokens.colors.bg-color,
   border: colorTokens.colors.border-color,
   corner-radius: lengthTokens.radii.radius-panel,
@@ -26,9 +27,11 @@ export colorPanel = frame {
     width: 100%,
     height: .auto,
     layout: {
-      item-gap: lengthTokens.spacing.space-sm,
-      wrap: .true,
-      line-gap: lengthTokens.spacing.space-md
+      stack: {
+        item-gap: lengthTokens.spacing.space-sm,
+        wrap: .true,
+        line-gap: lengthTokens.spacing.space-md
+      }
     },
     children: [
       bgSwatch,

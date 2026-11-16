@@ -1,5 +1,8 @@
+import "tokens/colors-dark.elyx" as dark
+
 // Light-mode colors, mirroring the custom properties in _sass/_variables.scss.
 // Dark-mode values live in colors-dark.elyx.
+@variants(dark.darkColors)
 export colors = tokens {
   bg-color: rgb(97.25%, 96.47%, 94.5098%),
   text-color: rgb(17.6471%, 16.0784%, 14.9%),

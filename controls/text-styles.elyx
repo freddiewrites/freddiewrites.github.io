@@ -56,6 +56,7 @@ export heading4 = text {
   font-features: .lining-figures
 }
 
+@variants(heading6)
 export heading5 = text {
   left: 0px,
   top: 216px,
@@ -70,7 +71,6 @@ export heading5 = text {
 }
 
 // h6 is the only heading in the muted color.
-@variant
 export heading6 = text : heading5 {
   left: 0px,
   top: 256px,
@@ -79,6 +79,7 @@ export heading6 = text : heading5 {
 }
 
 // Running text. Set width: 100% on instances so it wraps in the column.
+@variants(mutedParagraph)
 export paragraph = text {
   left: 0px,
   top: 296px,
@@ -91,7 +92,6 @@ export paragraph = text {
 }
 
 // The muted paragraph used for excerpts and blurbs.
-@variant
 export mutedParagraph = text : paragraph {
   left: 0px,
   top: 336px,
@@ -138,7 +138,7 @@ export postMeta = text {
 
 // Figure captions, right-aligned under the image.
 export caption = text {
-  left: 0px,
+  left: -210px,
   top: 504px,
   fill: colorTokens.colors.text-muted,
   contents: "A caption describing the image.",

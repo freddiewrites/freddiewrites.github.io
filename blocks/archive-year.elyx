@@ -6,12 +6,13 @@ import "controls/post-card.elyx" as postCards
 // A year of posts from _includes/post-archive.html. From 640px up the year
 // sits in its own 4em column. Stack years 32px apart.
 // yearPosts is a slot for post cards (dates as “03 Oct”, 57px date column).
+@variants(mobileArchiveYear)
 export archiveYear = frame {
   left: 0px,
   top: 0px,
   width: 636px,
   height: .auto,
-  layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+  layout: {stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}},
   padding-left: 72px,
   children: [yearLabel, yearPosts],
 
@@ -33,7 +34,9 @@ export archiveYear = frame {
   yearPosts = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+    },
     slot: .true,
     children: examplePost,
 

@@ -5,13 +5,13 @@ import "controls/text-styles.elyx" as textStyles
 
 // A bulleted list item. The plum marker hangs in the 24px list indent.
 // itemContent is a slot: swap itemText for a plain text layer when the item needs inline styles.
+@variants(numberedListItem)
 export listItem = frame {
   left: 0px,
   top: 0px,
   width: 400px,
   height: .auto,
-  layout: {direction: .column},
-  overflow: .visible,
+  layout: {stack: {direction: .column}},
   padding-left: lengthTokens.spacing.space-md,
   children: [itemMarker, itemContent],
 
@@ -32,7 +32,9 @@ export listItem = frame {
   itemContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+    },
     slot: .true,
     children: itemText,
 
@@ -44,7 +46,6 @@ export listItem = frame {
 }
 
 // An ordered list item; set the marker's number on each instance.
-@variant
 export numberedListItem = frame : listItem {
   left: 0px,
   top: 48px,

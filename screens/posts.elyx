@@ -8,6 +8,7 @@ import "controls/post-card.elyx" as postCards
 
 // The Posts archive (posts.md) in _layouts/page.html: every visible post, grouped by year.
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(postsDark, postsMobile)
 export posts = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -29,8 +30,9 @@ export posts = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     children: [pageTitle, archive],
 
     pageTitle = text : textStyles.heading1 {
@@ -41,7 +43,9 @@ export posts = frame : layouts.pageLayout {
     archive = frame {
       width: 100%,
       height: .auto,
-      layout: {direction: .column, item-gap: lengthTokens.spacing.space-lg},
+      layout: {
+        stack: {direction: .column, item-gap: lengthTokens.spacing.space-lg}
+      },
       children: [
         year2026,
         year2025,
@@ -536,6 +540,7 @@ postsDark = frame : posts {
   top: 0px
 }
 
+@variants(postsMobileDark)
 @context(media="mobile")
 postsMobile = frame : posts {
   left: 2248px,

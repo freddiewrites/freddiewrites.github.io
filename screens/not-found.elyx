@@ -8,6 +8,7 @@ import "controls/post-card.elyx" as postCards
 
 // The 404 page (404.md) in _layouts/page.html, with dates in a 6em column.
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(notFoundDark, notFoundMobile)
 export notFound = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -19,8 +20,9 @@ export notFound = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     children: [pageTitle, nothingHere, suggestion, recentPosts],
 
     pageTitle = text : textStyles.heading1 {
@@ -51,7 +53,9 @@ export notFound = frame : layouts.pageLayout {
     recentPosts = frame {
       width: 100%,
       height: .auto,
-      layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+      layout: {
+        stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+      },
       children: [shopfrontsCard, inattentionCard, yearCard],
 
       shopfrontsCard = frame : postCards.postCard {
@@ -105,6 +109,7 @@ notFoundDark = frame : notFound {
   top: 0px
 }
 
+@variants(notFoundMobileDark)
 @context(media="mobile")
 notFoundMobile = frame : notFound {
   left: 2248px,

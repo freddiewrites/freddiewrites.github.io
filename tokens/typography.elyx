@@ -1,3 +1,5 @@
+import "tokens/typography-mobile.elyx" as mobile
+
 // FH Serif and FH Sans are self-hosted, renamed copies of Source Serif 4 and Source Sans 3.
 export fonts = tokens {
   font-body: "Source Serif 4",
@@ -8,6 +10,7 @@ export fonts = tokens {
 
 // Sizes at the 18px base, rounded from the em values in the stylesheets.
 // Phone sizes live in typography-mobile.elyx.
+@variants(mobile.mobileFontSizes)
 export fontSizes = tokens {
   signup-title: 53,
   h1: 43,

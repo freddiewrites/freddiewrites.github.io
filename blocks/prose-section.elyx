@@ -11,8 +11,7 @@ export proseSection = frame {
   top: 0px,
   width: 636px,
   height: .auto,
-  layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
-  overflow: .visible,
+  layout: {stack: {direction: .column, item-gap: lengthTokens.spacing.space-sm}},
   children: [sectionHeading, sectionBody],
 
   sectionHeading = text : textStyles.heading2 {
@@ -22,8 +21,9 @@ export proseSection = frame {
   sectionBody = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     slot: .true,
     children: sectionText,
 
@@ -35,13 +35,13 @@ export proseSection = frame {
 }
 
 // An h3 subsection: 48px above the heading (24px gap + 24px padding).
+@variants(minorSubsection)
 export proseSubsection = frame {
   left: 0px,
   top: 200px,
   width: 636px,
   height: .auto,
-  layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
-  overflow: .visible,
+  layout: {stack: {direction: .column, item-gap: lengthTokens.spacing.space-sm}},
   padding-top: lengthTokens.spacing.space-md,
   children: [subsectionHeading, subsectionBody],
 
@@ -52,8 +52,9 @@ export proseSubsection = frame {
   subsectionBody = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     slot: .true,
     children: subsectionText,
 
@@ -65,7 +66,6 @@ export proseSubsection = frame {
 }
 
 // An h4 to h6 subsection: 32px above the heading (24px gap + 8px padding).
-@variant
 export minorSubsection = frame : proseSubsection {
   left: 0px,
   top: 400px,

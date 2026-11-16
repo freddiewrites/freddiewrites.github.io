@@ -9,6 +9,7 @@ import "blocks/newsletter.elyx" as newsletter
 // The newsletter signup page (newsletter.html) in _layouts/default.html.
 // Blocks sit 48px apart, the gap under the blurb.
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(newsletterPageDark, newsletterPageMobile)
 export newsletterPage = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -20,14 +21,17 @@ export newsletterPage = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-xl},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-xl}
+    },
     children: [signupIntro, signupForm, signupNote],
 
     signupIntro = frame {
       width: 100%,
       height: .auto,
-      layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+      layout: {
+        stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+      },
       padding-top: lengthTokens.spacing.space-md,
       children: [signupTitle, signupBlurb],
 
@@ -63,14 +67,14 @@ export newsletterPage = frame : layouts.pageLayout {
     signupNote = frame {
       width: 100%,
       height: .auto,
-      layout: {direction: .column},
+      layout: {stack: {direction: .column}},
       padding-top: lengthTokens.spacing.space-sm,
       children: signupNoteBody,
 
       signupNoteBody = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column},
+        layout: {stack: {direction: .column}},
         border: {color: colorTokens.colors.border-color, sides: .top},
         padding-top: lengthTokens.spacing.space-lg,
         children: signupNoteText,
@@ -91,6 +95,7 @@ newsletterPageDark = frame : newsletterPage {
   top: 0px
 }
 
+@variants(newsletterPageMobileDark)
 @context(media="mobile")
 newsletterPageMobile = frame : newsletterPage {
   left: 2248px,

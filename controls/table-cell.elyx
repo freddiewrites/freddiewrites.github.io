@@ -3,12 +3,13 @@ import "tokens/lengths.elyx" as lengthTokens
 import "tokens/typography.elyx" as typeTokens
 
 // A table body cell from _base.scss: sans text, 16px padding, a row separator below.
+@variants(lastRowCell, headerCell)
 export tableCell = frame {
   left: 0px,
   top: 0px,
   width: 128px,
   height: .auto,
-  layout: {direction: .column},
+  layout: {stack: {direction: .column}},
   border: {color: colorTokens.colors.border-color, sides: .bottom},
   padding: lengthTokens.spacing.space-sm,
   children: cellText,
@@ -25,7 +26,6 @@ export tableCell = frame {
 }
 
 // The last row has no separator.
-@variant
 export lastRowCell = frame : tableCell {
   left: 0px,
   top: 64px,
@@ -33,7 +33,6 @@ export lastRowCell = frame : tableCell {
 }
 
 // A header cell: small uppercase muted label over a 2px rule.
-@variant
 export headerCell = frame : tableCell {
   left: 0px,
   top: 128px,

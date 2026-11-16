@@ -24,6 +24,7 @@ import "controls/post-end-mark.elyx" as endMarks
 // Text with inline styles (links, code, emphasis) uses plain text layers,
 // because subranges don't apply on text instances.
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(styleGuidePostDark, styleGuidePostMobile)
 export styleGuidePost = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -56,8 +57,9 @@ export styleGuidePost = frame : layouts.pageLayout {
   postContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-2xl},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-2xl}
+    },
     children: [
       lede,
       headingsSection,
@@ -349,7 +351,9 @@ export styleGuidePost = frame : layouts.pageLayout {
         bulletList = frame {
           width: 100%,
           height: .auto,
-          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          layout: {
+            stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+          },
           children: [
             bulletOne,
             bulletTwo,
@@ -392,8 +396,10 @@ export styleGuidePost = frame : layouts.pageLayout {
             width: 100%,
             height: .auto,
             layout: {
-              direction: .column,
-              item-gap: lengthTokens.spacing.space-xs
+              stack: {
+                direction: .column,
+                item-gap: lengthTokens.spacing.space-xs
+              }
             },
             padding-left: lengthTokens.spacing.space-md,
             children: [bulletNestedOne, bulletNestedTwo, bulletNestedThree],
@@ -464,7 +470,9 @@ export styleGuidePost = frame : layouts.pageLayout {
         stepList = frame {
           width: 100%,
           height: .auto,
-          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          layout: {
+            stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+          },
           children: [stepOne, stepTwo, stepThree, stepNested, stepFour],
 
           stepOne = frame : listItems.numberedListItem {
@@ -509,8 +517,10 @@ export styleGuidePost = frame : layouts.pageLayout {
             width: 100%,
             height: .auto,
             layout: {
-              direction: .column,
-              item-gap: lengthTokens.spacing.space-xs
+              stack: {
+                direction: .column,
+                item-gap: lengthTokens.spacing.space-xs
+              }
             },
             padding-left: lengthTokens.spacing.space-md,
             children: [stepSubA, stepSubB, stepSubC],
@@ -727,7 +737,7 @@ export styleGuidePost = frame : layouts.pageLayout {
       featureTable = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column},
+        layout: {stack: {direction: .column}},
         children: [
           headerRow,
           projectsRow,
@@ -740,7 +750,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         headerRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [
             headerFeatureCell,
             headerFreeCell,
@@ -787,7 +797,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         projectsRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [
             projectsFeatureCell,
             projectsFreeCell,
@@ -834,7 +844,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         storageRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [
             storageFeatureCell,
             storageFreeCell,
@@ -881,7 +891,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         supportRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [
             supportFeatureCell,
             supportFreeCell,
@@ -928,7 +938,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         apiRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [apiFeatureCell, apiFreeCell, apiProCell, apiEnterpriseCell],
 
           apiFeatureCell = frame : cells.tableCell {
@@ -970,7 +980,7 @@ export styleGuidePost = frame : layouts.pageLayout {
         ssoRow = frame {
           width: .auto,
           height: .auto,
-          layout: {direction: .row},
+          layout: {stack: {}},
           children: [ssoFeatureCell, ssoFreeCell, ssoProCell, ssoEnterpriseCell],
 
           ssoFeatureCell = frame : cells.lastRowCell {
@@ -1106,7 +1116,9 @@ export styleGuidePost = frame : layouts.pageLayout {
       glossary = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column, item-gap: lengthTokens.spacing.space-sm},
+        layout: {
+          stack: {direction: .column, item-gap: lengthTokens.spacing.space-sm}
+        },
         children: [typographyDefinition, kerningDefinition, leadingDefinition],
 
         typographyDefinition = frame : definitions.definitionItem {
@@ -1265,7 +1277,9 @@ export styleGuidePost = frame : layouts.pageLayout {
         principlesList = frame {
           width: 100%,
           height: .auto,
-          layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+          layout: {
+            stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+          },
           children: [shortSentences, activeVoice, frontLoad, shortParagraphs],
 
           shortSentences = frame : listItems.numberedListItem {
@@ -1378,7 +1392,9 @@ export styleGuidePost = frame : layouts.pageLayout {
       codeList = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+        layout: {
+          stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+        },
         children: [primaryColorItem, spacingItem, transitionItem],
 
         primaryColorItem = frame : listItems.listItem {
@@ -1603,6 +1619,7 @@ styleGuidePostDark = frame : styleGuidePost {
   top: 0px
 }
 
+@variants(styleGuidePostMobileDark)
 @context(media="mobile")
 styleGuidePostMobile = frame : styleGuidePost {
   left: 2248px,

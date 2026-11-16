@@ -8,10 +8,11 @@ import "blocks/newsletter.elyx" as newsletter
 import "controls/divider.elyx" as dividers
 
 @with-context()
-__file__
+file {}
 
 // The homepage (_layouts/home.html and index.markdown).
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(homeDark, homeMobile)
 export home = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -29,7 +30,9 @@ export home = frame : layouts.pageLayout {
   intro = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     padding-top: lengthTokens.spacing.space-md,
     children: [masthead, introText],
 
@@ -110,6 +113,7 @@ homeDark = frame : home {
   top: 0px
 }
 
+@variants(homeMobileDark)
 @context(media="mobile")
 homeMobile = frame : home {
   left: 2248px,

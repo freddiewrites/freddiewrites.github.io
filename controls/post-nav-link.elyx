@@ -3,12 +3,13 @@ import "tokens/typography.elyx" as typeTokens
 import "controls/text-styles.elyx" as textStyles
 
 // An “Older” or “Newer” link at the end of a post.
+@variants(newerPostNavLink)
 export postNavLink = frame {
   left: 0px,
   top: 0px,
   width: 306px,
   height: .auto,
-  layout: {direction: .column, item-gap: 4px},
+  layout: {stack: {direction: .column, item-gap: 4px}},
   children: [navLabel, navTitle],
 
   navLabel = text : textStyles.sectionLabel {
@@ -28,18 +29,17 @@ export postNavLink = frame {
 }
 
 // The newer post sits in the right column, right-aligned.
-@variant
 export newerPostNavLink = frame : postNavLink {
   left: 0px,
   top: 80px,
 
-  navLabel {
-    contents: "Newer",
+  navTitle {
+    contents: "The Inattention Economy",
     align: .right
   }
 
-  navTitle {
-    contents: "The Inattention Economy",
+  navLabel {
+    contents: "Newer",
     align: .right
   }
 }

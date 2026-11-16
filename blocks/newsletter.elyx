@@ -6,12 +6,13 @@ import "controls/button.elyx" as buttons
 import "controls/text-styles.elyx" as textStyles
 
 // The signup fields from _includes/newsletter-fields.html, in one row as on screens 600px and wider.
+@variants(mobileNewsletterForm)
 export newsletterForm = frame {
   left: 0px,
   top: 0px,
   width: 570px,
   height: .auto,
-  layout: {align-items: .end, item-gap: lengthTokens.spacing.space-sm},
+  layout: {stack: {align-items: .end, item-gap: lengthTokens.spacing.space-sm}},
   children: [firstNameField, emailField, subscribeButton],
 
   firstNameField = frame : fields.textField {
@@ -35,8 +36,8 @@ export mobileNewsletterForm = frame : newsletterForm {
   left: 0px,
   top: 120px,
   width: 294px,
-  layout.align-items: .start,
-  layout.direction: .column,
+  layout.stack.align-items: .start,
+  layout.stack.direction: .column,
 
   firstNameField {
     width: 100%
@@ -48,12 +49,13 @@ export mobileNewsletterForm = frame : newsletterForm {
 }
 
 // The homepage signup panel from _includes/newsletter-form.html.
+@variants(mobileNewsletterPanel)
 export newsletterPanel = frame {
   left: 640px,
   top: 0px,
   width: 636px,
   height: .auto,
-  layout: {direction: .column},
+  layout: {stack: {direction: .column}},
   fill: colorTokens.colors.code-bg,
   border: colorTokens.colors.border-color,
   corner-radius: lengthTokens.radii.radius-panel,
@@ -63,8 +65,7 @@ export newsletterPanel = frame {
   titleWrap = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column},
-    overflow: .visible,
+    layout: {stack: {direction: .column}},
     padding-bottom: lengthTokens.spacing.space-xs,
     children: [accentBar, newsletterTitle],
 

@@ -2,11 +2,11 @@ import "tokens/colors.elyx" as colorTokens
 import "tokens/typography.elyx" as typeTokens
 
 // A main-nav link from _includes/header.html.
+@variants(activeNavLink)
 export navLink = frame {
   width: .auto,
   height: .auto,
-  layout: {direction: .column},
-  overflow: .visible,
+  layout: {stack: {direction: .column}},
   children: [linkLabel, activeUnderline],
 
   linkLabel = text {
@@ -30,7 +30,6 @@ export navLink = frame {
 }
 
 // The link for the section you're in.
-@variant
 export activeNavLink = frame : navLink {
   left: 0px,
   top: 48px,

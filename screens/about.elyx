@@ -13,6 +13,7 @@ import "controls/award-item.elyx" as awards
 
 // The About page (about.markdown) in _layouts/page.html.
 // Four boards: desktop light, desktop dark, mobile light and mobile dark.
+@variants(aboutDark, aboutMobile)
 export about = frame : layouts.pageLayout {
   left: 0px,
   top: 0px,
@@ -34,8 +35,9 @@ export about = frame : layouts.pageLayout {
   pageContent = frame {
     width: 100%,
     height: .auto,
-    layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
-    overflow: .visible,
+    layout: {
+      stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+    },
     children: [
       pageTitle,
       intro,
@@ -200,7 +202,9 @@ export about = frame : layouts.pageLayout {
       experienceList = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column, item-gap: lengthTokens.spacing.space-md},
+        layout: {
+          stack: {direction: .column, item-gap: lengthTokens.spacing.space-md}
+        },
         children: [
           elyxRole,
           sketchRole,
@@ -342,7 +346,9 @@ export about = frame : layouts.pageLayout {
       awardList = frame {
         width: 100%,
         height: .auto,
-        layout: {direction: .column, item-gap: lengthTokens.spacing.space-xs},
+        layout: {
+          stack: {direction: .column, item-gap: lengthTokens.spacing.space-xs}
+        },
         children: [
           heistInnovation,
           brandImpactEducation,
@@ -507,6 +513,7 @@ aboutDark = frame : about {
   top: 0px
 }
 
+@variants(aboutMobileDark)
 @context(media="mobile")
 aboutMobile = frame : about {
   left: 2248px,

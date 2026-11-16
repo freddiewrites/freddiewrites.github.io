@@ -1,3 +1,5 @@
+import "tokens/lengths-mobile.elyx" as mobile
+
 // Spacing scale, from _sass/_variables.scss.
 export spacing = tokens {
   space-xs: 8,
@@ -11,6 +13,7 @@ export spacing = tokens {
 
 // Layout widths at the 18px base size. content-width is 38rem.
 // Mobile values live in lengths-mobile.elyx.
+@variants(mobile.mobileSizes)
 export sizes = tokens {
   screen-width: 1024,
   content-width: 684,
@@ -26,6 +29,7 @@ export sizes = tokens {
 }
 
 // Responsive padding and gaps from _layout.scss and _components.scss.
+@variants(mobile.mobileInsets)
 export insets = tokens {
   // Space either side of the 960px frame at a 1024px screen.
   screen-gutter: 32,

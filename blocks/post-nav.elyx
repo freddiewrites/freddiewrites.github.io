@@ -2,12 +2,13 @@ import "tokens/lengths.elyx" as lengthTokens
 import "controls/post-nav-link.elyx" as navLinks
 
 // Older and newer post links from _layouts/post.html, in two equal columns.
+@variants(mobilePostNav)
 export postNav = frame {
   left: 0px,
   top: 0px,
   width: 636px,
   height: .auto,
-  layout: {item-gap: lengthTokens.spacing.space-md},
+  layout: {stack: {item-gap: lengthTokens.spacing.space-md}},
   children: [olderLink, newerLink],
 
   olderLink = frame : navLinks.postNavLink {}
@@ -21,7 +22,7 @@ export mobilePostNav = frame : postNav {
   left: 0px,
   top: 120px,
   width: 358px,
-  layout.direction: .column,
+  layout.stack.direction: .column,
   overrides: [move(postNav.newerLink, after = .nil)],
 
   olderLink {
